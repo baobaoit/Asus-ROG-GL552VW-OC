@@ -3416,6 +3416,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 0x12
             }
         })
+        Device(ALS0)
+        {
+            Name(_HID, "ACPI0008")
+            Name(_CID, "smc-als")
+            Name(_ALI, 150)
+            Name(_ALR, Package()
+            {
+                Package() { 100, 150 },
+            })
+        }
     }
 
     Scope (_SB)
@@ -31653,6 +31663,11 @@ RWAK (Arg0)
 
                 Return (MEMD)
             }
+            Method (SKBV, 1, NotSerialized)
+            {
+                ^^PCI0.LPCB.EC0.WRAM (0x04B1, Arg0)
+                Return (Arg0)
+            }
         }
     }
 
@@ -37245,156 +37260,22 @@ Else
 
         Method (_Q0E, 0, NotSerialized)  // _Qxx: EC Query
         {
-            If (LLess (MSOS (), OSW8))
+            
+            If (ATKP)
             {
-                SBRN ()
+                \_SB.ATKD.IANE (0x20)
             }
 
-            If (LGreaterEqual (MSOS (), OSVT))
-            {
-                Store (LBTN, Local0)
-                If (^^^GFX0.PRST ())
-                {
-                    If (LNotEqual (^^^GFX0.LCDD._DCS (), 0x1F))
-                    {
-                        Return (Zero)
-                    }
-
-                    ^^^GFX0.DWBL ()
-                    Store (One, ASBN)
-                }
-
-                If (^^^PEG0.PEGP.PRST)
-                {
-                    If (LNot (ASBN))
-                    {
-                        If (LNotEqual (^^^PEG0.PEGP.LCDD._DCS, 0x1F))
-                        {
-                            Return (Zero)
-                        }
-
-                        ^^^PEG0.PEGP.DWBL ()
-                        Store (One, ASBN)
-                    }
-                }
-
-                Store (Zero, ASBN)
-                If (ATKP)
-                {
-                    If (LGreaterEqual (MSOS (), OSW8)){}
-                    Else
-                    {
-                        If (LGreater (Local0, Zero))
-                        {
-                            Decrement (Local0)
-                        }
-
-                        If (LGreater (Local0, 0x0A))
-                        {
-                            Store (0x0A, Local0)
-                        }
-
-                        Store (Local0, LBTN)
-                        ^^^^ATKD.IANE (Add (Local0, 0x20))
-                    }
-                }
-            }
-            Else
-            {
-                If (LGreater (LBTN, Zero))
-                {
-                    Decrement (LBTN)
-                }
-
-                If (LGreater (LBTN, 0x0A))
-                {
-                    Store (0x0A, LBTN)
-                }
-
-                STBR ()
-                If (ATKP)
-                {
-                    ^^^^ATKD.IANE (Add (LBTN, 0x20))
-                }
-            }
-
-            Return (Zero)
         }
 
         Method (_Q0F, 0, NotSerialized)  // _Qxx: EC Query
         {
-            If (LLess (MSOS (), OSW8))
+            
+            If (ATKP)
             {
-                SBRN ()
+                \_SB.ATKD.IANE (0x10)
             }
 
-            If (LGreaterEqual (MSOS (), OSVT))
-            {
-                Store (LBTN, Local0)
-                If (^^^GFX0.PRST ())
-                {
-                    If (LNotEqual (^^^GFX0.LCDD._DCS (), 0x1F))
-                    {
-                        Return (Zero)
-                    }
-
-                    ^^^GFX0.UPBL ()
-                    Store (One, ASBN)
-                }
-
-                If (^^^PEG0.PEGP.PRST)
-                {
-                    If (LNot (ASBN))
-                    {
-                        If (LNotEqual (^^^PEG0.PEGP.LCDD._DCS, 0x1F))
-                        {
-                            Return (Zero)
-                        }
-
-                        ^^^PEG0.PEGP.UPBL ()
-                        Store (One, ASBN)
-                    }
-                }
-
-                Store (Zero, ASBN)
-                If (ATKP)
-                {
-                    If (LGreaterEqual (MSOS (), OSW8)){}
-                    Else
-                    {
-                        If (LLess (Local0, 0x0A))
-                        {
-                            Increment (Local0)
-                        }
-                        Else
-                        {
-                            Store (0x0A, Local0)
-                        }
-
-                        Store (Local0, LBTN)
-                        ^^^^ATKD.IANE (Add (Local0, 0x10))
-                    }
-                }
-            }
-            Else
-            {
-                If (LLess (LBTN, 0x0A))
-                {
-                    Increment (LBTN)
-                }
-                Else
-                {
-                    Store (0x0A, LBTN)
-                }
-
-                STBR ()
-                If (ATKP)
-                {
-                    ^^^^ATKD.IANE (Add (LBTN, 0x10))
-                }
-            }
-
-            Return (Zero)
         }
 
         Method (_Q10, 0, NotSerialized)  // _Qxx: EC Query
