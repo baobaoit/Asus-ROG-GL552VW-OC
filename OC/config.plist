@@ -256,11 +256,11 @@
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>AAAWGQ==</data>
-				<key>framebuffer-patch-enable	</key>
+				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-stolenmem	</key>
+				<key>framebuffer-stolenmem</key>
 				<data>AAAwAQ==</data>
-				<key>framebuffer-fbmem	</key>
+				<key>framebuffer-fbmem</key>
 				<data>AACQAA==</data>
 			</dict>
 		</dict>
