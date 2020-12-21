@@ -1,61 +1,41 @@
 /*
  * Intel ACPI Component Architecture
- * AML/ASL+ Disassembler version 20180427 (64-bit version)(RM)
- * Copyright (c) 2000 - 2018 Intel Corporation
+ * AML/ASL+ Disassembler version 20200717 (32-bit version)
+ * Copyright (c) 2000 - 2020 Intel Corporation
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Mon Dec 14 09:33:13 2020
+ * Disassembly of DSDT.aml, Tue Dec 22 00:54:38 2020
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00025CAE (154798)
+ *     Length           0x000261D5 (156117)
  *     Revision         0x02
- *     Checksum         0x28
+ *     Checksum         0xD9
  *     OEM ID           "_ASUS_"
  *     OEM Table ID     "Notebook"
  *     OEM Revision     0x01072009 (17244169)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20120913 (538052883)
+ *     Compiler Version 0x20180427 (538444839)
  */
 DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 {
-    /*
-     * iASL Warning: There were 42 external control methods found during
-     * disassembly, but only 30 were resolved (12 unresolved). Additional
-     * ACPI tables may be required to properly disassemble the code. This
-     * resulting disassembler output file may not compile because the
-     * disassembler did not know how many arguments to assign to the
-     * unresolved methods. Note: SSDTs can be dynamically loaded at
-     * runtime and may or may not be available via the host OS.
-     *
-     * In addition, the -fe option can be used to specify a file containing
-     * control method external declarations with the associated method
-     * argument counts. Each line of the file must be of the form:
-     *     External (<method pathname>, MethodObj, <argument count>)
-     * Invocation:
-     *     iasl -fe refs.txt -d dsdt.aml
-     *
-     * The following methods were unresolved and many not compile properly
-     * because the disassembler had to guess at the number of arguments
-     * required for each:
-     */
     /*
      * External declarations were imported from
      * a reference file -- refs.txt
      */
 
-    External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
+    External (_GPE.MMTB, MethodObj)    // 0 Arguments    // From external reference file
     External (_GPE.P0L6, MethodObj)    // 0 Arguments
     External (_GPE.P1L6, MethodObj)    // 0 Arguments
     External (_GPE.P2L6, MethodObj)    // 0 Arguments
-    External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
+    External (_GPE.VHOV, MethodObj)    // 3 Arguments    // From external reference file
     External (_PR_.BGIA, FieldUnitObj)
     External (_PR_.BGMA, FieldUnitObj)
     External (_PR_.BGMS, FieldUnitObj)
     External (_PR_.CPPC, FieldUnitObj)
-    External (_PR_.CPU0.LPSS, UnknownObj)    // Warning: Unknown object
-    External (_PR_.CPU0.TPSS, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU0.LPSS, UnknownObj)
+    External (_PR_.CPU0.TPSS, UnknownObj)
     External (_PR_.DSAE, FieldUnitObj)
     External (_PR_.DTSE, FieldUnitObj)
     External (_PR_.DTSF, FieldUnitObj)
@@ -68,53 +48,48 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     External (_SB_.PCI0.GFX0.AINT, MethodObj)    // 2 Arguments
     External (_SB_.PCI0.GFX0.CBLV, FieldUnitObj)
     External (_SB_.PCI0.GFX0.CLID, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.GFX0.DWBL, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.GFX0.DD02._BCM, MethodObj)    // 1 Arguments    // From external reference file
     External (_SB_.PCI0.GFX0.GCBL, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.GCDS, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.GFX0.GLID, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.GFX0.GSSE, FieldUnitObj)
-    External (_SB_.PCI0.GFX0.LCDD._DCS, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.GFX0.NATK, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.GFX0.OPTS, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.OWAK, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.GFX0.PRST, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.GFX0.SWHD, MethodObj)    // 1 Arguments
-    External (_SB_.PCI0.GFX0.UPBL, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // Imported: 1 Arguments
-    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (_SB_.PCI0.LPCB.H_EC.ECMD, MethodObj)    // 1 Arguments    // From external reference file
+    External (_SB_.PCI0.LPCB.H_EC.ECRD, MethodObj)    // 1 Arguments    // From external reference file
+    External (_SB_.PCI0.LPCB.H_EC.ECWT, MethodObj)    // 2 Arguments    // From external reference file
+    External (_SB_.PCI0.PAUD.PUAM, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.PEG0.PEGP.ADVD, IntObj)    // Warning: Unknown object
-    External (_SB_.PCI0.PEG0.PEGP.DWBL, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.PEG0.PEGP.GCDS, IntObj)    // Warning: Unknown object
-    External (_SB_.PCI0.PEG0.PEGP.LCDD._DCS, UnknownObj)    // Warning: Unknown object
-    External (_SB_.PCI0.PEG0.PEGP.NATK, IntObj)    // Warning: Unknown object
-    External (_SB_.PCI0.PEG0.PEGP.PRST, IntObj)    // Warning: Unknown object
-    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.PCI0.PEG0.PEGP.SWHD, MethodObj)    // Warning: Unknown method, guessing 1 arguments
-    External (_SB_.PCI0.PEG0.PEGP.UPBL, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (_SB_.PCI0.PEG0.PEGP.ADVD, IntObj)
+    External (_SB_.PCI0.PEG0.PEGP.GCDS, IntObj)
+    External (_SB_.PCI0.PEG0.PEGP.LCDD._DCS, UnknownObj)
+    External (_SB_.PCI0.PEG0.PEGP.NATK, IntObj)
+    External (_SB_.PCI0.PEG0.PEGP.PRST, IntObj)
+    External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // 2 Arguments    // From external reference file
+    External (_SB_.PCI0.PEG0.PEGP.SWHD, MethodObj)    // 1 Arguments
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
-    External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.XHC_.RHUB.INIR, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // Imported: 2 Arguments
-    External (_SB_.TPM_.PTS_, MethodObj)    // Warning: Unknown method, guessing 1 arguments
-    External (AL6F, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (D1F0, UnknownObj)    // Warning: Unknown object
-    External (D1F1, UnknownObj)    // Warning: Unknown object
-    External (D1F2, UnknownObj)    // Warning: Unknown object
+    External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // 4 Arguments    // From external reference file
+    External (_SB_.PCI0.XHC_.DUAM, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.XHC_.RHUB.INIR, MethodObj)    // 0 Arguments
+    External (_SB_.PCI0.XHC_.RHUB.TPLD, MethodObj)    // 2 Arguments    // From external reference file
+    External (_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments
+    External (AL6F, MethodObj)    // 0 Arguments
+    External (D1F0, UnknownObj)
+    External (D1F1, UnknownObj)
+    External (D1F2, UnknownObj)
     External (GSMI, FieldUnitObj)
-    External (HLVT, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (HLVT, MethodObj)    // 0 Arguments
     External (LIDS, FieldUnitObj)
     External (M32B, FieldUnitObj)
     External (M32L, FieldUnitObj)
     External (M64B, FieldUnitObj)
     External (M64L, FieldUnitObj)
-    External (MDBG, MethodObj)    // Imported: 1 Arguments
+    External (MDBG, MethodObj)    // 1 Arguments    // From external reference file
     External (P0WK, FieldUnitObj)
     External (P1GP, FieldUnitObj)
     External (P1WK, FieldUnitObj)
@@ -128,9 +103,9 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     External (PDC5, IntObj)
     External (PDC6, IntObj)
     External (PDC7, IntObj)
-    External (PS0X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (PS2X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
-    External (PS3X, MethodObj)    // Warning: Unknown method, guessing 0 arguments
+    External (PS0X, MethodObj)    // 0 Arguments
+    External (PS2X, MethodObj)    // 0 Arguments
+    External (PS3X, MethodObj)    // 0 Arguments
     External (SGGP, FieldUnitObj)
     External (SGMD, FieldUnitObj)
 
@@ -199,7 +174,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     Name (SS3, One)
     Name (SS4, One)
     Name (IOST, 0xFFFF)
-    Name (TOPM, 0x00000000)
+    Name (TOPM, Zero)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
     OperationRegion (GNVS, SystemMemory, 0x77325000, 0x05F5)
@@ -3416,14 +3391,18 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 0x12
             }
         })
-        Device(ALS0)
+        Device (ALS0)
         {
-            Name(_HID, "ACPI0008")
-            Name(_CID, "smc-als")
-            Name(_ALI, 150)
-            Name(_ALR, Package()
+            Name (_HID, "ACPI0008" /* Ambient Light Sensor Device */)  // _HID: Hardware ID
+            Name (_CID, "smc-als")  // _CID: Compatible ID
+            Name (_ALI, 0x96)  // _ALI: Ambient Light Illuminance
+            Name (_ALR, Package (0x01)  // _ALR: Ambient Light Response
             {
-                Package() { 100, 150 },
+                Package (0x02)
+                {
+                    0x64, 
+                    0x96
+                }
             })
         }
     }
@@ -3432,8 +3411,8 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
     {
         Device (PCI0)
         {
-            Name (_HID, EisaId ("PNP0A08"))  // _HID: Hardware ID
-            Name (_CID, EisaId ("PNP0A03"))  // _CID: Compatible ID
+            Name (_HID, EisaId ("PNP0A08") /* PCI Express Bus */)  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0A03") /* PCI Bus */)  // _CID: Compatible ID
             Name (_ADR, Zero)  // _ADR: Address
             Method (^BN00, 0, NotSerialized)
             {
@@ -3450,10 +3429,10 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
             {
                 If (PICM)
                 {
-                    Return (AR00)
+                    Return (AR00) /* \_SB_.AR00 */
                 }
 
-                Return (PR00)
+                Return (PR00) /* \_SB_.PR00 */
             }
 
             OperationRegion (HBUS, PCI_Config, Zero, 0x0100)
@@ -3684,237 +3663,237 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
             {
                 If (LEqual (EP_B, Zero))
                 {
-                    ShiftLeft (EPBR, 0x0C, EP_B)
+                    ShiftLeft (EPBR, 0x0C, EP_B) /* \_SB_.PCI0.EP_B */
                 }
 
-                Return (EP_B)
+                Return (EP_B) /* \_SB_.PCI0.EP_B */
             }
 
             Method (GMHB, 0, Serialized)
             {
                 If (LEqual (MH_B, Zero))
                 {
-                    ShiftLeft (MHBR, 0x0F, MH_B)
+                    ShiftLeft (MHBR, 0x0F, MH_B) /* \_SB_.PCI0.MH_B */
                 }
 
-                Return (MH_B)
+                Return (MH_B) /* \_SB_.PCI0.MH_B */
             }
 
             Method (GPCB, 0, Serialized)
             {
                 If (LEqual (PC_B, Zero))
                 {
-                    ShiftLeft (PXBR, 0x1A, PC_B)
+                    ShiftLeft (PXBR, 0x1A, PC_B) /* \_SB_.PCI0.PC_B */
                 }
 
-                Return (PC_B)
+                Return (PC_B) /* \_SB_.PCI0.PC_B */
             }
 
             Method (GPCL, 0, Serialized)
             {
                 If (LEqual (PC_L, Zero))
                 {
-                    ShiftRight (0x10000000, PXSZ, PC_L)
+                    ShiftRight (0x10000000, PXSZ, PC_L) /* \_SB_.PCI0.PC_L */
                 }
 
-                Return (PC_L)
+                Return (PC_L) /* \_SB_.PCI0.PC_L */
             }
 
             Method (GDMB, 0, Serialized)
             {
                 If (LEqual (DM_B, Zero))
                 {
-                    ShiftLeft (DIBR, 0x0C, DM_B)
+                    ShiftLeft (DIBR, 0x0C, DM_B) /* \_SB_.PCI0.DM_B */
                 }
 
-                Return (DM_B)
+                Return (DM_B) /* \_SB_.PCI0.DM_B */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 Store (GPCL (), Local0)
                 CreateWordField (BUF0, \_SB.PCI0._Y00._MAX, PBMX)  // _MAX: Maximum Base Address
-                Store (Subtract (ShiftRight (Local0, 0x14), 0x02), PBMX)
+                Store (Subtract (ShiftRight (Local0, 0x14), 0x02), PBMX) /* \_SB_.PCI0._CRS.PBMX */
                 CreateWordField (BUF0, \_SB.PCI0._Y00._LEN, PBLN)  // _LEN: Length
-                Store (Subtract (ShiftRight (Local0, 0x14), One), PBLN)
+                Store (Subtract (ShiftRight (Local0, 0x14), One), PBLN) /* \_SB_.PCI0._CRS.PBLN */
                 If (PM1L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y01._LEN, C0LN)  // _LEN: Length
-                    Store (Zero, C0LN)
+                    Store (Zero, C0LN) /* \_SB_.PCI0._CRS.C0LN */
                 }
 
                 If (LEqual (PM1L, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y01._RW, C0RW)  // _RW_: Read-Write Status
-                    Store (Zero, C0RW)
+                    Store (Zero, C0RW) /* \_SB_.PCI0._CRS.C0RW */
                 }
 
                 If (PM1H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y02._LEN, C4LN)  // _LEN: Length
-                    Store (Zero, C4LN)
+                    Store (Zero, C4LN) /* \_SB_.PCI0._CRS.C4LN */
                 }
 
                 If (LEqual (PM1H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y02._RW, C4RW)  // _RW_: Read-Write Status
-                    Store (Zero, C4RW)
+                    Store (Zero, C4RW) /* \_SB_.PCI0._CRS.C4RW */
                 }
 
                 If (PM2L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y03._LEN, C8LN)  // _LEN: Length
-                    Store (Zero, C8LN)
+                    Store (Zero, C8LN) /* \_SB_.PCI0._CRS.C8LN */
                 }
 
                 If (LEqual (PM2L, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y03._RW, C8RW)  // _RW_: Read-Write Status
-                    Store (Zero, C8RW)
+                    Store (Zero, C8RW) /* \_SB_.PCI0._CRS.C8RW */
                 }
 
                 If (PM2H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y04._LEN, CCLN)  // _LEN: Length
-                    Store (Zero, CCLN)
+                    Store (Zero, CCLN) /* \_SB_.PCI0._CRS.CCLN */
                 }
 
                 If (LEqual (PM2H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y04._RW, CCRW)  // _RW_: Read-Write Status
-                    Store (Zero, CCRW)
+                    Store (Zero, CCRW) /* \_SB_.PCI0._CRS.CCRW */
                 }
 
                 If (PM3L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y05._LEN, D0LN)  // _LEN: Length
-                    Store (Zero, D0LN)
+                    Store (Zero, D0LN) /* \_SB_.PCI0._CRS.D0LN */
                 }
 
                 If (LEqual (PM3L, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y05._RW, D0RW)  // _RW_: Read-Write Status
-                    Store (Zero, D0RW)
+                    Store (Zero, D0RW) /* \_SB_.PCI0._CRS.D0RW */
                 }
 
                 If (PM3H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y06._LEN, D4LN)  // _LEN: Length
-                    Store (Zero, D4LN)
+                    Store (Zero, D4LN) /* \_SB_.PCI0._CRS.D4LN */
                 }
 
                 If (LEqual (PM3H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y06._RW, D4RW)  // _RW_: Read-Write Status
-                    Store (Zero, D4RW)
+                    Store (Zero, D4RW) /* \_SB_.PCI0._CRS.D4RW */
                 }
 
                 If (PM4L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y07._LEN, D8LN)  // _LEN: Length
-                    Store (Zero, D8LN)
+                    Store (Zero, D8LN) /* \_SB_.PCI0._CRS.D8LN */
                 }
 
                 If (LEqual (PM4L, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y07._RW, D8RW)  // _RW_: Read-Write Status
-                    Store (Zero, D8RW)
+                    Store (Zero, D8RW) /* \_SB_.PCI0._CRS.D8RW */
                 }
 
                 If (PM4H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y08._LEN, DCLN)  // _LEN: Length
-                    Store (Zero, DCLN)
+                    Store (Zero, DCLN) /* \_SB_.PCI0._CRS.DCLN */
                 }
 
                 If (LEqual (PM4H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y08._RW, DCRW)  // _RW_: Read-Write Status
-                    Store (Zero, DCRW)
+                    Store (Zero, DCRW) /* \_SB_.PCI0._CRS.DCRW */
                 }
 
                 If (PM5L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y09._LEN, E0LN)  // _LEN: Length
-                    Store (Zero, E0LN)
+                    Store (Zero, E0LN) /* \_SB_.PCI0._CRS.E0LN */
                 }
 
                 If (LEqual (PM5L, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y09._RW, E0RW)  // _RW_: Read-Write Status
-                    Store (Zero, E0RW)
+                    Store (Zero, E0RW) /* \_SB_.PCI0._CRS.E0RW */
                 }
 
                 If (PM5H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0A._LEN, E4LN)  // _LEN: Length
-                    Store (Zero, E4LN)
+                    Store (Zero, E4LN) /* \_SB_.PCI0._CRS.E4LN */
                 }
 
                 If (LEqual (PM5H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0A._RW, E4RW)  // _RW_: Read-Write Status
-                    Store (Zero, E4RW)
+                    Store (Zero, E4RW) /* \_SB_.PCI0._CRS.E4RW */
                 }
 
                 If (PM6L)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0B._LEN, E8LN)  // _LEN: Length
-                    Store (Zero, E8LN)
+                    Store (Zero, E8LN) /* \_SB_.PCI0._CRS.E8LN */
                 }
 
                 If (LEqual (PM6L, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0B._RW, E8RW)  // _RW_: Read-Write Status
-                    Store (Zero, E8RW)
+                    Store (Zero, E8RW) /* \_SB_.PCI0._CRS.E8RW */
                 }
 
                 If (PM6H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0C._LEN, ECLN)  // _LEN: Length
-                    Store (Zero, ECLN)
+                    Store (Zero, ECLN) /* \_SB_.PCI0._CRS.ECLN */
                 }
 
                 If (LEqual (PM6H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
-                    Store (Zero, ECRW)
+                    Store (Zero, ECRW) /* \_SB_.PCI0._CRS.ECRW */
                 }
 
                 If (PM0H)
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
-                    Store (Zero, F0LN)
+                    Store (Zero, F0LN) /* \_SB_.PCI0._CRS.F0LN */
                 }
 
                 If (LEqual (PM0H, One))
                 {
                     CreateBitField (BUF0, \_SB.PCI0._Y0D._RW, F0RW)  // _RW_: Read-Write Status
-                    Store (Zero, F0RW)
+                    Store (Zero, F0RW) /* \_SB_.PCI0._CRS.F0RW */
                 }
 
                 CreateDWordField (BUF0, \_SB.PCI0._Y0E._MIN, M1MN)  // _MIN: Minimum Base Address
                 CreateDWordField (BUF0, \_SB.PCI0._Y0E._MAX, M1MX)  // _MAX: Maximum Base Address
                 CreateDWordField (BUF0, \_SB.PCI0._Y0E._LEN, M1LN)  // _LEN: Length
-                Store (M32L, M1LN)
-                Store (M32B, M1MN)
-                Subtract (Add (M1MN, M1LN), One, M1MX)
+                Store (M32L, M1LN) /* \_SB_.PCI0._CRS.M1LN */
+                Store (M32B, M1MN) /* \_SB_.PCI0._CRS.M1MN */
+                Subtract (Add (M1MN, M1LN), One, M1MX) /* \_SB_.PCI0._CRS.M1MX */
                 If (LEqual (M64L, Zero))
                 {
                     CreateDWordField (BUF0, \_SB.PCI0._Y0F._LEN, MSLN)  // _LEN: Length
-                    Store (Zero, MSLN)
+                    Store (Zero, MSLN) /* \_SB_.PCI0._CRS.MSLN */
                 }
                 Else
                 {
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._LEN, M2LN)  // _LEN: Length
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._MIN, M2MN)  // _MIN: Minimum Base Address
                     CreateQWordField (BUF0, \_SB.PCI0._Y0F._MAX, M2MX)  // _MAX: Maximum Base Address
-                    Store (M64L, M2LN)
-                    Store (M64B, M2MN)
-                    Subtract (Add (M2MN, M2LN), One, M2MX)
+                    Store (M64L, M2LN) /* \_SB_.PCI0._CRS.M2LN */
+                    Store (M64B, M2MN) /* \_SB_.PCI0._CRS.M2MN */
+                    Subtract (Add (M2MN, M2LN), One, M2MX) /* \_SB_.PCI0._CRS.M2MX */
                 }
 
-                Return (BUF0)
+                Return (BUF0) /* \_SB_.PCI0.BUF0 */
             }
 
             Name (GUID, ToUUID ("33db4d5b-1ff7-401c-9657-7441c03dd766") /* PCI Host Bridge Device */)
@@ -3929,11 +3908,11 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 CreateDWordField (Local0, 0x08, CDW3)
                 If (LAnd (LEqual (Arg0, GUID), NEXP))
                 {
-                    Store (CDW2, SUPP)
-                    Store (CDW3, CTRL)
+                    Store (CDW2, SUPP) /* \_SB_.PCI0.SUPP */
+                    Store (CDW3, CTRL) /* \_SB_.PCI0.CTRL */
                     If (LAnd (LEqual (TBTS, One), LEqual (TNAT, One)))
                     {
-                        And (CTRL, 0xFFFFFFF7, CTRL)
+                        And (CTRL, 0xFFFFFFF7, CTRL) /* \_SB_.PCI0.CTRL */
                     }
 
                     If (Not (And (CDW1, One)))
@@ -3951,21 +3930,21 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     If (LNotEqual (Arg1, One))
                     {
-                        Or (CDW1, 0x08, CDW1)
+                        Or (CDW1, 0x08, CDW1) /* \_SB_.PCI0._OSC.CDW1 */
                     }
 
                     If (LNotEqual (CDW3, CTRL))
                     {
-                        Or (CDW1, 0x10, CDW1)
+                        Or (CDW1, 0x10, CDW1) /* \_SB_.PCI0._OSC.CDW1 */
                     }
 
-                    Store (CTRL, CDW3)
-                    Store (CTRL, OSCC)
+                    Store (CTRL, CDW3) /* \_SB_.PCI0._OSC.CDW3 */
+                    Store (CTRL, OSCC) /* \OSCC */
                     Return (Local0)
                 }
                 Else
                 {
-                    Or (CDW1, 0x04, CDW1)
+                    Or (CDW1, 0x04, CDW1) /* \_SB_.PCI0._OSC.CDW1 */
                     Return (Local0)
                 }
             }
@@ -4009,38 +3988,38 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 Name (PA6L, Zero)
                 Method (NPTS, 1, NotSerialized)
                 {
-                    Store (PM0H, PA0H)
-                    Store (PMLK, PALK)
-                    Store (PM1H, PA1H)
-                    Store (PM1L, PA1L)
-                    Store (PM2H, PA2H)
-                    Store (PM2L, PA2L)
-                    Store (PM3H, PA3H)
-                    Store (PM3L, PA3L)
-                    Store (PM4H, PA4H)
-                    Store (PM4L, PA4L)
-                    Store (PM5H, PA5H)
-                    Store (PM5L, PA5L)
-                    Store (PM6H, PA6H)
-                    Store (PM6L, PA6L)
+                    Store (PM0H, PA0H) /* \_SB_.PCI0.PA0H */
+                    Store (PMLK, PALK) /* \_SB_.PCI0.PALK */
+                    Store (PM1H, PA1H) /* \_SB_.PCI0.PA1H */
+                    Store (PM1L, PA1L) /* \_SB_.PCI0.PA1L */
+                    Store (PM2H, PA2H) /* \_SB_.PCI0.PA2H */
+                    Store (PM2L, PA2L) /* \_SB_.PCI0.PA2L */
+                    Store (PM3H, PA3H) /* \_SB_.PCI0.PA3H */
+                    Store (PM3L, PA3L) /* \_SB_.PCI0.PA3L */
+                    Store (PM4H, PA4H) /* \_SB_.PCI0.PA4H */
+                    Store (PM4L, PA4L) /* \_SB_.PCI0.PA4L */
+                    Store (PM5H, PA5H) /* \_SB_.PCI0.PA5H */
+                    Store (PM5L, PA5L) /* \_SB_.PCI0.PA5L */
+                    Store (PM6H, PA6H) /* \_SB_.PCI0.PA6H */
+                    Store (PM6L, PA6L) /* \_SB_.PCI0.PA6L */
                 }
 
                 Method (NWAK, 1, NotSerialized)
                 {
-                    Store (PA0H, PM0H)
-                    Store (PA1H, PM1H)
-                    Store (PA1L, PM1L)
-                    Store (PA2H, PM2H)
-                    Store (PA2L, PM2L)
-                    Store (PA3H, PM3H)
-                    Store (PA3L, PM3L)
-                    Store (PA4H, PM4H)
-                    Store (PA4L, PM4L)
-                    Store (PA5H, PM5H)
-                    Store (PA5L, PM5L)
-                    Store (PA6H, PM6H)
-                    Store (PA6L, PM6L)
-                    Store (PALK, PMLK)
+                    Store (PA0H, PM0H) /* \_SB_.PCI0.PM0H */
+                    Store (PA1H, PM1H) /* \_SB_.PCI0.PM1H */
+                    Store (PA1L, PM1L) /* \_SB_.PCI0.PM1L */
+                    Store (PA2H, PM2H) /* \_SB_.PCI0.PM2H */
+                    Store (PA2L, PM2L) /* \_SB_.PCI0.PM2L */
+                    Store (PA3H, PM3H) /* \_SB_.PCI0.PM3H */
+                    Store (PA3L, PM3L) /* \_SB_.PCI0.PM3L */
+                    Store (PA4H, PM4H) /* \_SB_.PCI0.PM4H */
+                    Store (PA4L, PM4L) /* \_SB_.PCI0.PM4L */
+                    Store (PA5H, PM5H) /* \_SB_.PCI0.PM5H */
+                    Store (PA5L, PM5L) /* \_SB_.PCI0.PM5L */
+                    Store (PA6H, PM6H) /* \_SB_.PCI0.PM6H */
+                    Store (PA6L, PM6L) /* \_SB_.PCI0.PM6L */
+                    Store (PALK, PMLK) /* \_SB_.PCI0.PMLK */
                 }
             }
 
@@ -4051,10 +4030,10 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AR01)
+                        Return (AR01) /* \_SB_.AR01 */
                     }
 
-                    Return (PR01)
+                    Return (PR01) /* \_SB_.PR01 */
                 }
 
                 Device (PEGP)
@@ -4070,10 +4049,10 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AR02)
+                        Return (AR02) /* \_SB_.AR02 */
                     }
 
-                    Return (PR02)
+                    Return (PR02) /* \_SB_.PR02 */
                 }
 
                 Device (PEGP)
@@ -4089,10 +4068,10 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 {
                     If (PICM)
                     {
-                        Return (AR03)
+                        Return (AR03) /* \_SB_.AR03 */
                     }
 
-                    Return (PR03)
+                    Return (PR03) /* \_SB_.PR03 */
                 }
 
                 Device (PEGP)
@@ -4162,14 +4141,12 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Zero, 
                     Zero
                 })
-                
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP09.HPCE */
                     }
                 }
 
@@ -4180,7 +4157,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP09.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -4191,41 +4168,74 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR0C)
+                        Return (AR0C) /* \_SB_.AR0C */
                     }
 
-                    Return (PR0C)
+                    Return (PR0C) /* \_SB_.PR0C */
                 }
-                Method (_DSM, 4, NotSerialized)
+
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                    Return (Package()
+                    If (LEqual (Arg2, Zero))
                     {
-                        "AAPL,clock-id", Buffer() { 0x01 },
-                        "built-in", Buffer() { 0x00 },
-                        "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },
-                        "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },
-                        "AAPL,current-available", 2100,
-                        "AAPL,current-extra", 2200,
-                        "AAPL,current-extra-in-sleep", 1600,
-                        "AAPL,device-internal", 0x02,
-                        "AAPL,max-port-current-in-sleep", 2100,
+                        Return (Buffer (One)
+                        {
+                             0x03                                             // .
+                        })
+                    }
+
+                    Return (Package (0x12)
+                    {
+                        "AAPL,clock-id", 
+                        Buffer (One)
+                        {
+                             0x01                                             // .
+                        }, 
+
+                        "built-in", 
+                        Buffer (One)
+                        {
+                             0x00                                             // .
+                        }, 
+
+                        "subsystem-id", 
+                        Buffer (0x04)
+                        {
+                             0x70, 0x72, 0x00, 0x00                           // pr..
+                        }, 
+
+                        "subsystem-vendor-id", 
+                        Buffer (0x04)
+                        {
+                             0x86, 0x80, 0x00, 0x00                           // ....
+                        }, 
+
+                        "AAPL,current-available", 
+                        0x0834, 
+                        "AAPL,current-extra", 
+                        0x0898, 
+                        "AAPL,current-extra-in-sleep", 
+                        0x0640, 
+                        "AAPL,device-internal", 
+                        0x02, 
+                        "AAPL,max-port-current-in-sleep", 
+                        0x0834
                     })
                 }
             }
@@ -4301,7 +4311,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -4310,28 +4320,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP10._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP10._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP10._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP10._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP10._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP10._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -4341,16 +4351,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -4365,13 +4375,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -4379,7 +4389,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP10.LTRV */
                                     }
                                     Else
                                     {
@@ -4420,7 +4430,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -4429,7 +4439,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP10.HPCE */
                     }
                 }
 
@@ -4440,7 +4450,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP10.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -4451,26 +4461,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR0D)
+                        Return (AR0D) /* \_SB_.AR0D */
                     }
 
-                    Return (PR0D)
+                    Return (PR0D) /* \_SB_.PR0D */
                 }
             }
 
@@ -4545,7 +4555,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -4554,28 +4564,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP11._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP11._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP11._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP11._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP11._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP11._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -4585,16 +4595,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -4609,13 +4619,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -4623,7 +4633,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP11.LTRV */
                                     }
                                     Else
                                     {
@@ -4664,7 +4674,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -4673,7 +4683,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP11.HPCE */
                     }
                 }
 
@@ -4684,7 +4694,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP11.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -4695,26 +4705,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR0E)
+                        Return (AR0E) /* \_SB_.AR0E */
                     }
 
-                    Return (PR0E)
+                    Return (PR0E) /* \_SB_.PR0E */
                 }
             }
 
@@ -4789,7 +4799,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -4798,28 +4808,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP12._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP12._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP12._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP12._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP12._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP12._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -4829,16 +4839,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -4853,13 +4863,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -4867,7 +4877,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP12.LTRV */
                                     }
                                     Else
                                     {
@@ -4908,7 +4918,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -4917,7 +4927,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP12.HPCE */
                     }
                 }
 
@@ -4928,7 +4938,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP12.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -4939,26 +4949,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR0F)
+                        Return (AR0F) /* \_SB_.AR0F */
                     }
 
-                    Return (PR0F)
+                    Return (PR0F) /* \_SB_.PR0F */
                 }
             }
 
@@ -5033,7 +5043,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -5042,28 +5052,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP13._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP13._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP13._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP13._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP13._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP13._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -5073,16 +5083,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -5097,13 +5107,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -5111,7 +5121,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP13.LTRV */
                                     }
                                     Else
                                     {
@@ -5152,7 +5162,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -5161,7 +5171,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP13.HPCE */
                     }
                 }
 
@@ -5172,7 +5182,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP13.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -5183,26 +5193,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR10)
+                        Return (AR10) /* \_SB_.AR10 */
                     }
 
-                    Return (PR10)
+                    Return (PR10) /* \_SB_.PR10 */
                 }
             }
 
@@ -5277,7 +5287,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -5286,28 +5296,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP01._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP01._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP01._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP01._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP01._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP01._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -5317,16 +5327,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -5341,13 +5351,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -5355,7 +5365,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP01.LTRV */
                                     }
                                     Else
                                     {
@@ -5396,7 +5406,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -5405,7 +5415,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP01.HPCE */
                     }
                 }
 
@@ -5416,7 +5426,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP01.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -5427,26 +5437,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR04)
+                        Return (AR04) /* \_SB_.AR04 */
                     }
 
-                    Return (PR04)
+                    Return (PR04) /* \_SB_.PR04 */
                 }
             }
 
@@ -5521,7 +5531,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -5530,28 +5540,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP02._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP02._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP02._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP02._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP02._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP02._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -5561,16 +5571,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -5585,13 +5595,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -5599,7 +5609,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP02.LTRV */
                                     }
                                     Else
                                     {
@@ -5640,7 +5650,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -5649,7 +5659,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP02.HPCE */
                     }
                 }
 
@@ -5660,7 +5670,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP02.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -5671,26 +5681,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR05)
+                        Return (AR05) /* \_SB_.AR05 */
                     }
 
-                    Return (PR05)
+                    Return (PR05) /* \_SB_.PR05 */
                 }
             }
 
@@ -5765,7 +5775,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -5774,28 +5784,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP03._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP03._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP03._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP03._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP03._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP03._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -5805,16 +5815,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -5829,13 +5839,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -5843,7 +5853,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP03.LTRV */
                                     }
                                     Else
                                     {
@@ -5884,7 +5894,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -5893,7 +5903,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP03.HPCE */
                     }
                 }
 
@@ -5904,7 +5914,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP03.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -5915,26 +5925,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR06)
+                        Return (AR06) /* \_SB_.AR06 */
                     }
 
-                    Return (PR06)
+                    Return (PR06) /* \_SB_.PR06 */
                 }
 
                 Device (WLAN)
@@ -6046,7 +6056,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -6055,28 +6065,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP04._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP04._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP04._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP04._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP04._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP04._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -6086,16 +6096,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -6110,13 +6120,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -6124,7 +6134,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP04.LTRV */
                                     }
                                     Else
                                     {
@@ -6165,7 +6175,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -6174,7 +6184,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP04.HPCE */
                     }
                 }
 
@@ -6185,7 +6195,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP04.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -6196,26 +6206,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR07)
+                        Return (AR07) /* \_SB_.AR07 */
                     }
 
-                    Return (PR07)
+                    Return (PR07) /* \_SB_.PR07 */
                 }
 
                 Device (GLAN)
@@ -6308,7 +6318,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -6317,28 +6327,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP05._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP05._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP05._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP05._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP05._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP05._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -6348,16 +6358,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -6372,13 +6382,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -6386,7 +6396,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP05.LTRV */
                                     }
                                     Else
                                     {
@@ -6427,7 +6437,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -6436,7 +6446,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP05.HPCE */
                     }
                 }
 
@@ -6447,7 +6457,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP05.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -6458,26 +6468,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR08)
+                        Return (AR08) /* \_SB_.AR08 */
                     }
 
-                    Return (PR08)
+                    Return (PR08) /* \_SB_.PR08 */
                 }
             }
 
@@ -6552,7 +6562,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -6561,28 +6571,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP06._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP06._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP06._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP06._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP06._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP06._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -6592,16 +6602,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -6616,13 +6626,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -6630,7 +6640,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP06.LTRV */
                                     }
                                     Else
                                     {
@@ -6671,7 +6681,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -6680,7 +6690,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP06.HPCE */
                     }
                 }
 
@@ -6691,7 +6701,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP06.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -6702,26 +6712,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR09)
+                        Return (AR09) /* \_SB_.AR09 */
                     }
 
-                    Return (PR09)
+                    Return (PR09) /* \_SB_.PR09 */
                 }
             }
 
@@ -6796,7 +6806,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -6805,28 +6815,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP07._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP07._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP07._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP07._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP07._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP07._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -6836,16 +6846,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -6860,13 +6870,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -6874,7 +6884,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP07.LTRV */
                                     }
                                     Else
                                     {
@@ -6915,7 +6925,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -6924,7 +6934,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP07.HPCE */
                     }
                 }
 
@@ -6935,7 +6945,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP07.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -6946,26 +6956,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR0A)
+                        Return (AR0A) /* \_SB_.AR0A */
                     }
 
-                    Return (PR0A)
+                    Return (PR0A) /* \_SB_.PR0A */
                 }
             }
 
@@ -7040,7 +7050,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -7049,28 +7059,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP08._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP08._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP08._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP08._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP08._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP08._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -7080,16 +7090,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -7104,13 +7114,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -7118,7 +7128,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP08.LTRV */
                                     }
                                     Else
                                     {
@@ -7159,7 +7169,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -7168,7 +7178,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP08.HPCE */
                     }
                 }
 
@@ -7179,7 +7189,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP08.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -7190,26 +7200,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR0B)
+                        Return (AR0B) /* \_SB_.AR0B */
                     }
 
-                    Return (PR0B)
+                    Return (PR0B) /* \_SB_.PR0B */
                 }
             }
 
@@ -7284,7 +7294,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -7293,28 +7303,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP17._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP17._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP17._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP17._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP17._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP17._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -7324,16 +7334,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -7348,13 +7358,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -7362,7 +7372,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP17.LTRV */
                                     }
                                     Else
                                     {
@@ -7403,7 +7413,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -7412,7 +7422,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP17.HPCE */
                     }
                 }
 
@@ -7423,7 +7433,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP17.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -7434,26 +7444,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR14)
+                        Return (AR14) /* \_SB_.AR14 */
                     }
 
-                    Return (PR14)
+                    Return (PR14) /* \_SB_.PR14 */
                 }
             }
 
@@ -7528,7 +7538,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -7537,28 +7547,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP18._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP18._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP18._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP18._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP18._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP18._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -7568,16 +7578,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -7592,13 +7602,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -7606,7 +7616,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP18.LTRV */
                                     }
                                     Else
                                     {
@@ -7647,7 +7657,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -7656,7 +7666,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP18.HPCE */
                     }
                 }
 
@@ -7667,7 +7677,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP18.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -7678,26 +7688,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR15)
+                        Return (AR15) /* \_SB_.AR15 */
                     }
 
-                    Return (PR15)
+                    Return (PR15) /* \_SB_.PR15 */
                 }
             }
 
@@ -7772,7 +7782,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -7781,28 +7791,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP19._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP19._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP19._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP19._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP19._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP19._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -7812,16 +7822,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -7836,13 +7846,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -7850,7 +7860,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP19.LTRV */
                                     }
                                     Else
                                     {
@@ -7891,7 +7901,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -7900,7 +7910,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP19.HPCE */
                     }
                 }
 
@@ -7911,7 +7921,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP19.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -7922,26 +7932,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR16)
+                        Return (AR16) /* \_SB_.AR16 */
                     }
 
-                    Return (PR16)
+                    Return (PR16) /* \_SB_.PR16 */
                 }
             }
 
@@ -8016,7 +8026,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -8025,28 +8035,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP20._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP20._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP20._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP20._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP20._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP20._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -8056,16 +8066,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -8080,13 +8090,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -8094,7 +8104,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP20.LTRV */
                                     }
                                     Else
                                     {
@@ -8135,7 +8145,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -8144,7 +8154,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP20.HPCE */
                     }
                 }
 
@@ -8155,7 +8165,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP20.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -8166,26 +8176,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR17)
+                        Return (AR17) /* \_SB_.AR17 */
                     }
 
-                    Return (PR17)
+                    Return (PR17) /* \_SB_.PR17 */
                 }
             }
 
@@ -8260,7 +8270,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -8269,28 +8279,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP14._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP14._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP14._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP14._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP14._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP14._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -8300,16 +8310,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -8324,13 +8334,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -8338,7 +8348,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP14.LTRV */
                                     }
                                     Else
                                     {
@@ -8379,7 +8389,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -8388,7 +8398,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP14.HPCE */
                     }
                 }
 
@@ -8399,7 +8409,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP14.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -8410,26 +8420,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR11)
+                        Return (AR11) /* \_SB_.AR11 */
                     }
 
-                    Return (PR11)
+                    Return (PR11) /* \_SB_.PR11 */
                 }
             }
 
@@ -8504,7 +8514,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -8513,28 +8523,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP15._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP15._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP15._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP15._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP15._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP15._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -8544,16 +8554,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -8568,13 +8578,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -8582,7 +8592,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP15.LTRV */
                                     }
                                     Else
                                     {
@@ -8623,7 +8633,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -8632,7 +8642,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP15.HPCE */
                     }
                 }
 
@@ -8643,7 +8653,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP15.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -8654,26 +8664,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR12)
+                        Return (AR12) /* \_SB_.AR12 */
                     }
 
-                    Return (PR12)
+                    Return (PR12) /* \_SB_.PR12 */
                 }
             }
 
@@ -8748,7 +8758,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             {
                                 Name (OPTS, Buffer (0x02)
                                 {
-                                     0x00, 0x00                                     
+                                     0x00, 0x00                                       // ..
                                 })
                                 CreateBitField (OPTS, Zero, FUN0)
                                 CreateBitField (OPTS, 0x04, FUN4)
@@ -8757,28 +8767,28 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                 CreateBitField (OPTS, 0x09, FUN9)
                                 If (LGreaterEqual (Arg1, 0x02))
                                 {
-                                    Store (One, FUN0)
+                                    Store (One, FUN0) /* \_SB_.PCI0.RP16._DSM.FUN0 */
                                     If (LTRE)
                                     {
-                                        Store (One, FUN6)
+                                        Store (One, FUN6) /* \_SB_.PCI0.RP16._DSM.FUN6 */
                                     }
 
                                     If (OBFF)
                                     {
-                                        Store (One, FUN4)
+                                        Store (One, FUN4) /* \_SB_.PCI0.RP16._DSM.FUN4 */
                                     }
 
                                     If (LEqual (ECR1, One))
                                     {
                                         If (LGreaterEqual (Arg1, 0x03))
                                         {
-                                            Store (One, FUN8)
-                                            Store (One, FUN9)
+                                            Store (One, FUN8) /* \_SB_.PCI0.RP16._DSM.FUN8 */
+                                            Store (One, FUN9) /* \_SB_.PCI0.RP16._DSM.FUN9 */
                                         }
                                     }
                                 }
 
-                                Return (OPTS)
+                                Return (OPTS) /* \_SB_.PCI0.RP16._DSM.OPTS */
                             }
                             Case (0x04)
                             {
@@ -8788,16 +8798,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                     Else
                                     {
                                         Return (Buffer (0x10)
                                         {
-                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                                            /* 0000 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                                            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // ........
                                         })
                                     }
                                 }
@@ -8812,13 +8822,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         {
                                             If (LEqual (PCHS, SPTH))
                                             {
-                                                Store (0x0846, LMSL)
-                                                Store (0x0846, LNSL)
+                                                Store (0x0846, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x0846, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                             ElseIf (LEqual (PCHS, SPTL))
                                             {
-                                                Store (0x1003, LMSL)
-                                                Store (0x1003, LNSL)
+                                                Store (0x1003, LMSL) /* \_SB_.PCI0.LMSL */
+                                                Store (0x1003, LNSL) /* \_SB_.PCI0.LNSL */
                                             }
                                         }
 
@@ -8826,7 +8836,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                                         Store (And (LMSL, 0x03FF), Index (LTRV, One))
                                         Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 0x02))
                                         Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                        Return (LTRV)
+                                        Return (LTRV) /* \_SB_.PCI0.RP16.LTRV */
                                     }
                                     Else
                                     {
@@ -8867,7 +8877,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
 
@@ -8876,7 +8886,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, Zero)  // _ADR: Address
                     Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
-                        Return (HPCE)
+                        Return (HPCE) /* \_SB_.PCI0.RP16.HPCE */
                     }
                 }
 
@@ -8887,7 +8897,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                         Store (0xC8, Local0)
                         While (Local0)
                         {
-                            Store (One, PMSX)
+                            Store (One, PMSX) /* \_SB_.PCI0.RP16.PMSX */
                             If (PMSX)
                             {
                                 Decrement (Local0)
@@ -8898,26 +8908,26 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                             }
                         }
 
-                        Notify (PXSX, 0x02)
+                        Notify (PXSX, 0x02) // Device Wake
                     }
                 }
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (LTR1, LTRE)
-                    Store (PML1, LMSL)
-                    Store (PNL1, LNSL)
-                    Store (OBF1, OBFF)
+                    Store (LTR1, LTRE) /* \LTRE */
+                    Store (PML1, LMSL) /* \_SB_.PCI0.LMSL */
+                    Store (PNL1, LNSL) /* \_SB_.PCI0.LNSL */
+                    Store (OBF1, OBFF) /* \OBFF */
                 }
 
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
-                        Return (AR13)
+                        Return (AR13) /* \_SB_.AR13 */
                     }
 
-                    Return (PR13)
+                    Return (PR13) /* \_SB_.PR13 */
                 }
             }
 
@@ -8930,13 +8940,13 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
                 Method (SPTS, 1, NotSerialized)
                 {
-                    Store (One, SLPX)
-                    Store (One, SLPE)
+                    Store (One, SLPX) /* \_SB_.PCI0.LPCB.SLPX */
+                    Store (One, SLPE) /* \_SB_.PCI0.LPCB.SLPE */
                 }
 
                 Method (SWAK, 1, NotSerialized)
                 {
-                    Store (Zero, SLPE)
+                    Store (Zero, SLPE) /* \_SB_.PCI0.LPCB.SLPE */
                 }
 
                 OperationRegion (SMIE, SystemIO, PMBA, 0x04)
@@ -8983,12 +8993,21 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     SBBE,   8, 
                     SBBF,   8
                 }
-                Method (_DSM, 4, NotSerialized)
+
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
-                    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                    Return (Package()
+                    If (LEqual (Arg2, Zero))
                     {
-                        "compatible", "pci8086,9cc1",
+                        Return (Buffer (One)
+                        {
+                             0x03                                             // .
+                        })
+                    }
+
+                    Return (Package (0x02)
+                    {
+                        "compatible", 
+                        "pci8086,9cc1"
                     })
                 }
             }
@@ -9040,12 +9059,16 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
 
     Method (_WAK, 1, NotSerialized)  // _WAK: Wake
     {
-        If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
-RWAK (Arg0)
+        If (LOr (LLess (Arg0, One), LGreater (Arg0, 0x05)))
+        {
+            Store (0x03, Arg0)
+        }
+
+        RWAK (Arg0)
         \_SB.PCI0.NWAK (Arg0)
         \_SB.PCI0.LPCB.SWAK (Arg0)
         OEMW (Arg0)
-        Return (WAKP)
+        Return (WAKP) /* \WAKP */
     }
 
     Scope (_PR)
@@ -9366,7 +9389,7 @@ RWAK (Arg0)
     {
         Device (PAGD)
         {
-            Name (_HID, "ACPI000C")  // _HID: Hardware ID
+            Name (_HID, "ACPI000C" /* Processor Aggregator Device */)  // _HID: Hardware ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (_OSI ("Processor Aggregator Device"))
@@ -9391,7 +9414,7 @@ RWAK (Arg0)
     {
         Device (PDRC)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_UID, One)  // _UID: Unique ID
             Name (BUF0, ResourceTemplate ()
             {
@@ -9443,30 +9466,31 @@ RWAK (Arg0)
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y10._BAS, MBR0)  // _BAS: Base Address
-                Store (GMHB (), MBR0)
+                Store (GMHB (), MBR0) /* \_SB_.PCI0.PDRC._CRS.MBR0 */
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y11._BAS, DBR0)  // _BAS: Base Address
-                Store (GDMB (), DBR0)
+                Store (GDMB (), DBR0) /* \_SB_.PCI0.PDRC._CRS.DBR0 */
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y12._BAS, EBR0)  // _BAS: Base Address
-                Store (GEPB (), EBR0)
+                Store (GEPB (), EBR0) /* \_SB_.PCI0.PDRC._CRS.EBR0 */
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y13._BAS, XBR0)  // _BAS: Base Address
-                Store (GPCB (), XBR0)
+                Store (GPCB (), XBR0) /* \_SB_.PCI0.PDRC._CRS.XBR0 */
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y13._LEN, XSZ0)  // _LEN: Length
-                Store (GPCL (), XSZ0)
+                Store (GPCL (), XSZ0) /* \_SB_.PCI0.PDRC._CRS.XSZ0 */
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y14._BAS, SXRA)  // _BAS: Base Address
-                Store (SXRB, SXRA)
+                Store (SXRB, SXRA) /* \_SB_.PCI0.PDRC._CRS.SXRA */
                 CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y14._LEN, SXRL)  // _LEN: Length
-                Store (SXRS, SXRL)
+                Store (SXRS, SXRL) /* \_SB_.PCI0.PDRC._CRS.SXRL */
                 If (LNot (HPTE))
                 {
                     CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y15._BAS, HBAS)  // _BAS: Base Address
                     CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y15._LEN, HLEN)  // _LEN: Length
-                    Store (HPTB, HBAS)
-                    Store (0x0400, HLEN)
+                    Store (HPTB, HBAS) /* \_SB_.PCI0.PDRC._CRS.HBAS */
+                    Store (0x0400, HLEN) /* \_SB_.PCI0.PDRC._CRS.HLEN */
                 }
 
-                Return (BUF0)
+                Return (BUF0) /* \_SB_.PCI0.PDRC.BUF0 */
             }
         }
+
         Device (I2C0)
         {
             Name (LINK, "\\_SB.PCI0.I2C0")
@@ -9474,15 +9498,18 @@ RWAK (Arg0)
             {
                 Return (GETD (SB10))
             }
+
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
                 LPD0 (SB10)
             }
+
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
                 LPD3 (SB10)
             }
         }
+
         Device (I2C1)
         {
             Name (LINK, "\\_SB.PCI0.I2C1")
@@ -9490,15 +9517,18 @@ RWAK (Arg0)
             {
                 Return (GETD (SB11))
             }
+
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
                 LPD0 (SB11)
             }
+
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
                 LPD3 (SB11)
             }
         }
+
         Device (I2C2)
         {
             Name (LINK, "\\_SB.PCI0.I2C2")
@@ -9506,15 +9536,18 @@ RWAK (Arg0)
             {
                 Return (GETD (SB12))
             }
+
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
                 LPD0 (SB12)
             }
+
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
                 LPD3 (SB12)
             }
         }
+
         Device (I2C3)
         {
             Name (LINK, "\\_SB.PCI0.I2C3")
@@ -9522,15 +9555,18 @@ RWAK (Arg0)
             {
                 Return (GETD (SB13))
             }
+
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
                 LPD0 (SB13)
             }
+
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
                 LPD3 (SB13)
             }
         }
+
         Device (I2C4)
         {
             Name (LINK, "\\_SB.PCI0.I2C4")
@@ -9538,15 +9574,18 @@ RWAK (Arg0)
             {
                 Return (GETD (SB14))
             }
+
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
                 LPD0 (SB14)
             }
+
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
                 LPD3 (SB14)
             }
         }
+
         Device (I2C5)
         {
             Name (LINK, "\\_SB.PCI0.I2C5")
@@ -9554,10 +9593,12 @@ RWAK (Arg0)
             {
                 Return (GETD (SB15))
             }
+
             Method (_PS0, 0, NotSerialized)  // _PS0: Power State 0
             {
                 LPD0 (SB15)
             }
+
             Method (_PS3, 0, NotSerialized)  // _PS3: Power State 3
             {
                 LPD3 (SB15)
@@ -9582,7 +9623,7 @@ RWAK (Arg0)
                         {
                             Return (Buffer (0x02)
                             {
-                                 0x01, 0x03                                     
+                                 0x01, 0x03                                       // ..
                             })
                         }
 
@@ -9607,7 +9648,7 @@ RWAK (Arg0)
 
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -10096,7 +10137,8 @@ RWAK (Arg0)
                 Store (One, Local0)
             }
 
-            Store (Add (DerefOf (Index (DerefOf (Index (GCOM, Local0)), Arg0)), SBRG), Local1)
+            Store (Add (DerefOf (Index (DerefOf (Index (GCOM, Local0)), Arg0)), SBRG
+                ), Local1)
             Store (DerefOf (Index (DerefOf (Index (Arg1, Local0)), Arg0)), Local2)
             Return (Add (Local1, Local2))
         }
@@ -10112,7 +10154,7 @@ RWAK (Arg0)
                 TEMP,   32
             }
 
-            Return (TEMP)
+            Return (TEMP) /* \_SB_.GPC0.TEMP */
         }
 
         Method (SPC0, 2, Serialized)
@@ -10126,35 +10168,37 @@ RWAK (Arg0)
                 TEMP,   32
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SPC0.TEMP */
         }
 
         Method (GPC1, 1, Serialized)
         {
             Store (GGRP (Arg0), Local0)
             Store (GNMB (Arg0), Local1)
-            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04), Local2)
+            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04
+                ), Local2)
             OperationRegion (PDW1, SystemMemory, Local2, 0x04)
             Field (PDW1, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Return (TEMP)
+            Return (TEMP) /* \_SB_.GPC1.TEMP */
         }
 
         Method (SPC1, 2, Serialized)
         {
             Store (GGRP (Arg0), Local0)
             Store (GNMB (Arg0), Local1)
-            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04), Local2)
+            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04
+                ), Local2)
             OperationRegion (PDW1, SystemMemory, Local2, 0x04)
             Field (PDW1, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SPC1.TEMP */
         }
 
         Method (SRXO, 2, Serialized)
@@ -10170,7 +10214,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SRXO.TEMP */
         }
 
         Method (GGIV, 1, Serialized)
@@ -10186,7 +10230,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Return (TEMP)
+            Return (TEMP) /* \_SB_.GGIV.TEMP */
         }
 
         Method (GGOV, 1, Serialized)
@@ -10201,7 +10245,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Return (TEMP)
+            Return (TEMP) /* \_SB_.GGOV.TEMP */
         }
 
         Method (SGOV, 2, Serialized)
@@ -10216,7 +10260,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SGOV.TEMP */
         }
 
         Method (GGII, 1, Serialized)
@@ -10232,7 +10276,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Return (TEMP)
+            Return (TEMP) /* \_SB_.GGII.TEMP */
         }
 
         Method (SGII, 2, Serialized)
@@ -10248,7 +10292,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SGII.TEMP */
         }
 
         Method (GPMV, 1, Serialized)
@@ -10264,7 +10308,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Return (TEMP)
+            Return (TEMP) /* \_SB_.GPMV.TEMP */
         }
 
         Method (SPMV, 2, Serialized)
@@ -10280,7 +10324,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SPMV.TEMP */
         }
 
         Method (GHPO, 1, Serialized)
@@ -10306,21 +10350,24 @@ RWAK (Arg0)
                 TEMP,   32
             }
 
-            Or (And (TEMP, Not (ShiftLeft (One, Local1))), ShiftLeft (Arg1, Local1), TEMP)
+            Or (And (TEMP, Not (ShiftLeft (One, Local1))), ShiftLeft (Arg1, 
+                Local1), TEMP) /* \_SB_.SHPO.TEMP */
         }
 
         Method (GGPO, 1, Serialized)
         {
             Store (GGRP (Arg0), Local0)
             Store (GNMB (Arg0), Local1)
-            Store (Add (GADR (Local0, POWN), Multiply (ShiftRight (Local1, 0x03), 0x04)), Local2)
+            Store (Add (GADR (Local0, POWN), Multiply (ShiftRight (Local1, 0x03), 0x04)
+                ), Local2)
             OperationRegion (PREG, SystemMemory, Local2, 0x04)
             Field (PREG, AnyAcc, NoLock, Preserve)
             {
                 TEMP,   32
             }
 
-            Return (And (ShiftRight (TEMP, Multiply (And (Local1, 0x07), 0x04)), 0x03))
+            Return (And (ShiftRight (TEMP, Multiply (And (Local1, 0x07), 0x04)), 
+                0x03))
         }
 
         Method (SGRA, 2, Serialized)
@@ -10336,14 +10383,15 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SGRA.TEMP */
         }
 
         Method (SGWP, 2, Serialized)
         {
             Store (GGRP (Arg0), Local0)
             Store (GNMB (Arg0), Local1)
-            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04), Local2)
+            Store (Add (Add (GADR (Local0, PCFG), Multiply (Local1, 0x08)), 0x04
+                ), Local2)
             OperationRegion (PDW0, SystemMemory, Local2, 0x04)
             Field (PDW0, AnyAcc, NoLock, Preserve)
             {
@@ -10352,7 +10400,7 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (Arg1, TEMP)
+            Store (Arg1, TEMP) /* \_SB_.SGWP.TEMP */
         }
 
         Method (UGP1, 1, Serialized)
@@ -10365,7 +10413,8 @@ RWAK (Arg0)
                 GENX,   32
             }
 
-            If (LEqual (And (ShiftRight (GPEM, Multiply (Arg0, 0x02)), 0x03), Zero))
+            If (LEqual (And (ShiftRight (GPEM, Multiply (Arg0, 0x02)), 0x03), 
+                Zero))
             {
                 Store (And (STSX, GENX), Index (GPES, Arg0))
             }
@@ -10395,7 +10444,8 @@ RWAK (Arg0)
 
         Method (CGP1, 2, Serialized)
         {
-            If (LEqual (And (ShiftRight (GPEM, Multiply (Arg0, 0x02)), 0x03), Zero))
+            If (LEqual (And (ShiftRight (GPEM, Multiply (Arg0, 0x02)), 0x03), 
+                Zero))
             {
                 OperationRegion (GPPX, SystemMemory, GADR (Arg0, GPEO), 0x04)
                 Field (GPPX, AnyAcc, NoLock, Preserve)
@@ -10403,7 +10453,7 @@ RWAK (Arg0)
                     STSX,   32
                 }
 
-                Store (Arg1, STSX)
+                Store (Arg1, STSX) /* \_SB_.CGP1.STSX */
             }
         }
 
@@ -10492,7 +10542,8 @@ RWAK (Arg0)
         {
             Store (GGRP (Arg0), Local0)
             Store (GNMB (Arg0), Local1)
-            If (LEqual (And (ShiftRight (GPEM, Multiply (Local0, 0x02)), 0x03), Zero))
+            If (LEqual (And (ShiftRight (GPEM, Multiply (Local0, 0x02)), 0x03), 
+                Zero))
             {
                 OperationRegion (GPPX, SystemMemory, GADR (Local0, GPEO), 0x04)
                 Field (GPPX, AnyAcc, NoLock, Preserve)
@@ -10502,7 +10553,7 @@ RWAK (Arg0)
 
                 Store (STSX, Local3)
                 ShiftLeft (One, Local1, Local2)
-                Or (STSX, Local2, STSX)
+                Or (STSX, Local2, STSX) /* \_SB_.CAGS.STSX */
             }
         }
 
@@ -10532,9 +10583,10 @@ RWAK (Arg0)
             {
                 Store (DerefOf (Index (RXEV, Local0)), Local3)
                 And (Local3, Not (ShiftLeft (0x03, Multiply (Local1, 0x02))), Local3)
-                Or (Local3, ShiftLeft (RCFG, Multiply (Local1, 0x02)), Index (RXEV, Local0))
-                Store (0x02, RCFG)
-                Store (One, RDIS)
+                Or (Local3, ShiftLeft (RCFG, Multiply (Local1, 0x02)), Index (RXEV, Local0
+                    ))
+                Store (0x02, RCFG) /* \_SB_.DIPI.RCFG */
+                Store (One, RDIS) /* \_SB_.DIPI.RDIS */
             }
         }
 
@@ -10553,11 +10605,12 @@ RWAK (Arg0)
                 Offset (0x04)
             }
 
-            Store (And (ShiftRight (DerefOf (Index (RXEV, Local0)), Multiply (Local1, 0x02)), 0x03), Local3)
+            Store (And (ShiftRight (DerefOf (Index (RXEV, Local0)), Multiply (Local1, 0x02)
+                ), 0x03), Local3)
             If (LNotEqual (Local3, 0x02))
             {
-                Store (Zero, RDIS)
-                Store (Local3, RCFG)
+                Store (Zero, RDIS) /* \_SB_.UIPI.RDIS */
+                Store (Local3, RCFG) /* \_SB_.UIPI.RCFG */
             }
         }
     }
@@ -10578,7 +10631,8 @@ RWAK (Arg0)
         Method (THDA, 2, Serialized)
         {
             Store (0xFE200000, Local0)
-            Add (Local0, Multiply (0x40, Multiply (0x80, Subtract (Arg0, 0x20))), Local0)
+            Add (Local0, Multiply (0x40, Multiply (0x80, Subtract (Arg0, 0x20))), 
+                Local0)
             Add (Local0, Multiply (0x40, Arg1), Local0)
             Return (Local0)
         }
@@ -10637,39 +10691,39 @@ RWAK (Arg0)
                 BO00,   8
             }
 
-            Store (0x01000242, DO10)
-            Store (Local0, WO00)
+            Store (0x01000242, DO10) /* \THDS.DO10 */
+            Store (Local0, WO00) /* \THDS.WO00 */
             Store (Zero, Local6)
             Store (Local0, Local7)
             While (LGreaterEqual (Local7, 0x08))
             {
-                Store (STRD (Arg0, Local6, 0x08), QO00)
+                Store (STRD (Arg0, Local6, 0x08), QO00) /* \THDS.QO00 */
                 Add (Local6, 0x08, Local6)
                 Subtract (Local7, 0x08, Local7)
             }
 
             If (LGreaterEqual (Local7, 0x04))
             {
-                Store (STRD (Arg0, Local6, 0x04), DO00)
+                Store (STRD (Arg0, Local6, 0x04), DO00) /* \THDS.DO00 */
                 Add (Local6, 0x04, Local6)
                 Subtract (Local7, 0x04, Local7)
             }
 
             If (LGreaterEqual (Local7, 0x02))
             {
-                Store (STRD (Arg0, Local6, 0x02), WO00)
+                Store (STRD (Arg0, Local6, 0x02), WO00) /* \THDS.WO00 */
                 Add (Local6, 0x02, Local6)
                 Subtract (Local7, 0x02, Local7)
             }
 
             If (LGreaterEqual (Local7, One))
             {
-                Store (STRD (Arg0, Local6, One), BO00)
+                Store (STRD (Arg0, Local6, One), BO00) /* \THDS.BO00 */
                 Add (Local6, One, Local6)
                 Subtract (Local7, One, Local7)
             }
 
-            Store (Zero, DO30)
+            Store (Zero, DO30) /* \THDS.DO30 */
         }
 
         Method (THDH, 1, Serialized)
@@ -10689,12 +10743,12 @@ RWAK (Arg0)
     {
         If (LEqual (PCHS, One))
         {
-            Return (SPTH)
+            Return (SPTH) /* \SPTH */
         }
 
         If (LEqual (PCHS, 0x02))
         {
-            Return (SPTL)
+            Return (SPTL) /* \SPTL */
         }
 
         Return (Zero)
@@ -10702,7 +10756,7 @@ RWAK (Arg0)
 
     Scope (_GPE)
     {
-        Method (_L6D, 0, Serialized)  // _Lxx: Level-Triggered GPE
+        Method (_L6D, 0, Serialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
             \_SB.PCI0.XHC.GPEH ()
             \_SB.PCI0.HDAS.GPEH ()
@@ -10714,7 +10768,7 @@ RWAK (Arg0)
     {
         Device (PRRE)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_UID, "PCHRESV")  // _UID: Unique ID
             Name (_STA, 0x03)  // _STA: Status
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -10750,19 +10804,19 @@ RWAK (Arg0)
                         0x003F0000,         // Address Length
                         )
                 })
-                Return (BUF0)
+                Return (BUF0) /* \_SB_.PCI0.PRRE._CRS.BUF0 */
             }
         }
 
         Device (IOTR)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_UID, "IoTraps")  // _UID: Unique ID
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Store (Buffer (0x02)
                     {
-                         0x79, 0x00                                     
+                         0x79, 0x00                                       // y.
                     }, Local0)
                 Name (BUF0, ResourceTemplate ()
                 {
@@ -10808,14 +10862,14 @@ RWAK (Arg0)
                 CreateWordField (BUF2, \_SB.PCI0.IOTR._CRS._Y18._MAX, AMA2)  // _MAX: Maximum Base Address
                 CreateWordField (BUF3, \_SB.PCI0.IOTR._CRS._Y19._MIN, AMI3)  // _MIN: Minimum Base Address
                 CreateWordField (BUF3, \_SB.PCI0.IOTR._CRS._Y19._MAX, AMA3)  // _MAX: Maximum Base Address
-                Store (ITA0, AMI0)
-                Store (ITA0, AMA0)
-                Store (ITA1, AMI1)
-                Store (ITA1, AMA1)
-                Store (ITA2, AMI2)
-                Store (ITA2, AMA2)
-                Store (ITA3, AMI3)
-                Store (ITA3, AMA3)
+                Store (ITA0, AMI0) /* \_SB_.PCI0.IOTR._CRS.AMI0 */
+                Store (ITA0, AMA0) /* \_SB_.PCI0.IOTR._CRS.AMA0 */
+                Store (ITA1, AMI1) /* \_SB_.PCI0.IOTR._CRS.AMI1 */
+                Store (ITA1, AMA1) /* \_SB_.PCI0.IOTR._CRS.AMA1 */
+                Store (ITA2, AMI2) /* \_SB_.PCI0.IOTR._CRS.AMI2 */
+                Store (ITA2, AMA2) /* \_SB_.PCI0.IOTR._CRS.AMA2 */
+                Store (ITA3, AMI3) /* \_SB_.PCI0.IOTR._CRS.AMI3 */
+                Store (ITA3, AMA3) /* \_SB_.PCI0.IOTR._CRS.AMA3 */
                 If (LEqual (ITS0, One))
                 {
                     ConcatenateResTemplate (Local0, BUF0, Local0)
@@ -10843,7 +10897,7 @@ RWAK (Arg0)
 
     Scope (_SB.PCI0.LPCB)
     {
-        Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+        Method (XDSM, 4, Serialized)
         {
             If (PCIC (Arg0))
             {
@@ -10961,14 +11015,14 @@ RWAK (Arg0)
                     Return (Zero)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                Store (0x48, HCON)
+                Store (Zero, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Arg0, TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                Store (0x48, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Return (One)
                 }
 
@@ -10982,14 +11036,14 @@ RWAK (Arg0)
                     Return (0xFFFF)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (0x44, HCON)
+                Store (Zero, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Or (Arg0, One), TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (0x44, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
-                    Return (DAT0)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                    Return (DAT0) /* \_SB_.PCI0.SBUS.DAT0 */
                 }
 
                 Return (0xFFFF)
@@ -11002,15 +11056,15 @@ RWAK (Arg0)
                     Return (Zero)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                Store (Arg2, DAT0)
-                Store (0x48, HCON)
+                Store (Zero, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Arg0, TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                Store (Arg2, DAT0) /* \_SB_.PCI0.SBUS.DAT0 */
+                Store (0x48, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Return (One)
                 }
 
@@ -11024,15 +11078,15 @@ RWAK (Arg0)
                     Return (0xFFFF)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (Arg1, HCOM)
-                Store (0x48, HCON)
+                Store (Zero, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Or (Arg0, One), TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                Store (0x48, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
-                    Return (DAT0)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                    Return (DAT0) /* \_SB_.PCI0.SBUS.DAT0 */
                 }
 
                 Return (0xFFFF)
@@ -11045,16 +11099,16 @@ RWAK (Arg0)
                     Return (Zero)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                And (Arg2, 0xFF, DAT1)
-                And (ShiftRight (Arg2, 0x08), 0xFF, DAT0)
-                Store (0x4C, HCON)
+                Store (Zero, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Arg0, TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                And (Arg2, 0xFF, DAT1) /* \_SB_.PCI0.SBUS.DAT1 */
+                And (ShiftRight (Arg2, 0x08), 0xFF, DAT0) /* \_SB_.PCI0.SBUS.DAT0 */
+                Store (0x4C, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Return (One)
                 }
 
@@ -11068,14 +11122,14 @@ RWAK (Arg0)
                     Return (0xFFFF)
                 }
 
-                Store (Zero, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (Arg1, HCOM)
-                Store (0x4C, HCON)
+                Store (Zero, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Or (Arg0, One), TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                Store (0x4C, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Return (Or (ShiftLeft (DAT0, 0x08), DAT1))
                 }
 
@@ -11089,14 +11143,14 @@ RWAK (Arg0)
                     Return (Zero)
                 }
 
-                Store (Arg3, I2CE)
-                Store (0xBF, HSTS)
-                Store (Arg0, TXSA)
-                Store (Arg1, HCOM)
-                Store (SizeOf (Arg2), DAT0)
+                Store (Arg3, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Arg0, TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                Store (SizeOf (Arg2), DAT0) /* \_SB_.PCI0.SBUS.DAT0 */
                 Store (Zero, Local1)
-                Store (DerefOf (Index (Arg2, Zero)), HBDR)
-                Store (0x54, HCON)
+                Store (DerefOf (Index (Arg2, Zero)), HBDR) /* \_SB_.PCI0.SBUS.HBDR */
+                Store (0x54, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 While (LGreater (SizeOf (Arg2), Local1))
                 {
                     Store (0x0FA0, Local0)
@@ -11112,17 +11166,17 @@ RWAK (Arg0)
                         Return (Zero)
                     }
 
-                    Store (0x80, HSTS)
+                    Store (0x80, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Increment (Local1)
                     If (LGreater (SizeOf (Arg2), Local1))
                     {
-                        Store (DerefOf (Index (Arg2, Local1)), HBDR)
+                        Store (DerefOf (Index (Arg2, Local1)), HBDR) /* \_SB_.PCI0.SBUS.HBDR */
                     }
                 }
 
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Return (One)
                 }
 
@@ -11137,11 +11191,11 @@ RWAK (Arg0)
                     Return (Zero)
                 }
 
-                Store (Arg2, I2CE)
-                Store (0xBF, HSTS)
-                Store (Or (Arg0, One), TXSA)
-                Store (Arg1, HCOM)
-                Store (0x54, HCON)
+                Store (Arg2, I2CE) /* \_SB_.PCI0.SBUS.I2CE */
+                Store (0xBF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                Store (Or (Arg0, One), TXSA) /* \_SB_.PCI0.SBUS.TXSA */
+                Store (Arg1, HCOM) /* \_SB_.PCI0.SBUS.HCOM */
+                Store (0x54, HCON) /* \_SB_.PCI0.SBUS.HCON */
                 Store (0x0FA0, Local0)
                 While (LAnd (LNot (And (HSTS, 0x80)), Local0))
                 {
@@ -11156,7 +11210,7 @@ RWAK (Arg0)
                 }
 
                 Store (DAT0, Index (TBUF, Zero))
-                Store (0x80, HSTS)
+                Store (0x80, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                 Store (One, Local1)
                 While (LLess (Local1, DerefOf (Index (TBUF, Zero))))
                 {
@@ -11174,14 +11228,14 @@ RWAK (Arg0)
                     }
 
                     Store (HBDR, Index (TBUF, Local1))
-                    Store (0x80, HSTS)
+                    Store (0x80, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
                     Increment (Local1)
                 }
 
                 If (COMP ())
                 {
-                    Or (HSTS, 0xFF, HSTS)
-                    Return (TBUF)
+                    Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
+                    Return (TBUF) /* \_SB_.PCI0.SBUS.SBLR.TBUF */
                 }
 
                 Return (Zero)
@@ -11253,8 +11307,8 @@ RWAK (Arg0)
 
             Method (KILL, 0, Serialized)
             {
-                Or (HCON, 0x02, HCON)
-                Or (HSTS, 0xFF, HSTS)
+                Or (HCON, 0x02, HCON) /* \_SB_.PCI0.SBUS.HCON */
+                Or (HSTS, 0xFF, HSTS) /* \_SB_.PCI0.SBUS.HSTS */
             }
         }
     }
@@ -11263,16 +11317,16 @@ RWAK (Arg0)
     {
         Device (LNKA)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, One)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PARC, 0x80, PARC)
+                Or (PARC, 0x80, PARC) /* \_SB_.PARC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSA)
+                Return (PRSA) /* \_SB_.PRSA */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11283,9 +11337,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLA, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PARC, 0x0F), IRQ0)
-                Return (RTLA)
+                Store (Zero, IRQ0) /* \_SB_.LNKA._CRS.IRQ0 */
+                ShiftLeft (One, And (PARC, 0x0F), IRQ0) /* \_SB_.LNKA._CRS.IRQ0 */
+                Return (RTLA) /* \_SB_.LNKA._CRS.RTLA */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11293,7 +11347,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PARC)
+                Store (Local0, PARC) /* \_SB_.PARC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11311,16 +11365,16 @@ RWAK (Arg0)
 
         Device (LNKB)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x02)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PBRC, 0x80, PBRC)
+                Or (PBRC, 0x80, PBRC) /* \_SB_.PBRC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSB)
+                Return (PRSB) /* \_SB_.PRSB */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11331,9 +11385,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLB, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PBRC, 0x0F), IRQ0)
-                Return (RTLB)
+                Store (Zero, IRQ0) /* \_SB_.LNKB._CRS.IRQ0 */
+                ShiftLeft (One, And (PBRC, 0x0F), IRQ0) /* \_SB_.LNKB._CRS.IRQ0 */
+                Return (RTLB) /* \_SB_.LNKB._CRS.RTLB */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11341,7 +11395,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PBRC)
+                Store (Local0, PBRC) /* \_SB_.PBRC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11359,16 +11413,16 @@ RWAK (Arg0)
 
         Device (LNKC)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x03)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PCRC, 0x80, PCRC)
+                Or (PCRC, 0x80, PCRC) /* \_SB_.PCRC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSC)
+                Return (PRSC) /* \_SB_.PRSC */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11379,9 +11433,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLC, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PCRC, 0x0F), IRQ0)
-                Return (RTLC)
+                Store (Zero, IRQ0) /* \_SB_.LNKC._CRS.IRQ0 */
+                ShiftLeft (One, And (PCRC, 0x0F), IRQ0) /* \_SB_.LNKC._CRS.IRQ0 */
+                Return (RTLC) /* \_SB_.LNKC._CRS.RTLC */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11389,7 +11443,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PCRC)
+                Store (Local0, PCRC) /* \_SB_.PCRC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11407,16 +11461,16 @@ RWAK (Arg0)
 
         Device (LNKD)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x04)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PDRC, 0x80, PDRC)
+                Or (PDRC, 0x80, PDRC) /* \_SB_.PDRC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSD)
+                Return (PRSD) /* \_SB_.PRSD */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11427,9 +11481,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLD, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PDRC, 0x0F), IRQ0)
-                Return (RTLD)
+                Store (Zero, IRQ0) /* \_SB_.LNKD._CRS.IRQ0 */
+                ShiftLeft (One, And (PDRC, 0x0F), IRQ0) /* \_SB_.LNKD._CRS.IRQ0 */
+                Return (RTLD) /* \_SB_.LNKD._CRS.RTLD */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11437,7 +11491,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PDRC)
+                Store (Local0, PDRC) /* \_SB_.PDRC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11455,16 +11509,16 @@ RWAK (Arg0)
 
         Device (LNKE)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x05)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PERC, 0x80, PERC)
+                Or (PERC, 0x80, PERC) /* \_SB_.PERC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSE)
+                Return (PRSE) /* \_SB_.PRSE */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11475,9 +11529,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLE, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PERC, 0x0F), IRQ0)
-                Return (RTLE)
+                Store (Zero, IRQ0) /* \_SB_.LNKE._CRS.IRQ0 */
+                ShiftLeft (One, And (PERC, 0x0F), IRQ0) /* \_SB_.LNKE._CRS.IRQ0 */
+                Return (RTLE) /* \_SB_.LNKE._CRS.RTLE */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11485,7 +11539,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PERC)
+                Store (Local0, PERC) /* \_SB_.PERC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11503,16 +11557,16 @@ RWAK (Arg0)
 
         Device (LNKF)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x06)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PFRC, 0x80, PFRC)
+                Or (PFRC, 0x80, PFRC) /* \_SB_.PFRC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSF)
+                Return (PRSF) /* \_SB_.PRSF */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11523,9 +11577,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLF, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PFRC, 0x0F), IRQ0)
-                Return (RTLF)
+                Store (Zero, IRQ0) /* \_SB_.LNKF._CRS.IRQ0 */
+                ShiftLeft (One, And (PFRC, 0x0F), IRQ0) /* \_SB_.LNKF._CRS.IRQ0 */
+                Return (RTLF) /* \_SB_.LNKF._CRS.RTLF */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11533,7 +11587,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PFRC)
+                Store (Local0, PFRC) /* \_SB_.PFRC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11551,16 +11605,16 @@ RWAK (Arg0)
 
         Device (LNKG)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x07)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PGRC, 0x80, PGRC)
+                Or (PGRC, 0x80, PGRC) /* \_SB_.PGRC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSG)
+                Return (PRSG) /* \_SB_.PRSG */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11571,9 +11625,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLG, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PGRC, 0x0F), IRQ0)
-                Return (RTLG)
+                Store (Zero, IRQ0) /* \_SB_.LNKG._CRS.IRQ0 */
+                ShiftLeft (One, And (PGRC, 0x0F), IRQ0) /* \_SB_.LNKG._CRS.IRQ0 */
+                Return (RTLG) /* \_SB_.LNKG._CRS.RTLG */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11581,7 +11635,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PGRC)
+                Store (Local0, PGRC) /* \_SB_.PGRC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11599,16 +11653,16 @@ RWAK (Arg0)
 
         Device (LNKH)
         {
-            Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0F") /* PCI Interrupt Link Device */)  // _HID: Hardware ID
             Name (_UID, 0x08)  // _UID: Unique ID
             Method (_DIS, 0, Serialized)  // _DIS: Disable Device
             {
-                Or (PHRC, 0x80, PHRC)
+                Or (PHRC, 0x80, PHRC) /* \_SB_.PHRC */
             }
 
             Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
             {
-                Return (PRSH)
+                Return (PRSH) /* \_SB_.PRSH */
             }
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
@@ -11619,9 +11673,9 @@ RWAK (Arg0)
                         {}
                 })
                 CreateWordField (RTLH, One, IRQ0)
-                Store (Zero, IRQ0)
-                ShiftLeft (One, And (PHRC, 0x0F), IRQ0)
-                Return (RTLH)
+                Store (Zero, IRQ0) /* \_SB_.LNKH._CRS.IRQ0 */
+                ShiftLeft (One, And (PHRC, 0x0F), IRQ0) /* \_SB_.LNKH._CRS.IRQ0 */
+                Return (RTLH) /* \_SB_.LNKH._CRS.RTLH */
             }
 
             Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
@@ -11629,7 +11683,7 @@ RWAK (Arg0)
                 CreateWordField (Arg0, One, IRQ0)
                 FindSetRightBit (IRQ0, Local0)
                 Decrement (Local0)
-                Store (Local0, PHRC)
+                Store (Local0, PHRC) /* \_SB_.PHRC */
             }
 
             Method (_STA, 0, Serialized)  // _STA: Status
@@ -11653,10 +11707,10 @@ RWAK (Arg0)
         {
             If (LEqual (PMBV, Zero))
             {
-                Store (ShiftLeft (\_SB.PCI0.PPMC.ACBA, 0x08), PMBV)
+                Store (ShiftLeft (\_SB.PCI0.PPMC.ACBA, 0x08), PMBV) /* \PMBV */
             }
 
-            Return (PMBV)
+            Return (PMBV) /* \PMBV */
         }
 
         Name (PWRV, Zero)
@@ -11664,10 +11718,10 @@ RWAK (Arg0)
         {
             If (LEqual (PWRV, Zero))
             {
-                Store (ShiftLeft (\_SB.PCI0.PPMC.PWBA, 0x0C), PWRV)
+                Store (ShiftLeft (\_SB.PCI0.PPMC.PWBA, 0x0C), PWRV) /* \PWRV */
             }
 
-            Return (PWRV)
+            Return (PWRV) /* \PWRV */
         }
 
         Name (TCBV, Zero)
@@ -11675,10 +11729,10 @@ RWAK (Arg0)
         {
             If (LEqual (TCBV, Zero))
             {
-                Store (ShiftLeft (\_SB.PCI0.SBUS.TCOB, 0x05), TCBV)
+                Store (ShiftLeft (\_SB.PCI0.SBUS.TCOB, 0x05), TCBV) /* \TCBV */
             }
 
-            Return (TCBV)
+            Return (TCBV) /* \TCBV */
         }
 
         OperationRegion (PMIO, SystemIO, PMBS (), 0x80)
@@ -11825,7 +11879,7 @@ RWAK (Arg0)
                 DAT0,   32
             }
 
-            Return (DAT0)
+            Return (DAT0) /* \PCRR.DAT0 */
         }
 
         Method (PCRW, 3, Serialized)
@@ -11838,7 +11892,7 @@ RWAK (Arg0)
                 DAT0,   32
             }
 
-            Store (Arg2, DAT0)
+            Store (Arg2, DAT0) /* \PCRW.DAT0 */
             OperationRegion (PCR1, SystemMemory, Add (SBRG, 0x00C73418), 0x04)
             Field (PCR1, DWordAcc, Lock, Preserve)
             {
@@ -11911,8 +11965,6 @@ RWAK (Arg0)
             }
 
             Name (XFLT, Zero)
-            
-
             Method (_S3D, 0, NotSerialized)  // _S3D: S3 Device State
             {
                 Return (0x03)
@@ -11945,11 +11997,9 @@ RWAK (Arg0)
                 }
             }
 
-            
-
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
-                Store (Arg0, PMEE)
+                Store (Arg0, PMEE) /* \_SB_.PCI0.XHC_.PMEE */
             }
 
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
@@ -11968,10 +12018,10 @@ RWAK (Arg0)
                 }
 
                 Store (PMES, Local0)
-                Store (One, PMES)
+                Store (One, PMES) /* \_SB_.PCI0.XHC_.PMES */
                 If (LAnd (PMEE, Local0))
                 {
-                    Notify (XHC, 0x02)
+                    Notify (XHC, 0x02) // Device Wake
                 }
             }
 
@@ -12018,11 +12068,11 @@ RWAK (Arg0)
 
                 Store (MEMB, Local2)
                 Store (PDBM, Local1)
-                And (PDBM, 0xFFFFFFFFFFFFFFF9, PDBM)
+                And (PDBM, 0xFFFFFFFFFFFFFFF9, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
                 Store (D0D3, Local3)
-                Store (Zero, D0D3)
-                Store (XWMB, MEMB)
-                Or (Local1, 0x02, PDBM)
+                Store (Zero, D0D3) /* \_SB_.PCI0.XHC_.D0D3 */
+                Store (XWMB, MEMB) /* \_SB_.PCI0.XHC_.MEMB */
+                Or (Local1, 0x02, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
                 OperationRegion (MC11, SystemMemory, XWMB, 0x9000)
                 Field (MC11, DWordAcc, Lock, Preserve)
                 {
@@ -12031,10 +12081,10 @@ RWAK (Arg0)
                     UPSW,   2
                 }
 
-                Store (Zero, UPSW)
-                And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM)
-                Store (Local2, MEMB)
-                Store (Local1, PDBM)
+                Store (Zero, UPSW) /* \_SB_.PCI0.XHC_._PS0.UPSW */
+                And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
+                Store (Local2, MEMB) /* \_SB_.PCI0.XHC_.MEMB */
+                Store (Local1, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
                 If (CondRefOf (\_SB.PCI0.XHC.PS0X))
                 {
                     PS0X ()
@@ -12042,7 +12092,7 @@ RWAK (Arg0)
 
                 If (LAnd (UWAB, LOr (LEqual (D0D3, Zero), LEqual (^^XDCI.D0I3, Zero))))
                 {
-                    Store (One, MPMC)
+                    Store (One, MPMC) /* \MPMC */
                     While (PMFS)
                     {
                         Sleep (0x0A)
@@ -12059,10 +12109,10 @@ RWAK (Arg0)
 
                 Store (MEMB, Local2)
                 Store (PDBM, Local1)
-                And (PDBM, 0xFFFFFFFFFFFFFFF9, PDBM)
-                Store (Zero, D0D3)
-                Store (XWMB, MEMB)
-                Or (Local1, 0x02, PDBM)
+                And (PDBM, 0xFFFFFFFFFFFFFFF9, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
+                Store (Zero, D0D3) /* \_SB_.PCI0.XHC_.D0D3 */
+                Store (XWMB, MEMB) /* \_SB_.PCI0.XHC_.MEMB */
+                Or (Local1, 0x02, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
                 OperationRegion (MC11, SystemMemory, XWMB, 0x9000)
                 Field (MC11, DWordAcc, Lock, Preserve)
                 {
@@ -12071,19 +12121,20 @@ RWAK (Arg0)
                     UPSW,   2
                 }
 
-                Store (0x03, UPSW)
-                And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM)
-                Store (0x03, D0D3)
-                Store (Local2, MEMB)
-                Store (Local1, PDBM)
+                Store (0x03, UPSW) /* \_SB_.PCI0.XHC_._PS3.UPSW */
+                And (PDBM, 0xFFFFFFFFFFFFFFFD, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
+                Store (0x03, D0D3) /* \_SB_.PCI0.XHC_.D0D3 */
+                Store (Local2, MEMB) /* \_SB_.PCI0.XHC_.MEMB */
+                Store (Local1, PDBM) /* \_SB_.PCI0.XHC_.PDBM */
                 If (CondRefOf (\_SB.PCI0.XHC.PS3X))
                 {
                     PS3X ()
                 }
 
-                If (LAnd (UWAB, LAnd (LEqual (D0D3, 0x03), LOr (LEqual (^^XDCI.D0I3, 0x03), LEqual (^^XDCI.DVID, 0xFFFF)))))
+                If (LAnd (UWAB, LAnd (LEqual (D0D3, 0x03), LOr (LEqual (^^XDCI.D0I3, 0x03), LEqual (
+                    ^^XDCI.DVID, 0xFFFF)))))
                 {
-                    Store (0x03, MPMC)
+                    Store (0x03, MPMC) /* \MPMC */
                     While (PMFS)
                     {
                         Sleep (0x0A)
@@ -12110,12 +12161,12 @@ RWAK (Arg0)
                         Buffer (0x10){}
                     })
                     CreateField (DerefOf (Index (PCKG, Zero)), Zero, 0x07, REV)
-                    Store (One, REV)
+                    Store (One, REV) /* \_SB_.PCI0.XHC_.RHUB.GPLD.REV_ */
                     CreateField (DerefOf (Index (PCKG, Zero)), 0x40, One, VISI)
-                    Store (Arg0, VISI)
+                    Store (Arg0, VISI) /* \_SB_.PCI0.XHC_.RHUB.GPLD.VISI */
                     CreateField (DerefOf (Index (PCKG, Zero)), 0x57, 0x08, GPOS)
-                    Store (Arg1, GPOS)
-                    Return (PCKG)
+                    Store (Arg1, GPOS) /* \_SB_.PCI0.XHC_.RHUB.GPLD.GPOS */
+                    Return (PCKG) /* \_SB_.PCI0.XHC_.RHUB.GPLD.PCKG */
                 }
 
                 Method (GUPC, 1, Serialized)
@@ -12128,7 +12179,7 @@ RWAK (Arg0)
                         Zero
                     })
                     Store (Arg0, Index (PCKG, Zero))
-                    Return (PCKG)
+                    Return (PCKG) /* \_SB_.PCI0.XHC_.RHUB.GUPC.PCKG */
                 }
 
                 Name (_ADR, Zero)  // _ADR: Address
@@ -12171,20 +12222,50 @@ RWAK (Arg0)
                     }
                 }
             }
-            
-            Method(_PRW) { Return(Package() { 0x6D, 0 }) }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
-                If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                Return (Package()
+                Return (Package (0x02)
                 {
-                    "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },
-                    "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },
-                    "AAPL,current-available", 2100,
-                    "AAPL,current-extra", 2200,
-                    "AAPL,current-extra-in-sleep", 1600,
-                    "AAPL,device-internal", 0x02,
-                    "AAPL,max-port-current-in-sleep", 2100,
+                    0x6D, 
+                    Zero
+                })
+            }
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+            {
+                If (LEqual (Arg2, Zero))
+                {
+                    Return (Buffer (One)
+                    {
+                         0x03                                             // .
+                    })
+                }
+
+                Return (Package (0x0E)
+                {
+                    "subsystem-id", 
+                    Buffer (0x04)
+                    {
+                         0x70, 0x72, 0x00, 0x00                           // pr..
+                    }, 
+
+                    "subsystem-vendor-id", 
+                    Buffer (0x04)
+                    {
+                         0x86, 0x80, 0x00, 0x00                           // ....
+                    }, 
+
+                    "AAPL,current-available", 
+                    0x0834, 
+                    "AAPL,current-extra", 
+                    0x0898, 
+                    "AAPL,current-extra-in-sleep", 
+                    0x0640, 
+                    "AAPL,device-internal", 
+                    0x02, 
+                    "AAPL,max-port-current-in-sleep", 
+                    0x0834
                 })
             }
         }
@@ -12239,7 +12320,7 @@ RWAK (Arg0)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x73                                           
+                                     0x73                                             // s
                                 })
                             }
                             Case (One)
@@ -12269,8 +12350,8 @@ RWAK (Arg0)
                                 Store (DerefOf (Index (Arg3, Zero)), Local1)
                                 If (LEqual (Local1, Zero))
                                 {
-                                    Store (Zero, UXPE)
-                                    Store (Zero, PURC)
+                                    Store (Zero, UXPE) /* \_SB_.PCI0.XDCI._DSM.UXPE */
+                                    Store (Zero, PURC) /* \_SB_.PCI0.XDCI._DSM.PURC */
                                     Store (Zero, Local0)
                                     While (LLess (Local0, 0x0A))
                                     {
@@ -12278,7 +12359,7 @@ RWAK (Arg0)
                                         Increment (Local0)
                                     }
 
-                                    Store (Zero, PUPS)
+                                    Store (Zero, PUPS) /* \_SB_.PCI0.XDCI._DSM.PUPS */
                                     Store (Zero, Local0)
                                     While (LLess (Local0, 0x07D0))
                                     {
@@ -12300,7 +12381,7 @@ RWAK (Arg0)
                                 {
                                     If (LNotEqual (U2CP, Zero)){}
                                     If (LNotEqual (U3CP, Zero)){}
-                                    Store (0x03, PUPS)
+                                    Store (0x03, PUPS) /* \_SB_.PCI0.XDCI._DSM.PUPS */
                                     Store (Zero, Local0)
                                     While (LLess (Local0, 0x07D0))
                                     {
@@ -12315,8 +12396,8 @@ RWAK (Arg0)
 
                                     If (LNotEqual (U2CP, 0x03)){}
                                     If (LNotEqual (U3CP, 0x03)){}
-                                    Store (One, PURC)
-                                    Store (0x03, UXPE)
+                                    Store (One, PURC) /* \_SB_.PCI0.XDCI._DSM.PURC */
+                                    Store (0x03, UXPE) /* \_SB_.PCI0.XDCI._DSM.UXPE */
                                     Return (Zero)
                                 }
                             }
@@ -12345,7 +12426,7 @@ RWAK (Arg0)
 
                                 If (LEqual (OTHC, Zero))
                                 {
-                                    Store (One, CSFR)
+                                    Store (One, CSFR) /* \_SB_.PCI0.XDCI._DSM.CSFR */
                                     Store (Zero, Local0)
                                     While (LLess (Local0, 0x64))
                                     {
@@ -12387,11 +12468,9 @@ RWAK (Arg0)
                 }
             }
 
-            
-
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
-                Store (Arg0, PMEE)
+                Store (Arg0, PMEE) /* \_SB_.PCI0.XDCI.PMEE */
             }
 
             Method (GPEH, 0, NotSerialized)
@@ -12402,13 +12481,21 @@ RWAK (Arg0)
                 }
 
                 Store (PMES, Local0)
-                Store (One, PMES)
+                Store (One, PMES) /* \_SB_.PCI0.XDCI.PMES */
                 If (LAnd (PMEE, Local0))
                 {
-                    Notify (XDCI, 0x02)
+                    Notify (XDCI, 0x02) // Device Wake
                 }
             }
-            Method(_PRW) { Return(Package() { 0x6D, 0 }) }
+
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+            {
+                Return (Package (0x02)
+                {
+                    0x6D, 
+                    Zero
+                })
+            }
         }
     }
 
@@ -12434,10 +12521,8 @@ RWAK (Arg0)
             Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
             Method (_DSW, 3, NotSerialized)  // _DSW: Device Sleep Wake
             {
-                Store (Arg0, PMEE)
+                Store (Arg0, PMEE) /* \_SB_.PCI0.HDAS.PMEE */
             }
-
-            
 
             Method (GPEH, 0, NotSerialized)
             {
@@ -12449,8 +12534,8 @@ RWAK (Arg0)
                 If (LAnd (PMEE, PMES))
                 {
                     ADBG ("HDAS GPEH")
-                    Store (One, PMES)
-                    Notify (HDAS, 0x02)
+                    Store (One, PMES) /* \_SB_.PCI0.HDAS.PMES */
+                    Notify (HDAS, 0x02) // Device Wake
                 }
             }
 
@@ -12500,12 +12585,12 @@ RWAK (Arg0)
                 CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y1A._MIN, NBAS)  // _MIN: Minimum Base Address
                 CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y1A._MAX, NMAS)  // _MAX: Maximum Base Address
                 CreateQWordField (NBUF, \_SB.PCI0.HDAS._Y1A._LEN, NLEN)  // _LEN: Length
-                Store (NHLA, NBAS)
-                Add (NHLA, Subtract (NHLL, One), NMAS)
-                Store (NHLL, NLEN)
+                Store (NHLA, NBAS) /* \_SB_.PCI0.HDAS._INI.NBAS */
+                Add (NHLA, Subtract (NHLL, One), NMAS) /* \_SB_.PCI0.HDAS._INI.NMAS */
+                Store (NHLL, NLEN) /* \_SB_.PCI0.HDAS._INI.NLEN */
                 If (LEqual (AUWA (), One))
                 {
-                    Store (Zero, MBCG)
+                    Store (Zero, MBCG) /* \_SB_.PCI0.HDAS.MBCG */
                 }
             }
 
@@ -12525,18 +12610,18 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x0F                                           
+                                 0x0F                                             // .
                             })
                         }
                         Case (One)
                         {
                             ADBG ("_DSM Fun 1 NHLT")
-                            Return (NBUF)
+                            Return (NBUF) /* \_SB_.PCI0.HDAS.NBUF */
                         }
                         Case (0x02)
                         {
                             ADBG ("_DSM Fun 2 FMSK")
-                            Return (ADFM)
+                            Return (ADFM) /* \ADFM */
                         }
                         Case (0x03)
                         {
@@ -12548,7 +12633,7 @@ RWAK (Arg0)
                             ADBG ("_DSM Fun NOK")
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
 
@@ -12557,22 +12642,42 @@ RWAK (Arg0)
 
                 ADBG ("_DSM UUID NOK")
             }
+
             Device (BUS0)
             {
-                Name (_CID, "smbus")
-                Name (_ADR, Zero)
+                Name (_CID, "smbus")  // _CID: Compatible ID
+                Name (_ADR, Zero)  // _ADR: Address
                 Device (DVL0)
                 {
-                    Name (_ADR, 0x57)
-                    Name (_CID, "diagsvault")
-                    Method (_DSM, 4, NotSerialized)
+                    Name (_ADR, 0x57)  // _ADR: Address
+                    Name (_CID, "diagsvault")  // _CID: Compatible ID
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
-                        If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-                        Return (Package() { "address", 0x57 })
+                        If (LEqual (Arg2, Zero))
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x03                                             // .
+                            })
+                        }
+
+                        Return (Package (0x02)
+                        {
+                            "address", 
+                            0x57
+                        })
                     }
                 }
             }
-            Method(_PRW) { Return(Package() { 0x6D, 0 }) }
+
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+            {
+                Return (Package (0x02)
+                {
+                    0x6D, 
+                    Zero
+                })
+            }
         }
 
         Device (SAT0)
@@ -12650,32 +12755,32 @@ RWAK (Arg0)
                 }
                 Else
                 {
-                    Store (Arg0, CRGC)
+                    Store (Arg0, CRGC) /* \_SB_.PCI0.SAT0.RDCA.CRGC */
                 }
 
                 Switch (ToInteger (Arg4))
                 {
                     Case (Zero)
                     {
-                        Return (RPCD)
+                        Return (RPCD) /* \_SB_.PCI0.SAT0.RDCA.RPCD */
                     }
                     Case (0x02)
                     {
-                        Store (Arg1, CAIR)
-                        Return (CADR)
+                        Store (Arg1, CAIR) /* \_SB_.PCI0.SAT0.RDCA.CAIR */
+                        Return (CADR) /* \_SB_.PCI0.SAT0.RDCA.CADR */
                     }
                     Case (One)
                     {
                         And (Arg2, RPCD, Local0)
                         Or (Arg3, Local0, Local0)
-                        Store (Local0, RPCD)
+                        Store (Local0, RPCD) /* \_SB_.PCI0.SAT0.RDCA.RPCD */
                     }
                     Case (0x03)
                     {
-                        Store (Arg1, CAIR)
+                        Store (Arg1, CAIR) /* \_SB_.PCI0.SAT0.RDCA.CAIR */
                         And (Arg2, CADR, Local0)
                         Or (Arg3, Local0, Local0)
-                        Store (Local0, CADR)
+                        Store (Local0, CADR) /* \_SB_.PCI0.SAT0.RDCA.CADR */
                     }
                     Default
                     {
@@ -12787,16 +12892,16 @@ RWAK (Arg0)
                         Return (Zero)
                     }
 
-                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD)
+                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD) /* \_SB_.PCI0.SAT0.NVM1.PCMD */
                     If (LEqual (NITV, One))
                     {
-                        Store (0x24, PRBI)
-                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD)
+                        Store (0x24, PRBI) /* \_SB_.PCI0.SAT0.NVM1.PRBI */
+                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD) /* \_SB_.PCI0.SAT0.NVM1.PRBD */
                     }
                     ElseIf (LEqual (NITV, 0x02))
                     {
-                        Store (0x10, PRBI)
-                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD)
+                        Store (0x10, PRBI) /* \_SB_.PCI0.SAT0.NVM1.PRBI */
+                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD) /* \_SB_.PCI0.SAT0.NVM1.PRBD */
                     }
 
                     EPD3 ()
@@ -12821,23 +12926,23 @@ RWAK (Arg0)
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (NIT1, NITV)
-                    Store (NPM1, NPMV)
-                    Store (NPC1, NPCV)
-                    Store (NL11, NL1V)
-                    Store (ND21, ND2V)
-                    Store (ND11, ND1V)
-                    Store (NLR1, NLRV)
-                    Store (NLD1, NLDV)
-                    Store (NEA1, NEAV)
-                    Store (NEB1, NEBV)
-                    Store (NEC1, NECV)
-                    Store (NRA1, NRAV)
-                    Store (NMB1, NMBV)
-                    Store (NMV1, NMVV)
-                    Store (NPB1, NPBV)
-                    Store (NPV1, NPVV)
-                    Store (Zero, NCRN)
+                    Store (NIT1, NITV) /* \_SB_.PCI0.SAT0.NVM1.NITV */
+                    Store (NPM1, NPMV) /* \_SB_.PCI0.SAT0.NVM1.NPMV */
+                    Store (NPC1, NPCV) /* \_SB_.PCI0.SAT0.NVM1.NPCV */
+                    Store (NL11, NL1V) /* \_SB_.PCI0.SAT0.NVM1.NL1V */
+                    Store (ND21, ND2V) /* \_SB_.PCI0.SAT0.NVM1.ND2V */
+                    Store (ND11, ND1V) /* \_SB_.PCI0.SAT0.NVM1.ND1V */
+                    Store (NLR1, NLRV) /* \_SB_.PCI0.SAT0.NVM1.NLRV */
+                    Store (NLD1, NLDV) /* \_SB_.PCI0.SAT0.NVM1.NLDV */
+                    Store (NEA1, NEAV) /* \_SB_.PCI0.SAT0.NVM1.NEAV */
+                    Store (NEB1, NEBV) /* \_SB_.PCI0.SAT0.NVM1.NEBV */
+                    Store (NEC1, NECV) /* \_SB_.PCI0.SAT0.NVM1.NECV */
+                    Store (NRA1, NRAV) /* \_SB_.PCI0.SAT0.NVM1.NRAV */
+                    Store (NMB1, NMBV) /* \_SB_.PCI0.SAT0.NVM1.NMBV */
+                    Store (NMV1, NMVV) /* \_SB_.PCI0.SAT0.NVM1.NMVV */
+                    Store (NPB1, NPBV) /* \_SB_.PCI0.SAT0.NVM1.NPBV */
+                    Store (NPV1, NPVV) /* \_SB_.PCI0.SAT0.NVM1.NPVV */
+                    Store (Zero, NCRN) /* \_SB_.PCI0.SAT0.NVM1.NCRN */
                 }
             }
 
@@ -12933,16 +13038,16 @@ RWAK (Arg0)
                         Return (Zero)
                     }
 
-                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD)
+                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD) /* \_SB_.PCI0.SAT0.NVM2.PCMD */
                     If (LEqual (NITV, One))
                     {
-                        Store (0x24, PRBI)
-                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD)
+                        Store (0x24, PRBI) /* \_SB_.PCI0.SAT0.NVM2.PRBI */
+                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD) /* \_SB_.PCI0.SAT0.NVM2.PRBD */
                     }
                     ElseIf (LEqual (NITV, 0x02))
                     {
-                        Store (0x10, PRBI)
-                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD)
+                        Store (0x10, PRBI) /* \_SB_.PCI0.SAT0.NVM2.PRBI */
+                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD) /* \_SB_.PCI0.SAT0.NVM2.PRBD */
                     }
 
                     EPD3 ()
@@ -12967,23 +13072,23 @@ RWAK (Arg0)
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (NIT2, NITV)
-                    Store (NPM2, NPMV)
-                    Store (NPC2, NPCV)
-                    Store (NL12, NL1V)
-                    Store (ND22, ND2V)
-                    Store (ND12, ND1V)
-                    Store (NLR2, NLRV)
-                    Store (NLD2, NLDV)
-                    Store (NEA2, NEAV)
-                    Store (NEB2, NEBV)
-                    Store (NEC2, NECV)
-                    Store (NRA2, NRAV)
-                    Store (NMB2, NMBV)
-                    Store (NMV2, NMVV)
-                    Store (NPB2, NPBV)
-                    Store (NPV2, NPVV)
-                    Store (One, NCRN)
+                    Store (NIT2, NITV) /* \_SB_.PCI0.SAT0.NVM2.NITV */
+                    Store (NPM2, NPMV) /* \_SB_.PCI0.SAT0.NVM2.NPMV */
+                    Store (NPC2, NPCV) /* \_SB_.PCI0.SAT0.NVM2.NPCV */
+                    Store (NL12, NL1V) /* \_SB_.PCI0.SAT0.NVM2.NL1V */
+                    Store (ND22, ND2V) /* \_SB_.PCI0.SAT0.NVM2.ND2V */
+                    Store (ND12, ND1V) /* \_SB_.PCI0.SAT0.NVM2.ND1V */
+                    Store (NLR2, NLRV) /* \_SB_.PCI0.SAT0.NVM2.NLRV */
+                    Store (NLD2, NLDV) /* \_SB_.PCI0.SAT0.NVM2.NLDV */
+                    Store (NEA2, NEAV) /* \_SB_.PCI0.SAT0.NVM2.NEAV */
+                    Store (NEB2, NEBV) /* \_SB_.PCI0.SAT0.NVM2.NEBV */
+                    Store (NEC2, NECV) /* \_SB_.PCI0.SAT0.NVM2.NECV */
+                    Store (NRA2, NRAV) /* \_SB_.PCI0.SAT0.NVM2.NRAV */
+                    Store (NMB2, NMBV) /* \_SB_.PCI0.SAT0.NVM2.NMBV */
+                    Store (NMV2, NMVV) /* \_SB_.PCI0.SAT0.NVM2.NMVV */
+                    Store (NPB2, NPBV) /* \_SB_.PCI0.SAT0.NVM2.NPBV */
+                    Store (NPV2, NPVV) /* \_SB_.PCI0.SAT0.NVM2.NPVV */
+                    Store (One, NCRN) /* \_SB_.PCI0.SAT0.NVM2.NCRN */
                 }
             }
 
@@ -13079,16 +13184,16 @@ RWAK (Arg0)
                         Return (Zero)
                     }
 
-                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD)
+                    Store (RDCA (NCRN, 0x04, Zero, Zero, 0x02), PCMD) /* \_SB_.PCI0.SAT0.NVM3.PCMD */
                     If (LEqual (NITV, One))
                     {
-                        Store (0x24, PRBI)
-                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD)
+                        Store (0x24, PRBI) /* \_SB_.PCI0.SAT0.NVM3.PRBI */
+                        Store (RDCA (NCRN, 0x24, Zero, Zero, 0x02), PRBD) /* \_SB_.PCI0.SAT0.NVM3.PRBD */
                     }
                     ElseIf (LEqual (NITV, 0x02))
                     {
-                        Store (0x10, PRBI)
-                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD)
+                        Store (0x10, PRBI) /* \_SB_.PCI0.SAT0.NVM3.PRBI */
+                        Store (RDCA (NCRN, 0x10, Zero, Zero, 0x02), PRBD) /* \_SB_.PCI0.SAT0.NVM3.PRBD */
                     }
 
                     EPD3 ()
@@ -13113,23 +13218,23 @@ RWAK (Arg0)
 
                 Method (_INI, 0, NotSerialized)  // _INI: Initialize
                 {
-                    Store (NIT3, NITV)
-                    Store (NPM3, NPMV)
-                    Store (NPC3, NPCV)
-                    Store (NL13, NL1V)
-                    Store (ND23, ND2V)
-                    Store (ND13, ND1V)
-                    Store (NLR3, NLRV)
-                    Store (NLD3, NLDV)
-                    Store (NEA3, NEAV)
-                    Store (NEB3, NEBV)
-                    Store (NEC3, NECV)
-                    Store (NRA3, NRAV)
-                    Store (NMB3, NMBV)
-                    Store (NMV3, NMVV)
-                    Store (NPB3, NPBV)
-                    Store (NPV3, NPVV)
-                    Store (0x02, NCRN)
+                    Store (NIT3, NITV) /* \_SB_.PCI0.SAT0.NVM3.NITV */
+                    Store (NPM3, NPMV) /* \_SB_.PCI0.SAT0.NVM3.NPMV */
+                    Store (NPC3, NPCV) /* \_SB_.PCI0.SAT0.NVM3.NPCV */
+                    Store (NL13, NL1V) /* \_SB_.PCI0.SAT0.NVM3.NL1V */
+                    Store (ND23, ND2V) /* \_SB_.PCI0.SAT0.NVM3.ND2V */
+                    Store (ND13, ND1V) /* \_SB_.PCI0.SAT0.NVM3.ND1V */
+                    Store (NLR3, NLRV) /* \_SB_.PCI0.SAT0.NVM3.NLRV */
+                    Store (NLD3, NLDV) /* \_SB_.PCI0.SAT0.NVM3.NLDV */
+                    Store (NEA3, NEAV) /* \_SB_.PCI0.SAT0.NVM3.NEAV */
+                    Store (NEB3, NEBV) /* \_SB_.PCI0.SAT0.NVM3.NEBV */
+                    Store (NEC3, NECV) /* \_SB_.PCI0.SAT0.NVM3.NECV */
+                    Store (NRA3, NRAV) /* \_SB_.PCI0.SAT0.NVM3.NRAV */
+                    Store (NMB3, NMBV) /* \_SB_.PCI0.SAT0.NVM3.NMBV */
+                    Store (NMV3, NMVV) /* \_SB_.PCI0.SAT0.NVM3.NMVV */
+                    Store (NPB3, NPBV) /* \_SB_.PCI0.SAT0.NVM3.NPBV */
+                    Store (NPV3, NPVV) /* \_SB_.PCI0.SAT0.NVM3.NPVV */
+                    Store (0x02, NCRN) /* \_SB_.PCI0.SAT0.NVM3.NCRN */
                 }
             }
         }
@@ -13163,8 +13268,8 @@ RWAK (Arg0)
                         )
                 })
                 CreateDWordField (CBUF, \_SB.PCI0.CIO2._CRS._Y1B._INT, CIOV)  // _INT: Interrupts
-                Store (CIOI, CIOV)
-                Return (CBUF)
+                Store (CIOI, CIOV) /* \_SB_.PCI0.CIO2._CRS.CIOV */
+                Return (CBUF) /* \_SB_.PCI0.CIO2._CRS.CBUF */
             }
         }
 
@@ -13186,8 +13291,8 @@ RWAK (Arg0)
                     }
                 })
                 CreateDWordField (RBUF, \_SB.PCI0.TERM._CRS._Y1C._INT, IRQN)  // _INT: Interrupts
-                Store (TIRQ, IRQN)
-                Return (RBUF)
+                Store (TIRQ, IRQN) /* \_SB_.PCI0.TERM._CRS.IRQN */
+                Return (RBUF) /* \_SB_.PCI0.TERM._CRS.RBUF */
             }
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
@@ -13217,7 +13322,7 @@ RWAK (Arg0)
                 TEMP,   32
             }
 
-            Or (TEMP, 0x03, TEMP)
+            Or (TEMP, 0x03, TEMP) /* \_SB_.PCI0.LPD3.TEMP */
             Store (TEMP, Local0)
         }
 
@@ -13229,7 +13334,7 @@ RWAK (Arg0)
                 HRV,    8
             }
 
-            Return (HRV)
+            Return (HRV) /* \_SB_.PCI0.LHRV.HRV_ */
         }
 
         Method (LPD0, 1, Serialized)
@@ -13240,7 +13345,7 @@ RWAK (Arg0)
                 TEMP,   32
             }
 
-            And (TEMP, 0xFFFFFFFC, TEMP)
+            And (TEMP, 0xFFFFFFFC, TEMP) /* \_SB_.PCI0.LPD0.TEMP */
             Store (TEMP, Local0)
         }
 
@@ -13271,14 +13376,14 @@ RWAK (Arg0)
             CreateDWordField (RBUF, \_SB.PCI0.LCRS._Y1D._BAS, BVAL)  // _BAS: Base Address
             CreateDWordField (RBUF, \_SB.PCI0.LCRS._Y1D._LEN, BLEN)  // _LEN: Length
             CreateDWordField (RBUF, \_SB.PCI0.LCRS._Y1E._INT, IRQN)  // _INT: Interrupts
-            Store (Arg1, BVAL)
-            Store (Arg2, IRQN)
+            Store (Arg1, BVAL) /* \_SB_.PCI0.LCRS.BVAL */
+            Store (Arg2, IRQN) /* \_SB_.PCI0.LCRS.IRQN */
             If (LEqual (Arg0, 0x04))
             {
-                Store (0x08, BLEN)
+                Store (0x08, BLEN) /* \_SB_.PCI0.LCRS.BLEN */
             }
 
-            Return (RBUF)
+            Return (RBUF) /* \_SB_.PCI0.LCRS.RBUF */
         }
 
         Method (LSTA, 1, Serialized)
@@ -13306,7 +13411,7 @@ RWAK (Arg0)
     {
         Device (SIRC)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_STA, 0x03)  // _STA: Status
             Name (_UID, 0x05)  // _UID: Unique ID
             Method (ADDB, 3, Serialized)
@@ -13322,24 +13427,24 @@ RWAK (Arg0)
                 CreateDWordField (BUFF, \_SB.PCI0.SIRC.ADDB._Y1F._LEN, LENG)  // _LEN: Length
                 Store (Buffer (0x02)
                     {
-                         0x79, 0x00                                     
+                         0x79, 0x00                                       // y.
                     }, Local0)
                 If (LOr (LOr (LEqual (Arg0, One), LEqual (Arg0, 0x03)), LEqual (Arg0, 0x04)))
                 {
-                    Store (Arg2, ADDR)
+                    Store (Arg2, ADDR) /* \_SB_.PCI0.SIRC.ADDB.ADDR */
                     ConcatenateResTemplate (Local0, BUFF, Local0)
                 }
 
                 If (LEqual (Arg0, 0x03))
                 {
-                    Store (Arg1, ADDR)
+                    Store (Arg1, ADDR) /* \_SB_.PCI0.SIRC.ADDB.ADDR */
                     ConcatenateResTemplate (Local0, BUFF, Local0)
                 }
 
                 If (LEqual (Arg0, 0x04))
                 {
-                    Store (Add (0x08, Arg1), ADDR)
-                    Store (0x0FF8, LENG)
+                    Store (Add (0x08, Arg1), ADDR) /* \_SB_.PCI0.SIRC.ADDB.ADDR */
+                    Store (0x0FF8, LENG) /* \_SB_.PCI0.SIRC.ADDB.LENG */
                     ConcatenateResTemplate (Local0, BUFF, Local0)
                 }
 
@@ -13350,7 +13455,7 @@ RWAK (Arg0)
             {
                 Store (Buffer (0x02)
                     {
-                         0x79, 0x00                                     
+                         0x79, 0x00                                       // y.
                     }, Local0)
                 ConcatenateResTemplate (Local0, ADDB (SMD0, SB00, SB10), Local0)
                 ConcatenateResTemplate (Local0, ADDB (SMD1, SB01, SB11), Local0)
@@ -13410,47 +13515,44 @@ RWAK (Arg0)
                 CreateDWordField (RBUF, \_SB.PCI0.GPI0._CRS._Y21._BAS, COM1)  // _BAS: Base Address
                 CreateDWordField (RBUF, \_SB.PCI0.GPI0._CRS._Y22._BAS, COM3)  // _BAS: Base Address
                 CreateDWordField (RBUF, \_SB.PCI0.GPI0._CRS._Y23._INT, IRQN)  // _INT: Interrupts
-                Store (Add (SBRG, 0x00AF0000), COM0)
-                Store (Add (SBRG, 0x00AE0000), COM1)
-                Store (Add (SBRG, 0x00AC0000), COM3)
-                Store (SGIR, IRQN)
-                Return (RBUF)
+                Store (Add (SBRG, 0x00AF0000), COM0) /* \_SB_.PCI0.GPI0._CRS.COM0 */
+                Store (Add (SBRG, 0x00AE0000), COM1) /* \_SB_.PCI0.GPI0._CRS.COM1 */
+                Store (Add (SBRG, 0x00AC0000), COM3) /* \_SB_.PCI0.GPI0._CRS.COM3 */
+                Store (SGIR, IRQN) /* \_SB_.PCI0.GPI0._CRS.IRQN */
+                Return (RBUF) /* \_SB_.PCI0.GPI0._CRS.RBUF */
             }
 
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                
                 Return (0x0F)
-
             }
         }
     }
 
     Scope (_SB.PCI0)
     {
-        
     }
 
     If (LNotEqual (SMD0, 0x02))
     {
         Scope (_SB.PCI0.I2C0)
         {
-            
             Name (_HID, "INT3442")  // _HID: Hardware ID
             Method (_HRV, 0, NotSerialized)  // _HRV: Hardware Revision
             {
                 Return (LHRV (SB10))
             }
+
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Return (LCRS (SMD0, SB00, SIR0))
             }
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (LSTA (SMD0))
             }
         }
-
     }
 
     If (LEqual (SMD0, 0x02))
@@ -13472,29 +13574,28 @@ RWAK (Arg0)
 
     Scope (_SB.PCI0)
     {
-        
     }
 
     If (LNotEqual (SMD1, 0x02))
     {
         Scope (_SB.PCI0.I2C1)
         {
-            
             Name (_HID, "INT3443")  // _HID: Hardware ID
             Method (_HRV, 0, NotSerialized)  // _HRV: Hardware Revision
             {
                 Return (LHRV (SB11))
             }
+
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Return (LCRS (SMD1, SB01, SIR1))
             }
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (LSTA (SMD1))
             }
         }
-
     }
 
     If (LEqual (SMD1, 0x02))
@@ -13516,29 +13617,28 @@ RWAK (Arg0)
 
     Scope (_SB.PCI0)
     {
-        
     }
 
     If (LNotEqual (SMD2, 0x02))
     {
         Scope (_SB.PCI0.I2C2)
         {
-            
             Name (_HID, "INT3444")  // _HID: Hardware ID
             Method (_HRV, 0, NotSerialized)  // _HRV: Hardware Revision
             {
                 Return (LHRV (SB12))
             }
+
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Return (LCRS (SMD2, SB02, SIR2))
             }
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (LSTA (SMD2))
             }
         }
-
     }
 
     If (LEqual (SMD2, 0x02))
@@ -13560,29 +13660,28 @@ RWAK (Arg0)
 
     Scope (_SB.PCI0)
     {
-        
     }
 
     If (LNotEqual (SMD3, 0x02))
     {
         Scope (_SB.PCI0.I2C3)
         {
-            
             Name (_HID, "INT3445")  // _HID: Hardware ID
             Method (_HRV, 0, NotSerialized)  // _HRV: Hardware Revision
             {
                 Return (LHRV (SB13))
             }
+
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Return (LCRS (SMD3, SB03, SIR3))
             }
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (LSTA (SMD3))
             }
         }
-
     }
 
     If (LEqual (SMD3, 0x02))
@@ -13604,29 +13703,28 @@ RWAK (Arg0)
 
     Scope (_SB.PCI0)
     {
-        
     }
 
     If (LNotEqual (SMD4, 0x02))
     {
         Scope (_SB.PCI0.I2C4)
         {
-            
             Name (_HID, "INT3446")  // _HID: Hardware ID
             Method (_HRV, 0, NotSerialized)  // _HRV: Hardware Revision
             {
                 Return (LHRV (SB14))
             }
+
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Return (LCRS (SMD4, SB04, SIR4))
             }
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (LSTA (SMD4))
             }
         }
-
     }
 
     If (LEqual (SMD4, 0x02))
@@ -13648,29 +13746,28 @@ RWAK (Arg0)
 
     Scope (_SB.PCI0)
     {
-        
     }
 
     If (LNotEqual (SMD5, 0x02))
     {
         Scope (_SB.PCI0.I2C5)
         {
-            
             Name (_HID, "INT3447")  // _HID: Hardware ID
             Method (_HRV, 0, NotSerialized)  // _HRV: Hardware Revision
             {
                 Return (LHRV (SB15))
             }
+
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
                 Return (LCRS (SMD5, SB05, SIR5))
             }
+
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (LSTA (SMD5))
             }
         }
-
     }
 
     If (LEqual (SMD5, 0x02))
@@ -14066,7 +14163,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                 }
@@ -14079,7 +14176,7 @@ RWAK (Arg0)
 
             Return (Buffer (One)
             {
-                 0x00                                           
+                 0x00                                             // .
             })
         }
 
@@ -14093,7 +14190,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                 }
@@ -14106,7 +14203,7 @@ RWAK (Arg0)
 
             Return (Buffer (One)
             {
-                 0x00                                           
+                 0x00                                             // .
             })
         }
     }
@@ -14150,8 +14247,8 @@ RWAK (Arg0)
                     SRXO (GPDI, One)
                 }
 
-                Store (GNUM (GPDI), INT1)
-                Store (INUM (GPDI), INT2)
+                Store (GNUM (GPDI), INT1) /* \_SB_.PCI0.I2C0.TPD0.INT1 */
+                Store (INUM (GPDI), INT2) /* \_SB_.PCI0.I2C0.TPD0.INT2 */
                 If (LEqual (SDM0, Zero))
                 {
                     SHPO (GPDI, One)
@@ -14159,36 +14256,36 @@ RWAK (Arg0)
 
                 If (LEqual (SDS0, One))
                 {
-                    Store ("SYNA2393", _HID)
-                    Store (0x20, HID2)
+                    Store ("SYNA2393", _HID) /* \_SB_.PCI0.I2C0.TPD0._HID */
+                    Store (0x20, HID2) /* \_SB_.PCI0.I2C0.TPD0.HID2 */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS0, 0x02))
                 {
-                    Store ("06CB2846", _HID)
-                    Store (0x20, HID2)
+                    Store ("06CB2846", _HID) /* \_SB_.PCI0.I2C0.TPD0._HID */
+                    Store (0x20, HID2) /* \_SB_.PCI0.I2C0.TPD0.HID2 */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS0, 0x05))
                 {
-                    Store ("CUST0001", _HID)
-                    Store (TPDH, HID2)
-                    Store (TPDB, BADR)
+                    Store ("CUST0001", _HID) /* \_SB_.PCI0.I2C0.TPD0._HID */
+                    Store (TPDH, HID2) /* \_SB_.PCI0.I2C0.TPD0.HID2 */
+                    Store (TPDB, BADR) /* \_SB_.PCI0.I2C0.TPD0.BADR */
                     If (LEqual (TPDS, Zero))
                     {
-                        Store (0x000186A0, SPED)
+                        Store (0x000186A0, SPED) /* \_SB_.PCI0.I2C0.TPD0.SPED */
                     }
 
                     If (LEqual (TPDS, One))
                     {
-                        Store (0x00061A80, SPED)
+                        Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C0.TPD0.SPED */
                     }
 
                     If (LEqual (TPDS, 0x02))
                     {
-                        Store (0x000F4240, SPED)
+                        Store (0x000F4240, SPED) /* \_SB_.PCI0.I2C0.TPD0.SPED */
                     }
 
                     Return (Zero)
@@ -14196,7 +14293,7 @@ RWAK (Arg0)
             }
 
             Name (_HID, "XXXX0000")  // _HID: Hardware ID
-            Name (_CID, "PNP0C50")  // _CID: Compatible ID
+            Name (_CID, "PNP0C50" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
             Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
@@ -14212,7 +14309,7 @@ RWAK (Arg0)
 
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
 
@@ -14230,7 +14327,7 @@ RWAK (Arg0)
             {
                 If (LLess (OSYS, 0x07DC))
                 {
-                    Return (SBFI)
+                    Return (SBFI) /* \_SB_.PCI0.I2C0.TPD0.SBFI */
                 }
 
                 If (LEqual (SDM0, Zero))
@@ -14253,25 +14350,25 @@ RWAK (Arg0)
             {
                 If (LEqual (I2SC, One))
                 {
-                    Store ("INT3439", _HID)
-                    Store ("INT3439", _CID)
-                    Store (0x1A, CADR)
+                    Store ("INT3439", _HID) /* \_SB_.PCI0.I2C0.HDAC._HID */
+                    Store ("INT3439", _CID) /* \_SB_.PCI0.I2C0.HDAC._CID */
+                    Store (0x1A, CADR) /* \_SB_.PCI0.I2C0.HDAC.CADR */
                     Return (Zero)
                 }
 
                 If (LEqual (I2SC, 0x02))
                 {
-                    Store ("INT343A", _HID)
-                    Store ("INT343A", _CID)
-                    Store (0x1C, CADR)
+                    Store ("INT343A", _HID) /* \_SB_.PCI0.I2C0.HDAC._HID */
+                    Store ("INT343A", _CID) /* \_SB_.PCI0.I2C0.HDAC._CID */
+                    Store (0x1C, CADR) /* \_SB_.PCI0.I2C0.HDAC.CADR */
                     Return (Zero)
                 }
 
                 If (LEqual (I2SC, 0x03))
                 {
-                    Store ("INT343B", _HID)
-                    Store ("INT343B", _CID)
-                    Store (0x34, CADR)
+                    Store ("INT343B", _HID) /* \_SB_.PCI0.I2C0.HDAC._HID */
+                    Store ("INT343B", _CID) /* \_SB_.PCI0.I2C0.HDAC._CID */
+                    Store (0x34, CADR) /* \_SB_.PCI0.I2C0.HDAC.CADR */
                     Return (Zero)
                 }
             }
@@ -14293,12 +14390,12 @@ RWAK (Arg0)
                     }
                 })
                 CreateWordField (SBFB, \_SB.PCI0.I2C0.HDAC._CRS._Y26._ADR, ADR)  // _ADR: Address
-                Store (CADR, ADR)
+                Store (CADR, ADR) /* \_SB_.PCI0.I2C0.HDAC._CRS.ADR_ */
                 CreateDWordField (SBFI, \_SB.PCI0.I2C0.HDAC._CRS._Y27._INT, AINT)  // _INT: Interrupts
-                Store (INUM (0x02040016), AINT)
+                Store (INUM (0x02040016), AINT) /* \_SB_.PCI0.I2C0.HDAC._CRS.AINT */
                 If (LEqual (BID, 0x20))
                 {
-                    Return (SBFB)
+                    Return (SBFB) /* \_SB_.PCI0.I2C0.HDAC._CRS.SBFB */
                 }
 
                 Return (ConcatenateResTemplate (SBFB, SBFI))
@@ -14355,8 +14452,8 @@ RWAK (Arg0)
                     SRXO (GPLI, One)
                 }
 
-                Store (GNUM (GPLI), INT1)
-                Store (INUM (GPLI), INT2)
+                Store (GNUM (GPLI), INT1) /* \_SB_.PCI0.I2C1.TPL1.INT1 */
+                Store (INUM (GPLI), INT2) /* \_SB_.PCI0.I2C1.TPL1.INT2 */
                 If (LEqual (SDM1, Zero))
                 {
                     SHPO (GPLI, One)
@@ -14364,67 +14461,67 @@ RWAK (Arg0)
 
                 If (LEqual (SDS1, One))
                 {
-                    Store ("ATML3432", _HID)
-                    Store (Zero, HID2)
-                    Store (0x4C, BADR)
-                    Store (0x00061A80, SPED)
+                    Store ("ATML3432", _HID) /* \_SB_.PCI0.I2C1.TPL1._HID */
+                    Store (Zero, HID2) /* \_SB_.PCI0.I2C1.TPL1.HID2 */
+                    Store (0x4C, BADR) /* \_SB_.PCI0.I2C1.TPL1.BADR */
+                    Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS1, 0x02))
                 {
-                    Store ("ATML2952", _HID)
-                    Store (Zero, HID2)
-                    Store (0x4A, BADR)
-                    Store (0x00061A80, SPED)
+                    Store ("ATML2952", _HID) /* \_SB_.PCI0.I2C1.TPL1._HID */
+                    Store (Zero, HID2) /* \_SB_.PCI0.I2C1.TPL1.HID2 */
+                    Store (0x4A, BADR) /* \_SB_.PCI0.I2C1.TPL1.BADR */
+                    Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS1, 0x03))
                 {
-                    Store ("ELAN2097", _HID)
-                    Store (One, HID2)
-                    Store (0x10, BADR)
-                    Store (0x00061A80, SPED)
+                    Store ("ELAN2097", _HID) /* \_SB_.PCI0.I2C1.TPL1._HID */
+                    Store (One, HID2) /* \_SB_.PCI0.I2C1.TPL1.HID2 */
+                    Store (0x10, BADR) /* \_SB_.PCI0.I2C1.TPL1.BADR */
+                    Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS1, 0x04))
                 {
-                    Store ("NTRG0001", _HID)
-                    Store (One, HID2)
-                    Store (0x07, BADR)
-                    Store (0x00061A80, SPED)
+                    Store ("NTRG0001", _HID) /* \_SB_.PCI0.I2C1.TPL1._HID */
+                    Store (One, HID2) /* \_SB_.PCI0.I2C1.TPL1.HID2 */
+                    Store (0x07, BADR) /* \_SB_.PCI0.I2C1.TPL1.BADR */
+                    Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS1, 0x05))
                 {
-                    Store ("NTRG0002", _HID)
-                    Store (One, HID2)
-                    Store (0x64, BADR)
-                    Store (0x00061A80, SPED)
+                    Store ("NTRG0002", _HID) /* \_SB_.PCI0.I2C1.TPL1._HID */
+                    Store (One, HID2) /* \_SB_.PCI0.I2C1.TPL1.HID2 */
+                    Store (0x64, BADR) /* \_SB_.PCI0.I2C1.TPL1.BADR */
+                    Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     Return (Zero)
                 }
 
                 If (LEqual (SDS1, 0x06))
                 {
-                    Store ("CUST0000", _HID)
-                    Store (TPLH, HID2)
-                    Store (TPLB, BADR)
+                    Store ("CUST0000", _HID) /* \_SB_.PCI0.I2C1.TPL1._HID */
+                    Store (TPLH, HID2) /* \_SB_.PCI0.I2C1.TPL1.HID2 */
+                    Store (TPLB, BADR) /* \_SB_.PCI0.I2C1.TPL1.BADR */
                     If (LEqual (TPLS, Zero))
                     {
-                        Store (0x000186A0, SPED)
+                        Store (0x000186A0, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     }
 
                     If (LEqual (TPLS, One))
                     {
-                        Store (0x00061A80, SPED)
+                        Store (0x00061A80, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     }
 
                     If (LEqual (TPLS, 0x02))
                     {
-                        Store (0x000F4240, SPED)
+                        Store (0x000F4240, SPED) /* \_SB_.PCI0.I2C1.TPL1.SPED */
                     }
 
                     Return (Zero)
@@ -14432,7 +14529,7 @@ RWAK (Arg0)
             }
 
             Name (_HID, "XXXX0000")  // _HID: Hardware ID
-            Name (_CID, "PNP0C50")  // _CID: Compatible ID
+            Name (_CID, "PNP0C50" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
             Name (_S0W, 0x04)  // _S0W: S0 Device Wake State
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
@@ -14448,7 +14545,7 @@ RWAK (Arg0)
 
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
 
@@ -14461,7 +14558,7 @@ RWAK (Arg0)
             {
                 If (LLess (OSYS, 0x07DC))
                 {
-                    Return (SBFI)
+                    Return (SBFI) /* \_SB_.PCI0.I2C1.TPL1.SBFI */
                 }
 
                 If (LEqual (SDM1, Zero))
@@ -14498,7 +14595,7 @@ RWAK (Arg0)
                         0x00, ResourceConsumer, , Exclusive,
                         )
                 })
-                Return (SBUF)
+                Return (SBUF) /* \_SB_.PCI0.I2C1.IMP3._CRS.SBUF */
             }
         }
     }
@@ -14610,55 +14707,55 @@ RWAK (Arg0)
                 CreateBitField (GBUF, \_SB.PCI0.SPI1.FPNT._CRS._Y2C._MOD, GTRG)  // _MOD: Mode
                 CreateBitField (BBUF, \_SB.PCI0.SPI1.FPNT._CRS._Y2A._DPL, SCSP)  // _DPL: Device Selection Polarity
                 CreateWordField (UBUF, 0x17, UPIN)
-                Store (GNUM (GFPS), SPIN)
-                Store (GNUM (GFPI), GPIN)
-                Store (INUM (GFPI), IPIN)
-                Store (GNUM (GFPI), UPIN)
+                Store (GNUM (GFPS), SPIN) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPIN */
+                Store (GNUM (GFPI), GPIN) /* \_SB_.PCI0.SPI1.FPNT._CRS.GPIN */
+                Store (INUM (GFPI), IPIN) /* \_SB_.PCI0.SPI1.FPNT._CRS.IPIN */
+                Store (GNUM (GFPI), UPIN) /* \_SB_.PCI0.SPI1.FPNT._CRS.UPIN */
                 If (LOr (LEqual (SDS7, 0x02), LEqual (SDS7, 0x06)))
                 {
-                    Store (Zero, ILVL)
-                    Store (One, ITRG)
-                    Store (Zero, GLVL)
-                    Store (One, GTRG)
+                    Store (Zero, ILVL) /* \_SB_.PCI0.SPI1.FPNT._CRS.ILVL */
+                    Store (One, ITRG) /* \_SB_.PCI0.SPI1.FPNT._CRS.ITRG */
+                    Store (Zero, GLVL) /* \_SB_.PCI0.SPI1.FPNT._CRS.GLVL */
+                    Store (One, GTRG) /* \_SB_.PCI0.SPI1.FPNT._CRS.GTRG */
                 }
 
                 If (LEqual (SDS7, 0x04))
                 {
-                    Store (Zero, ILVL)
-                    Store (One, ITRG)
+                    Store (Zero, ILVL) /* \_SB_.PCI0.SPI1.FPNT._CRS.ILVL */
+                    Store (One, ITRG) /* \_SB_.PCI0.SPI1.FPNT._CRS.ITRG */
                 }
 
                 Switch (SDS7)
                 {
                     Case (One)
                     {
-                        Store (0x00989680, SPEX)
-                        Store (Zero, PHAX)
+                        Store (0x00989680, SPEX) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPEX */
+                        Store (Zero, PHAX) /* \_SB_.PCI0.SPI1.FPNT._CRS.PHAX */
                     }
                     Case (0x02)
                     {
-                        Store (0x002DC6C0, SPEX)
-                        Store (Zero, PHAX)
+                        Store (0x002DC6C0, SPEX) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPEX */
+                        Store (Zero, PHAX) /* \_SB_.PCI0.SPI1.FPNT._CRS.PHAX */
                     }
                     Case (0x03)
                     {
-                        Store (0x007A1200, SPEX)
-                        Store (One, PHAX)
+                        Store (0x007A1200, SPEX) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPEX */
+                        Store (One, PHAX) /* \_SB_.PCI0.SPI1.FPNT._CRS.PHAX */
                     }
                     Case (0x04)
                     {
-                        Store (0x007A1200, SPEX)
-                        Store (Zero, PHAX)
+                        Store (0x007A1200, SPEX) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPEX */
+                        Store (Zero, PHAX) /* \_SB_.PCI0.SPI1.FPNT._CRS.PHAX */
                     }
                     Case (0x05)
                     {
-                        Store (0x00F42400, SPEX)
-                        Store (Zero, PHAX)
+                        Store (0x00F42400, SPEX) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPEX */
+                        Store (Zero, PHAX) /* \_SB_.PCI0.SPI1.FPNT._CRS.PHAX */
                     }
                     Case (0x06)
                     {
-                        Store (0x002DC6C0, SPEX)
-                        Store (Zero, PHAX)
+                        Store (0x002DC6C0, SPEX) /* \_SB_.PCI0.SPI1.FPNT._CRS.SPEX */
+                        Store (Zero, PHAX) /* \_SB_.PCI0.SPI1.FPNT._CRS.PHAX */
                     }
                     Default
                     {
@@ -14668,7 +14765,7 @@ RWAK (Arg0)
 
                 If (LEqual (SDS7, One))
                 {
-                    Return (BBUF)
+                    Return (BBUF) /* \_SB_.PCI0.SPI1.FPNT._CRS.BBUF */
                 }
 
                 If (LAnd (LEqual (SDS7, 0x04), LEqual (SDM7, Zero)))
@@ -14748,9 +14845,9 @@ RWAK (Arg0)
                 CreateWordField (SBFG, 0x8C, INT3)
                 CreateWordField (SBFG, 0x3C, WAK3)
                 CreateWordField (SBFG, 0x64, KIL3)
-                Store (GNUM (GBTI), INT3)
-                Store (GNUM (GBTW), WAK3)
-                Store (GNUM (GBTK), KIL3)
+                Store (GNUM (GBTI), INT3) /* \_SB_.PCI0.UA00.BTH0._CRS.INT3 */
+                Store (GNUM (GBTW), WAK3) /* \_SB_.PCI0.UA00.BTH0._CRS.WAK3 */
+                Store (GNUM (GBTK), KIL3) /* \_SB_.PCI0.UA00.BTH0._CRS.KIL3 */
                 Name (SBFI, ResourceTemplate ()
                 {
                     UartSerialBusV2 (0x0001C200, DataBitsEight, StopBitsOne,
@@ -14778,16 +14875,16 @@ RWAK (Arg0)
                 CreateDWordField (SBFI, \_SB.PCI0.UA00.BTH0._CRS._Y2D._INT, INT4)  // _INT: Interrupts
                 CreateWordField (SBFI, 0x3C, WAK4)
                 CreateWordField (SBFI, 0x64, KIL4)
-                Store (INUM (GBTI), INT4)
-                Store (GNUM (GBTW), WAK4)
-                Store (GNUM (GBTK), KIL4)
+                Store (INUM (GBTI), INT4) /* \_SB_.PCI0.UA00.BTH0._CRS.INT4 */
+                Store (GNUM (GBTW), WAK4) /* \_SB_.PCI0.UA00.BTH0._CRS.WAK4 */
+                Store (GNUM (GBTK), KIL4) /* \_SB_.PCI0.UA00.BTH0._CRS.KIL4 */
                 If (LEqual (SDM8, Zero))
                 {
-                    Return (SBFG)
+                    Return (SBFG) /* \_SB_.PCI0.UA00.BTH0._CRS.SBFG */
                 }
                 Else
                 {
-                    Return (SBFI)
+                    Return (SBFI) /* \_SB_.PCI0.UA00.BTH0._CRS.SBFI */
                 }
             }
 
@@ -14830,14 +14927,14 @@ RWAK (Arg0)
                         }
                 })
                 CreateWordField (BUF2, 0x17, RPIN)
-                Store (GNUM (GGNR), RPIN)
+                Store (GNUM (GGNR), RPIN) /* \_SB_.PCI0.GNSS._CRS.RPIN */
                 If (LEqual (GNSC, One))
                 {
                     Return (ConcatenateResTemplate (BUF1, BUF2))
                 }
                 Else
                 {
-                    Return (BUF2)
+                    Return (BUF2) /* \_SB_.PCI0.GNSS._CRS.BUF2 */
                 }
             }
 
@@ -15129,12 +15226,14 @@ RWAK (Arg0)
             })
             Method (W3DC, 4, NotSerialized)
             {
-                Store (Arg3, Index (DerefOf (Index (DerefOf (Index (CACH, Arg0)), Arg1)), Arg2))
+                Store (Arg3, Index (DerefOf (Index (DerefOf (Index (CACH, Arg0)), Arg1)), 
+                    Arg2))
             }
 
             Method (R3DC, 3, NotSerialized)
             {
-                Return (DerefOf (Index (DerefOf (Index (DerefOf (Index (CACH, Arg0)), Arg1)), Arg2)))
+                Return (DerefOf (Index (DerefOf (Index (DerefOf (Index (CACH, Arg0)), Arg1)), 
+                    Arg2)))
             }
 
             Method (WREG, 4, Serialized)
@@ -15171,16 +15270,16 @@ RWAK (Arg0)
                 }
 
                 Store (Add (Timer, 0xC350), Local1)
-                Store (0x07, RST)
-                Store (Zero, ENB)
+                Store (0x07, RST) /* \_SB_.PCI0.GEXP.WREG.RST_ */
+                Store (Zero, ENB) /* \_SB_.PCI0.GEXP.WREG.ENB_ */
                 Store (RBCK, Local0)
                 Store (CLR, Local0)
-                Store (0x001C001C, HOLD)
-                Store (0x0210, HCNT)
-                Store (0x0280, LCNT)
-                Store (Add (EXPA, Arg1), TAR)
-                Store (0x65, ICON)
-                Store (One, ENB)
+                Store (0x001C001C, HOLD) /* \_SB_.PCI0.GEXP.WREG.HOLD */
+                Store (0x0210, HCNT) /* \_SB_.PCI0.GEXP.WREG.HCNT */
+                Store (0x0280, LCNT) /* \_SB_.PCI0.GEXP.WREG.LCNT */
+                Store (Add (EXPA, Arg1), TAR) /* \_SB_.PCI0.GEXP.WREG.TAR_ */
+                Store (0x65, ICON) /* \_SB_.PCI0.GEXP.WREG.ICON */
+                Store (One, ENB) /* \_SB_.PCI0.GEXP.WREG.ENB_ */
                 While (LNotEqual (ENSB, One))
                 {
                     If (LGreater (Timer, Local1))
@@ -15189,8 +15288,8 @@ RWAK (Arg0)
                     }
                 }
 
-                Store (Arg2, DATA)
-                Store (Add (END, Arg3), DATA)
+                Store (Arg2, DATA) /* \_SB_.PCI0.GEXP.WREG.DATA */
+                Store (Add (END, Arg3), DATA) /* \_SB_.PCI0.GEXP.WREG.DATA */
                 While (LNotEqual (ACTV, Zero))
                 {
                     If (LGreater (Timer, Local1))
@@ -15199,7 +15298,7 @@ RWAK (Arg0)
                     }
                 }
 
-                Store (Zero, ENB)
+                Store (Zero, ENB) /* \_SB_.PCI0.GEXP.WREG.ENB_ */
                 While (LNotEqual (ENSB, Zero))
                 {
                     If (LGreater (Timer, Local1))
@@ -15259,16 +15358,16 @@ RWAK (Arg0)
                 }
 
                 Store (Add (Timer, 0xC350), Local1)
-                Store (0x07, RST)
-                Store (Zero, ENB)
+                Store (0x07, RST) /* \_SB_.PCI0.GEXP.RREG.RST_ */
+                Store (Zero, ENB) /* \_SB_.PCI0.GEXP.RREG.ENB_ */
                 Store (RBCK, Local0)
                 Store (CLR, Local0)
-                Store (0x001C001C, HOLD)
-                Store (0x0210, HCNT)
-                Store (0x0280, LCNT)
-                Store (Add (EXPA, Arg1), TAR)
-                Store (0x65, ICON)
-                Store (One, ENB)
+                Store (0x001C001C, HOLD) /* \_SB_.PCI0.GEXP.RREG.HOLD */
+                Store (0x0210, HCNT) /* \_SB_.PCI0.GEXP.RREG.HCNT */
+                Store (0x0280, LCNT) /* \_SB_.PCI0.GEXP.RREG.LCNT */
+                Store (Add (EXPA, Arg1), TAR) /* \_SB_.PCI0.GEXP.RREG.TAR_ */
+                Store (0x65, ICON) /* \_SB_.PCI0.GEXP.RREG.ICON */
+                Store (One, ENB) /* \_SB_.PCI0.GEXP.RREG.ENB_ */
                 While (LNotEqual (ENSB, One))
                 {
                     If (LGreater (Timer, Local1))
@@ -15277,8 +15376,8 @@ RWAK (Arg0)
                     }
                 }
 
-                Store (Arg2, DATA)
-                Store (Add (END, READ), DATA)
+                Store (Arg2, DATA) /* \_SB_.PCI0.GEXP.RREG.DATA */
+                Store (Add (END, READ), DATA) /* \_SB_.PCI0.GEXP.RREG.DATA */
                 While (LNotEqual (ACTV, Zero))
                 {
                     If (LGreater (Timer, Local1))
@@ -15288,7 +15387,7 @@ RWAK (Arg0)
                 }
 
                 Store (DATA, Local0)
-                Store (Zero, ENB)
+                Store (Zero, ENB) /* \_SB_.PCI0.GEXP.RREG.ENB_ */
                 While (LNotEqual (ENSB, Zero))
                 {
                     If (LGreater (Timer, Local1))
@@ -15309,7 +15408,7 @@ RWAK (Arg0)
                     D0D3,   2
                 }
 
-                Store (Zero, D0D3)
+                Store (Zero, D0D3) /* \_SB_.PCI0.GEXP.PS0_.D0D3 */
                 Store (D0D3, Local0)
             }
 
@@ -15322,7 +15421,7 @@ RWAK (Arg0)
                     D0D3,   2
                 }
 
-                Store (0x03, D0D3)
+                Store (0x03, D0D3) /* \_SB_.PCI0.GEXP.PS3_.D0D3 */
                 Store (D0D3, Local0)
             }
 
@@ -15344,44 +15443,44 @@ RWAK (Arg0)
 
                 If (LEqual (Arg0, Zero))
                 {
-                    Store (SB10, SB1X)
-                    Store (SB00, SB0X)
-                    Store (SMD0, SMDX)
+                    Store (SB10, SB1X) /* \_SB_.PCI0.GEXP.CSER.SB1X */
+                    Store (SB00, SB0X) /* \_SB_.PCI0.GEXP.CSER.SB0X */
+                    Store (SMD0, SMDX) /* \_SB_.PCI0.GEXP.CSER.SMDX */
                 }
 
                 If (LEqual (Arg0, One))
                 {
-                    Store (SB11, SB1X)
-                    Store (SB01, SB0X)
-                    Store (SMD1, SMDX)
+                    Store (SB11, SB1X) /* \_SB_.PCI0.GEXP.CSER.SB1X */
+                    Store (SB01, SB0X) /* \_SB_.PCI0.GEXP.CSER.SB0X */
+                    Store (SMD1, SMDX) /* \_SB_.PCI0.GEXP.CSER.SMDX */
                 }
 
                 If (LEqual (Arg0, 0x02))
                 {
-                    Store (SB12, SB1X)
-                    Store (SB02, SB0X)
-                    Store (SMD2, SMDX)
+                    Store (SB12, SB1X) /* \_SB_.PCI0.GEXP.CSER.SB1X */
+                    Store (SB02, SB0X) /* \_SB_.PCI0.GEXP.CSER.SB0X */
+                    Store (SMD2, SMDX) /* \_SB_.PCI0.GEXP.CSER.SMDX */
                 }
 
                 If (LEqual (Arg0, 0x03))
                 {
-                    Store (SB13, SB1X)
-                    Store (SB03, SB0X)
-                    Store (SMD3, SMDX)
+                    Store (SB13, SB1X) /* \_SB_.PCI0.GEXP.CSER.SB1X */
+                    Store (SB03, SB0X) /* \_SB_.PCI0.GEXP.CSER.SB0X */
+                    Store (SMD3, SMDX) /* \_SB_.PCI0.GEXP.CSER.SMDX */
                 }
 
                 If (LEqual (Arg0, 0x04))
                 {
-                    Store (SB14, SB1X)
-                    Store (SB04, SB0X)
-                    Store (SMD4, SMDX)
+                    Store (SB14, SB1X) /* \_SB_.PCI0.GEXP.CSER.SB1X */
+                    Store (SB04, SB0X) /* \_SB_.PCI0.GEXP.CSER.SB0X */
+                    Store (SMD4, SMDX) /* \_SB_.PCI0.GEXP.CSER.SMDX */
                 }
 
                 If (LEqual (Arg0, 0x05))
                 {
-                    Store (SB15, SB1X)
-                    Store (SB05, SB0X)
-                    Store (SMD5, SMDX)
+                    Store (SB15, SB1X) /* \_SB_.PCI0.GEXP.CSER.SB1X */
+                    Store (SB05, SB0X) /* \_SB_.PCI0.GEXP.CSER.SB0X */
+                    Store (SMD5, SMDX) /* \_SB_.PCI0.GEXP.CSER.SMDX */
                 }
 
                 If (LGreater (Arg0, 0x05))
@@ -15435,17 +15534,17 @@ RWAK (Arg0)
                 }
 
                 PS0 (SB1X)
-                Divide (Arg2, PPR, PINN, REGN)
-                Store (DerefOf (Index (Local0, REGN)), REGA)
-                Store (RREG (SB0X, Arg1, REGA), OLDV)
+                Divide (Arg2, PPR, PINN, REGN) /* \_SB_.PCI0.GEXP.CSER.REGN */
+                Store (DerefOf (Index (Local0, REGN)), REGA) /* \_SB_.PCI0.GEXP.CSER.REGA */
+                Store (RREG (SB0X, Arg1, REGA), OLDV) /* \_SB_.PCI0.GEXP.CSER.OLDV */
                 If (LEqual (Arg4, 0x02))
                 {
-                    Store (And (One, ShiftRight (OLDV, PINN)), RETV)
+                    Store (And (One, ShiftRight (OLDV, PINN)), RETV) /* \_SB_.PCI0.GEXP.CSER.RETV */
                 }
                 Else
                 {
-                    And (OLDV, Not (ShiftLeft (One, PINN)), NEWV)
-                    Or (ShiftLeft (Arg3, PINN), NEWV, NEWV)
+                    And (OLDV, Not (ShiftLeft (One, PINN)), NEWV) /* \_SB_.PCI0.GEXP.CSER.NEWV */
+                    Or (ShiftLeft (Arg3, PINN), NEWV, NEWV) /* \_SB_.PCI0.GEXP.CSER.NEWV */
                     If (LNotEqual (NEWV, OLDV))
                     {
                         WREG (SB0X, Arg1, REGA, NEWV)
@@ -15453,7 +15552,7 @@ RWAK (Arg0)
                 }
 
                 PS3 (SB1X)
-                Return (RETV)
+                Return (RETV) /* \_SB_.PCI0.GEXP.CSER.RETV */
             }
         }
     }
@@ -15465,7 +15564,7 @@ RWAK (Arg0)
             Zero
         })
         Store (Arg0, Index (PKG, Zero))
-        Return (PKG)
+        Return (PKG) /* \PKG1.PKG_ */
     }
 
     Method (PKG3, 3, Serialized)
@@ -15479,7 +15578,7 @@ RWAK (Arg0)
         Store (Arg0, Index (PKG, Zero))
         Store (Arg1, Index (PKG, One))
         Store (Arg2, Index (PKG, 0x02))
-        Return (PKG)
+        Return (PKG) /* \PKG3.PKG_ */
     }
 
     If (USTP)
@@ -15558,18 +15657,18 @@ RWAK (Arg0)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    Store (Zero, PGEN)
+                    Store (Zero, PGEN) /* \_SB_.PCI0.PEMC.PGEN */
                     PCRA (0xC0, 0x0600, 0x7FFFFFBA)
                     Sleep (0x02)
                     PCRO (0xC0, 0x0600, 0x80000045)
-                    And (PSTA, 0xFFFFFFFC, PSTA)
+                    And (PSTA, 0xFFFFFFFC, PSTA) /* \_SB_.PCI0.PEMC.PSTA */
                     Store (PSTA, Local0)
                 }
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    Store (One, PGEN)
-                    Or (PSTA, 0x03, PSTA)
+                    Store (One, PGEN) /* \_SB_.PCI0.PEMC.PGEN */
+                    Or (PSTA, 0x03, PSTA) /* \_SB_.PCI0.PEMC.PSTA */
                     Store (PSTA, Local0)
                 }
 
@@ -15593,27 +15692,27 @@ RWAK (Arg0)
                                     {
                                         Return (Buffer (One)
                                         {
-                                             0x61                                           
+                                             0x61                                             // a
                                         })
                                     }
 
                                     Return (Buffer (One)
                                     {
-                                         0x21                                           
+                                         0x21                                             // !
                                     })
                                 }
                                 Case (0x05)
                                 {
                                     Return (Buffer (One)
                                     {
-                                         0x03                                           
+                                         0x03                                             // .
                                     })
                                 }
                                 Case (0x06)
                                 {
                                     Return (Buffer (One)
                                     {
-                                         0x05                                           
+                                         0x05                                             // .
                                     })
                                 }
 
@@ -15623,7 +15722,7 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -15631,7 +15730,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -15661,18 +15760,18 @@ RWAK (Arg0)
 
                 Method (_PS0, 0, Serialized)  // _PS0: Power State 0
                 {
-                    Store (Zero, PGEN)
+                    Store (Zero, PGEN) /* \_SB_.PCI0.PSDC.PGEN */
                     PCRA (0xC0, 0x0600, 0xFFFFFE7A)
                     Sleep (0x02)
                     PCRO (0xC0, 0x0600, 0x0185)
-                    And (PSTA, 0xFFFFFFFC, PSTA)
+                    And (PSTA, 0xFFFFFFFC, PSTA) /* \_SB_.PCI0.PSDC.PSTA */
                     Store (PSTA, Local0)
                 }
 
                 Method (_PS3, 0, Serialized)  // _PS3: Power State 3
                 {
-                    Store (One, PGEN)
-                    Or (PSTA, 0x03, PSTA)
+                    Store (One, PGEN) /* \_SB_.PCI0.PSDC.PGEN */
+                    Or (PSTA, 0x03, PSTA) /* \_SB_.PCI0.PSDC.PSTA */
                     Store (PSTA, Local0)
                 }
 
@@ -15693,7 +15792,7 @@ RWAK (Arg0)
                                 {
                                     Return (Buffer (One)
                                     {
-                                         0x19                                           
+                                         0x19                                             // .
                                     })
                                 }
                                 Case (0x03)
@@ -15701,7 +15800,7 @@ RWAK (Arg0)
                                     Sleep (0x64)
                                     Return (Buffer (One)
                                     {
-                                         0x00                                           
+                                         0x00                                             // .
                                     })
                                 }
                                 Case (0x04)
@@ -15709,7 +15808,7 @@ RWAK (Arg0)
                                     Sleep (0x64)
                                     Return (Buffer (One)
                                     {
-                                         0x00                                           
+                                         0x00                                             // .
                                     })
                                 }
 
@@ -15719,7 +15818,7 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -15727,7 +15826,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -15775,7 +15874,7 @@ RWAK (Arg0)
     }
 
     Name (ECUP, One)
-    Mutex(EHLD, 0)
+    Mutex (EHLD, 0x00)
     Scope (\)
     {
         Device (CHUB)
@@ -15803,7 +15902,7 @@ RWAK (Arg0)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x03                                           
+                                     0x03                                             // .
                                 })
                             }
                             Case (One)
@@ -15850,7 +15949,7 @@ RWAK (Arg0)
         }
     }
 
-    Mutex(MUTX, 0)
+    Mutex (MUTX, 0x00)
     OperationRegion (PRT0, SystemIO, 0x80, 0x04)
     Field (PRT0, DWordAcc, Lock, Preserve)
     {
@@ -15861,25 +15960,25 @@ RWAK (Arg0)
     {
         If (LEqual (Arg0, Zero))
         {
-            Store (Or (And (P80D, 0xFFFFFF00), Arg1), P80D)
+            Store (Or (And (P80D, 0xFFFFFF00), Arg1), P80D) /* \P80D */
         }
 
         If (LEqual (Arg0, One))
         {
-            Store (Or (And (P80D, 0xFFFF00FF), ShiftLeft (Arg1, 0x08)), P80D)
+            Store (Or (And (P80D, 0xFFFF00FF), ShiftLeft (Arg1, 0x08)), P80D) /* \P80D */
         }
 
         If (LEqual (Arg0, 0x02))
         {
-            Store (Or (And (P80D, 0xFF00FFFF), ShiftLeft (Arg1, 0x10)), P80D)
+            Store (Or (And (P80D, 0xFF00FFFF), ShiftLeft (Arg1, 0x10)), P80D) /* \P80D */
         }
 
         If (LEqual (Arg0, 0x03))
         {
-            Store (Or (And (P80D, 0x00FFFFFF), ShiftLeft (Arg1, 0x18)), P80D)
+            Store (Or (And (P80D, 0x00FFFFFF), ShiftLeft (Arg1, 0x18)), P80D) /* \P80D */
         }
 
-        Store (P80D, P80H)
+        Store (P80D, P80H) /* \P80H */
     }
 
     Method (ADBG, 1, Serialized)
@@ -15905,13 +16004,13 @@ RWAK (Arg0)
     })
     Method (_PIC, 1, NotSerialized)  // _PIC: Interrupt Model
     {
-        Store (Arg0, GPIC)
-        Store (Arg0, PICM)
+        Store (Arg0, GPIC) /* \GPIC */
+        Store (Arg0, PICM) /* \PICM */
     }
 
     Method (RPTS, 1, NotSerialized)
     {
-        Store (Zero, P80D)
+        Store (Zero, P80D) /* \P80D */
         P8XH (Zero, Arg0)
         ADBG (Concatenate ("_PTS=", ToHexString (Arg0)))
         If (LEqual (Arg0, 0x03))
@@ -15967,39 +16066,39 @@ RWAK (Arg0)
         {
             If (LNotEqual (\_SB.PCI0.RP01.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP01, Zero)
+                Notify (\_SB.PCI0.RP01, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP02.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP02, Zero)
+                Notify (\_SB.PCI0.RP02, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP03.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP03, Zero)
+                Notify (\_SB.PCI0.RP03, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP04.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP04, Zero)
+                Notify (\_SB.PCI0.RP04, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP05.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP05, Zero)
+                Notify (\_SB.PCI0.RP05, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP06.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP06, Zero)
+                Notify (\_SB.PCI0.RP06, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP07.VDID, 0xFFFFFFFF))
             {
                 If (LEqual (DSTS, Zero))
                 {
-                    Notify (\_SB.PCI0.RP07, Zero)
+                    Notify (\_SB.PCI0.RP07, Zero) // Bus Check
                 }
             }
 
@@ -16007,68 +16106,68 @@ RWAK (Arg0)
             {
                 If (LEqual (DSTS, Zero))
                 {
-                    Notify (\_SB.PCI0.RP08, Zero)
+                    Notify (\_SB.PCI0.RP08, Zero) // Bus Check
                 }
             }
 
             If (LNotEqual (\_SB.PCI0.RP09.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP09, Zero)
+                Notify (\_SB.PCI0.RP09, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP10.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP10, Zero)
+                Notify (\_SB.PCI0.RP10, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP11.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP11, Zero)
+                Notify (\_SB.PCI0.RP11, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP12.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP12, Zero)
+                Notify (\_SB.PCI0.RP12, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP13.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP13, Zero)
+                Notify (\_SB.PCI0.RP13, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP14.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP14, Zero)
+                Notify (\_SB.PCI0.RP14, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP15.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP15, Zero)
+                Notify (\_SB.PCI0.RP15, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP16.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP16, Zero)
+                Notify (\_SB.PCI0.RP16, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP17.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP17, Zero)
+                Notify (\_SB.PCI0.RP17, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP18.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP18, Zero)
+                Notify (\_SB.PCI0.RP18, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP19.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP19, Zero)
+                Notify (\_SB.PCI0.RP19, Zero) // Bus Check
             }
 
             If (LNotEqual (\_SB.PCI0.RP20.VDID, 0xFFFFFFFF))
             {
-                Notify (\_SB.PCI0.RP20, Zero)
+                Notify (\_SB.PCI0.RP20, Zero) // Bus Check
             }
         }
 
@@ -16085,7 +16184,7 @@ RWAK (Arg0)
         Multiply (Arg0, 0x08, Local0)
         Multiply (Arg1, 0x08, Local1)
         CreateField (Arg2, Local0, Local1, TBF3)
-        Return (TBF3)
+        Return (TBF3) /* \GETB.TBF3 */
     }
 
     Method (PNOT, 0, Serialized)
@@ -16094,94 +16193,94 @@ RWAK (Arg0)
         {
             If (And (PDC0, 0x08))
             {
-                Notify (\_PR.CPU0, 0x80)
+                Notify (\_PR.CPU0, 0x80) // Performance Capability Change
             }
 
             If (And (PDC1, 0x08))
             {
-                Notify (\_PR.CPU1, 0x80)
+                Notify (\_PR.CPU1, 0x80) // Performance Capability Change
             }
 
             If (And (PDC2, 0x08))
             {
-                Notify (\_PR.CPU2, 0x80)
+                Notify (\_PR.CPU2, 0x80) // Performance Capability Change
             }
 
             If (And (PDC3, 0x08))
             {
-                Notify (\_PR.CPU3, 0x80)
+                Notify (\_PR.CPU3, 0x80) // Performance Capability Change
             }
 
             If (And (PDC4, 0x08))
             {
-                Notify (\_PR.CPU4, 0x80)
+                Notify (\_PR.CPU4, 0x80) // Performance Capability Change
             }
 
             If (And (PDC5, 0x08))
             {
-                Notify (\_PR.CPU5, 0x80)
+                Notify (\_PR.CPU5, 0x80) // Performance Capability Change
             }
 
             If (And (PDC6, 0x08))
             {
-                Notify (\_PR.CPU6, 0x80)
+                Notify (\_PR.CPU6, 0x80) // Performance Capability Change
             }
 
             If (And (PDC7, 0x08))
             {
-                Notify (\_PR.CPU7, 0x80)
+                Notify (\_PR.CPU7, 0x80) // Performance Capability Change
             }
         }
         Else
         {
-            Notify (\_PR.CPU0, 0x80)
+            Notify (\_PR.CPU0, 0x80) // Performance Capability Change
         }
 
         If (LGreater (TCNT, One))
         {
             If (LAnd (And (PDC0, 0x08), And (PDC0, 0x10)))
             {
-                Notify (\_PR.CPU0, 0x81)
+                Notify (\_PR.CPU0, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC1, 0x08), And (PDC1, 0x10)))
             {
-                Notify (\_PR.CPU1, 0x81)
+                Notify (\_PR.CPU1, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC2, 0x08), And (PDC2, 0x10)))
             {
-                Notify (\_PR.CPU2, 0x81)
+                Notify (\_PR.CPU2, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC3, 0x08), And (PDC3, 0x10)))
             {
-                Notify (\_PR.CPU3, 0x81)
+                Notify (\_PR.CPU3, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC4, 0x08), And (PDC4, 0x10)))
             {
-                Notify (\_PR.CPU4, 0x81)
+                Notify (\_PR.CPU4, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC5, 0x08), And (PDC5, 0x10)))
             {
-                Notify (\_PR.CPU5, 0x81)
+                Notify (\_PR.CPU5, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC6, 0x08), And (PDC6, 0x10)))
             {
-                Notify (\_PR.CPU6, 0x81)
+                Notify (\_PR.CPU6, 0x81) // C-State Change
             }
 
             If (LAnd (And (PDC7, 0x08), And (PDC7, 0x10)))
             {
-                Notify (\_PR.CPU7, 0x81)
+                Notify (\_PR.CPU7, 0x81) // C-State Change
             }
         }
         Else
         {
-            Notify (\_PR.CPU0, 0x81)
+            Notify (\_PR.CPU0, 0x81) // C-State Change
         }
     }
 
@@ -16208,32 +16307,32 @@ RWAK (Arg0)
             Return (Zero)
         }
 
-        Store (One, CSEM)
-        Store (PPL1, PLSV)
-        Store (PL1E, PLEN)
-        Store (CLP1, CLMP)
+        Store (One, CSEM) /* \CSEM */
+        Store (PPL1, PLSV) /* \PLSV */
+        Store (PL1E, PLEN) /* \PLEN */
+        Store (CLP1, CLMP) /* \CLMP */
         If (LEqual (PWRU, Zero))
         {
-            Store (One, PPUU)
+            Store (One, PPUU) /* \SPL1.PPUU */
         }
         Else
         {
-            ShiftLeft (Decrement (PWRU), 0x02, PPUU)
+            ShiftLeft (Decrement (PWRU), 0x02, PPUU) /* \SPL1.PPUU */
         }
 
         Multiply (PLVL, PPUU, Local0)
         Divide (Local0, 0x03E8, , Local1)
-        Store (Local1, PPL1)
-        Store (One, PL1E)
-        Store (One, CLP1)
+        Store (Local1, PPL1) /* \PPL1 */
+        Store (One, PL1E) /* \PL1E */
+        Store (One, CLP1) /* \CLP1 */
     }
 
     Method (RPL1, 0, Serialized)
     {
-        Store (PLSV, PPL1)
-        Store (PLEN, PL1E)
-        Store (CLMP, CLP1)
-        Store (Zero, CSEM)
+        Store (PLSV, PPL1) /* \PPL1 */
+        Store (PLEN, PL1E) /* \PL1E */
+        Store (CLMP, CLP1) /* \CLP1 */
+        Store (Zero, CSEM) /* \CSEM */
     }
 
     Name (UAMS, Zero)
@@ -16259,22 +16358,22 @@ RWAK (Arg0)
             {
                 If (LEqual (GLCK, One))
                 {
-                    Store (Zero, GLCK)
-                    Store (One, ECUP)
+                    Store (Zero, GLCK) /* \GLCK */
+                    Store (One, ECUP) /* \ECUP */
                     \_SB.PCI0.LPCB.EC0.CSEE (0xAF)
                     P8XH (Zero, 0xC5)
                     P8XH (One, 0xAB)
                     ADBG ("Exit CS")
                     If (LGreaterEqual (OSYS, 0x07DF))
                     {
-                        Store (Zero, ACTD)
+                        Store (Zero, ACTD) /* \GUAM.ACTD */
                     }
 
                     If (PSCP)
                     {
                         If (CondRefOf (\_PR.CPU0._PPC))
                         {
-                            Store (Zero, \_PR.CPPC)
+                            Store (Zero, \_PR.CPPC) /* External reference */
                             PNOT ()
                         }
                     }
@@ -16289,16 +16388,16 @@ RWAK (Arg0)
             {
                 If (LEqual (GLCK, Zero))
                 {
-                    Store (One, GLCK)
+                    Store (One, GLCK) /* \GLCK */
                     \_SB.PCI0.LPCB.EC0.CSEE (0xAE)
-                    Store (Zero, ECUP)
+                    Store (Zero, ECUP) /* \ECUP */
                     P8XH (Zero, 0xC5)
                     P8XH (One, Zero)
                     ADBG ("Enter CS")
                     If (LEqual (ECNO, One)){}
                     If (LGreaterEqual (OSYS, 0x07DF))
                     {
-                        Store (One, ACTD)
+                        Store (One, ACTD) /* \GUAM.ACTD */
                     }
 
                     If (PSCP)
@@ -16307,11 +16406,11 @@ RWAK (Arg0)
                         {
                             If (And (PDC0, 0x0400))
                             {
-                                Subtract (SizeOf (\_PR.CPU0.TPSS), One, \_PR.CPPC)
+                                Subtract (SizeOf (\_PR.CPU0.TPSS), One, \_PR.CPPC) /* External reference */
                             }
                             Else
                             {
-                                Subtract (SizeOf (\_PR.CPU0.LPSS), One, \_PR.CPPC)
+                                Subtract (SizeOf (\_PR.CPU0.LPSS), One, \_PR.CPPC) /* External reference */
                             }
 
                             PNOT ()
@@ -16334,7 +16433,7 @@ RWAK (Arg0)
 
         }
 
-        Store (LAnd (Arg0, LNot (PWRS)), UAMS)
+        Store (LAnd (Arg0, LNot (PWRS)), UAMS) /* \UAMS */
         P_CS ()
     }
 
@@ -16365,97 +16464,97 @@ RWAK (Arg0)
 
     Method (TRAP, 2, Serialized)
     {
-        Store (Arg1, SMIF)
+        Store (Arg1, SMIF) /* \SMIF */
         If (LEqual (Arg0, 0x02))
         {
-            Store (Arg1, \_PR.DTSF)
-            Store (Zero, \_PR.TRPD)
-            Return (\_PR.DTSF)
+            Store (Arg1, \_PR.DTSF) /* External reference */
+            Store (Zero, \_PR.TRPD) /* External reference */
+            Return (\_PR.DTSF) /* External reference */
         }
 
         If (LEqual (Arg0, 0x03))
         {
-            Store (Zero, TRPH)
+            Store (Zero, TRPH) /* \TRPH */
         }
 
         If (LEqual (Arg0, 0x04))
         {
-            Store (Zero, \_PR.TRPF)
+            Store (Zero, \_PR.TRPF) /* External reference */
         }
 
-        Return (SMIF)
+        Return (SMIF) /* \SMIF */
     }
 
     Scope (_SB.PCI0)
     {
         Method (PTMA, 0, NotSerialized)
         {
-            Return (\_PR.BGMA)
+            Return (\_PR.BGMA) /* External reference */
         }
 
         Method (PTMS, 0, NotSerialized)
         {
-            Return (\_PR.BGMS)
+            Return (\_PR.BGMS) /* External reference */
         }
 
         Method (PTIA, 0, NotSerialized)
         {
-            Return (\_PR.BGIA)
+            Return (\_PR.BGIA) /* External reference */
         }
 
         Method (_INI, 0, Serialized)  // _INI: Initialize
         {
-            Store (0x07D0, OSYS)
+            Store (0x07D0, OSYS) /* \OSYS */
             If (CondRefOf (\_OSI, Local0))
             {
                 If (_OSI ("Linux"))
                 {
-                    Store (0x03E8, OSYS)
+                    Store (0x03E8, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2001"))
                 {
-                    Store (0x07D1, OSYS)
+                    Store (0x07D1, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2001 SP1"))
                 {
-                    Store (0x07D1, OSYS)
+                    Store (0x07D1, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2001 SP2"))
                 {
-                    Store (0x07D2, OSYS)
+                    Store (0x07D2, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2001.1"))
                 {
-                    Store (0x07D3, OSYS)
+                    Store (0x07D3, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2006"))
                 {
-                    Store (0x07D6, OSYS)
+                    Store (0x07D6, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2009"))
                 {
-                    Store (0x07D9, OSYS)
+                    Store (0x07D9, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2012"))
                 {
-                    Store (0x07DC, OSYS)
+                    Store (0x07DC, OSYS) /* \OSYS */
                 }
 
                 If (_OSI ("Windows 2013"))
                 {
-                    Store (0x07DD, OSYS)
+                    Store (0x07DD, OSYS) /* \OSYS */
                 }
 
-                If(LOr(_OSI("Darwin"),_OSI("Windows 2015")))
+                If (LOr (_OSI ("Darwin"), _OSI ("Windows 2015")))
                 {
-                    Store (0x07DF, OSYS)
+                    Store (0x07DF, OSYS) /* \OSYS */
                 }
             }
 
@@ -16463,97 +16562,97 @@ RWAK (Arg0)
             {
                 If (LGreaterEqual (\_PR.DTSE, One))
                 {
-                    Store (One, \_PR.DSAE)
+                    Store (One, \_PR.DSAE) /* External reference */
                 }
             }
         }
 
         Method (NHPG, 0, Serialized)
         {
-            Store (Zero, ^RP01.HPEX)
-            Store (Zero, ^RP02.HPEX)
-            Store (Zero, ^RP03.HPEX)
-            Store (Zero, ^RP04.HPEX)
-            Store (Zero, ^RP05.HPEX)
-            Store (Zero, ^RP06.HPEX)
-            Store (Zero, ^RP07.HPEX)
-            Store (Zero, ^RP08.HPEX)
-            Store (Zero, ^RP09.HPEX)
-            Store (Zero, ^RP10.HPEX)
-            Store (Zero, ^RP11.HPEX)
-            Store (Zero, ^RP12.HPEX)
-            Store (Zero, ^RP13.HPEX)
-            Store (Zero, ^RP14.HPEX)
-            Store (Zero, ^RP15.HPEX)
-            Store (Zero, ^RP16.HPEX)
-            Store (Zero, ^RP17.HPEX)
-            Store (Zero, ^RP18.HPEX)
-            Store (Zero, ^RP19.HPEX)
-            Store (Zero, ^RP20.HPEX)
-            Store (One, ^RP01.HPSX)
-            Store (One, ^RP02.HPSX)
-            Store (One, ^RP03.HPSX)
-            Store (One, ^RP04.HPSX)
-            Store (One, ^RP05.HPSX)
-            Store (One, ^RP06.HPSX)
-            Store (One, ^RP07.HPSX)
-            Store (One, ^RP08.HPSX)
-            Store (One, ^RP09.HPSX)
-            Store (One, ^RP10.HPSX)
-            Store (One, ^RP11.HPSX)
-            Store (One, ^RP12.HPSX)
-            Store (One, ^RP13.HPSX)
-            Store (One, ^RP14.HPSX)
-            Store (One, ^RP15.HPSX)
-            Store (One, ^RP16.HPSX)
-            Store (One, ^RP17.HPSX)
-            Store (One, ^RP18.HPSX)
-            Store (One, ^RP19.HPSX)
-            Store (One, ^RP20.HPSX)
+            Store (Zero, ^RP01.HPEX) /* \_SB_.PCI0.RP01.HPEX */
+            Store (Zero, ^RP02.HPEX) /* \_SB_.PCI0.RP02.HPEX */
+            Store (Zero, ^RP03.HPEX) /* \_SB_.PCI0.RP03.HPEX */
+            Store (Zero, ^RP04.HPEX) /* \_SB_.PCI0.RP04.HPEX */
+            Store (Zero, ^RP05.HPEX) /* \_SB_.PCI0.RP05.HPEX */
+            Store (Zero, ^RP06.HPEX) /* \_SB_.PCI0.RP06.HPEX */
+            Store (Zero, ^RP07.HPEX) /* \_SB_.PCI0.RP07.HPEX */
+            Store (Zero, ^RP08.HPEX) /* \_SB_.PCI0.RP08.HPEX */
+            Store (Zero, ^RP09.HPEX) /* \_SB_.PCI0.RP09.HPEX */
+            Store (Zero, ^RP10.HPEX) /* \_SB_.PCI0.RP10.HPEX */
+            Store (Zero, ^RP11.HPEX) /* \_SB_.PCI0.RP11.HPEX */
+            Store (Zero, ^RP12.HPEX) /* \_SB_.PCI0.RP12.HPEX */
+            Store (Zero, ^RP13.HPEX) /* \_SB_.PCI0.RP13.HPEX */
+            Store (Zero, ^RP14.HPEX) /* \_SB_.PCI0.RP14.HPEX */
+            Store (Zero, ^RP15.HPEX) /* \_SB_.PCI0.RP15.HPEX */
+            Store (Zero, ^RP16.HPEX) /* \_SB_.PCI0.RP16.HPEX */
+            Store (Zero, ^RP17.HPEX) /* \_SB_.PCI0.RP17.HPEX */
+            Store (Zero, ^RP18.HPEX) /* \_SB_.PCI0.RP18.HPEX */
+            Store (Zero, ^RP19.HPEX) /* \_SB_.PCI0.RP19.HPEX */
+            Store (Zero, ^RP20.HPEX) /* \_SB_.PCI0.RP20.HPEX */
+            Store (One, ^RP01.HPSX) /* \_SB_.PCI0.RP01.HPSX */
+            Store (One, ^RP02.HPSX) /* \_SB_.PCI0.RP02.HPSX */
+            Store (One, ^RP03.HPSX) /* \_SB_.PCI0.RP03.HPSX */
+            Store (One, ^RP04.HPSX) /* \_SB_.PCI0.RP04.HPSX */
+            Store (One, ^RP05.HPSX) /* \_SB_.PCI0.RP05.HPSX */
+            Store (One, ^RP06.HPSX) /* \_SB_.PCI0.RP06.HPSX */
+            Store (One, ^RP07.HPSX) /* \_SB_.PCI0.RP07.HPSX */
+            Store (One, ^RP08.HPSX) /* \_SB_.PCI0.RP08.HPSX */
+            Store (One, ^RP09.HPSX) /* \_SB_.PCI0.RP09.HPSX */
+            Store (One, ^RP10.HPSX) /* \_SB_.PCI0.RP10.HPSX */
+            Store (One, ^RP11.HPSX) /* \_SB_.PCI0.RP11.HPSX */
+            Store (One, ^RP12.HPSX) /* \_SB_.PCI0.RP12.HPSX */
+            Store (One, ^RP13.HPSX) /* \_SB_.PCI0.RP13.HPSX */
+            Store (One, ^RP14.HPSX) /* \_SB_.PCI0.RP14.HPSX */
+            Store (One, ^RP15.HPSX) /* \_SB_.PCI0.RP15.HPSX */
+            Store (One, ^RP16.HPSX) /* \_SB_.PCI0.RP16.HPSX */
+            Store (One, ^RP17.HPSX) /* \_SB_.PCI0.RP17.HPSX */
+            Store (One, ^RP18.HPSX) /* \_SB_.PCI0.RP18.HPSX */
+            Store (One, ^RP19.HPSX) /* \_SB_.PCI0.RP19.HPSX */
+            Store (One, ^RP20.HPSX) /* \_SB_.PCI0.RP20.HPSX */
         }
 
         Method (NPME, 0, Serialized)
         {
-            Store (Zero, ^RP01.PMEX)
-            Store (Zero, ^RP02.PMEX)
-            Store (Zero, ^RP03.PMEX)
-            Store (Zero, ^RP04.PMEX)
-            Store (Zero, ^RP05.PMEX)
-            Store (Zero, ^RP06.PMEX)
-            Store (Zero, ^RP07.PMEX)
-            Store (Zero, ^RP08.PMEX)
-            Store (Zero, ^RP09.PMEX)
-            Store (Zero, ^RP10.PMEX)
-            Store (Zero, ^RP11.PMEX)
-            Store (Zero, ^RP12.PMEX)
-            Store (Zero, ^RP13.PMEX)
-            Store (Zero, ^RP14.PMEX)
-            Store (Zero, ^RP15.PMEX)
-            Store (Zero, ^RP16.PMEX)
-            Store (Zero, ^RP17.PMEX)
-            Store (Zero, ^RP18.PMEX)
-            Store (Zero, ^RP19.PMEX)
-            Store (Zero, ^RP20.PMEX)
-            Store (One, ^RP01.PMSX)
-            Store (One, ^RP02.PMSX)
-            Store (One, ^RP03.PMSX)
-            Store (One, ^RP04.PMSX)
-            Store (One, ^RP05.PMSX)
-            Store (One, ^RP06.PMSX)
-            Store (One, ^RP07.PMSX)
-            Store (One, ^RP08.PMSX)
-            Store (One, ^RP09.PMSX)
-            Store (One, ^RP10.PMSX)
-            Store (One, ^RP11.PMSX)
-            Store (One, ^RP12.PMSX)
-            Store (One, ^RP13.PMSX)
-            Store (One, ^RP14.PMSX)
-            Store (One, ^RP15.PMSX)
-            Store (One, ^RP16.PMSX)
-            Store (One, ^RP17.PMSX)
-            Store (One, ^RP18.PMSX)
-            Store (One, ^RP19.PMSX)
-            Store (One, ^RP20.PMSX)
+            Store (Zero, ^RP01.PMEX) /* \_SB_.PCI0.RP01.PMEX */
+            Store (Zero, ^RP02.PMEX) /* \_SB_.PCI0.RP02.PMEX */
+            Store (Zero, ^RP03.PMEX) /* \_SB_.PCI0.RP03.PMEX */
+            Store (Zero, ^RP04.PMEX) /* \_SB_.PCI0.RP04.PMEX */
+            Store (Zero, ^RP05.PMEX) /* \_SB_.PCI0.RP05.PMEX */
+            Store (Zero, ^RP06.PMEX) /* \_SB_.PCI0.RP06.PMEX */
+            Store (Zero, ^RP07.PMEX) /* \_SB_.PCI0.RP07.PMEX */
+            Store (Zero, ^RP08.PMEX) /* \_SB_.PCI0.RP08.PMEX */
+            Store (Zero, ^RP09.PMEX) /* \_SB_.PCI0.RP09.PMEX */
+            Store (Zero, ^RP10.PMEX) /* \_SB_.PCI0.RP10.PMEX */
+            Store (Zero, ^RP11.PMEX) /* \_SB_.PCI0.RP11.PMEX */
+            Store (Zero, ^RP12.PMEX) /* \_SB_.PCI0.RP12.PMEX */
+            Store (Zero, ^RP13.PMEX) /* \_SB_.PCI0.RP13.PMEX */
+            Store (Zero, ^RP14.PMEX) /* \_SB_.PCI0.RP14.PMEX */
+            Store (Zero, ^RP15.PMEX) /* \_SB_.PCI0.RP15.PMEX */
+            Store (Zero, ^RP16.PMEX) /* \_SB_.PCI0.RP16.PMEX */
+            Store (Zero, ^RP17.PMEX) /* \_SB_.PCI0.RP17.PMEX */
+            Store (Zero, ^RP18.PMEX) /* \_SB_.PCI0.RP18.PMEX */
+            Store (Zero, ^RP19.PMEX) /* \_SB_.PCI0.RP19.PMEX */
+            Store (Zero, ^RP20.PMEX) /* \_SB_.PCI0.RP20.PMEX */
+            Store (One, ^RP01.PMSX) /* \_SB_.PCI0.RP01.PMSX */
+            Store (One, ^RP02.PMSX) /* \_SB_.PCI0.RP02.PMSX */
+            Store (One, ^RP03.PMSX) /* \_SB_.PCI0.RP03.PMSX */
+            Store (One, ^RP04.PMSX) /* \_SB_.PCI0.RP04.PMSX */
+            Store (One, ^RP05.PMSX) /* \_SB_.PCI0.RP05.PMSX */
+            Store (One, ^RP06.PMSX) /* \_SB_.PCI0.RP06.PMSX */
+            Store (One, ^RP07.PMSX) /* \_SB_.PCI0.RP07.PMSX */
+            Store (One, ^RP08.PMSX) /* \_SB_.PCI0.RP08.PMSX */
+            Store (One, ^RP09.PMSX) /* \_SB_.PCI0.RP09.PMSX */
+            Store (One, ^RP10.PMSX) /* \_SB_.PCI0.RP10.PMSX */
+            Store (One, ^RP11.PMSX) /* \_SB_.PCI0.RP11.PMSX */
+            Store (One, ^RP12.PMSX) /* \_SB_.PCI0.RP12.PMSX */
+            Store (One, ^RP13.PMSX) /* \_SB_.PCI0.RP13.PMSX */
+            Store (One, ^RP14.PMSX) /* \_SB_.PCI0.RP14.PMSX */
+            Store (One, ^RP15.PMSX) /* \_SB_.PCI0.RP15.PMSX */
+            Store (One, ^RP16.PMSX) /* \_SB_.PCI0.RP16.PMSX */
+            Store (One, ^RP17.PMSX) /* \_SB_.PCI0.RP17.PMSX */
+            Store (One, ^RP18.PMSX) /* \_SB_.PCI0.RP18.PMSX */
+            Store (One, ^RP19.PMSX) /* \_SB_.PCI0.RP19.PMSX */
+            Store (One, ^RP20.PMSX) /* \_SB_.PCI0.RP20.PMSX */
         }
     }
 
@@ -16582,7 +16681,7 @@ RWAK (Arg0)
                 FindSetLeftBit (Local0, Index (PRWP, One))
             }
 
-            Return (PRWP)
+            Return (PRWP) /* \PRWP */
         }
     }
 
@@ -16597,37 +16696,37 @@ RWAK (Arg0)
             CreateDWordField (Arg3, 0x04, CAP0)
             If (LEqual (S0ID, One))
             {
-                Store (One, SCGE)
+                Store (One, SCGE) /* \_SB_.SCGE */
             }
 
             If (LEqual (Arg0, ToUUID ("0811b06e-4a27-44f9-8d60-3cbbc22e7b48") /* Platform-wide Capabilities */))
             {
                 If (LEqual (Arg1, One))
                 {
-                    Store (CAP0, OSCP)
+                    Store (CAP0, OSCP) /* \_SB_.OSCP */
                     If (And (CAP0, 0x04))
                     {
-                        Store (0x04, OSCO)
+                        Store (0x04, OSCO) /* \_SB_.OSCO */
                         If (LNotEqual (And (SGMD, 0x0F), 0x02))
                         {
                             If (LEqual (RTD3, Zero))
                             {
-                                And (CAP0, 0x3B, CAP0)
-                                Or (STS0, 0x10, STS0)
+                                And (CAP0, 0x3B, CAP0) /* \_SB_._OSC.CAP0 */
+                                Or (STS0, 0x10, STS0) /* \_SB_._OSC.STS0 */
                             }
                         }
                     }
                 }
                 Else
                 {
-                    And (STS0, 0xFFFFFF00, STS0)
-                    Or (STS0, 0x0A, STS0)
+                    And (STS0, 0xFFFFFF00, STS0) /* \_SB_._OSC.STS0 */
+                    Or (STS0, 0x0A, STS0) /* \_SB_._OSC.STS0 */
                 }
             }
             Else
             {
-                And (STS0, 0xFFFFFF00, STS0)
-                Or (STS0, 0x06, STS0)
+                And (STS0, 0xFFFFFF00, STS0) /* \_SB_._OSC.STS0 */
+                Or (STS0, 0x06, STS0) /* \_SB_._OSC.STS0 */
             }
 
             Return (Arg3)
@@ -16660,10 +16759,10 @@ RWAK (Arg0)
                 CreateQWordField (RBUF, \_SB.EPC._Y2E._MIN, EMIN)  // _MIN: Minimum Base Address
                 CreateQWordField (RBUF, \_SB.EPC._Y2E._MAX, EMAX)  // _MAX: Maximum Base Address
                 CreateQWordField (RBUF, \_SB.EPC._Y2E._LEN, ELEN)  // _LEN: Length
-                Store (\_PR.EMNA, EMIN)
-                Store (\_PR.ELNG, ELEN)
-                Subtract (Add (\_PR.EMNA, \_PR.ELNG), One, EMAX)
-                Return (RBUF)
+                Store (\_PR.EMNA, EMIN) /* \_SB_.EPC_._CRS.EMIN */
+                Store (\_PR.ELNG, ELEN) /* \_SB_.EPC_._CRS.ELEN */
+                Subtract (Add (\_PR.EMNA, \_PR.ELNG), One, EMAX) /* \_SB_.EPC_._CRS.EMAX */
+                Return (RBUF) /* \_SB_.EPC_.RBUF */
             }
 
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
@@ -16690,7 +16789,7 @@ RWAK (Arg0)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x02                                           
+                                     0x02                                             // .
                                 })
                             }
                             Case (One)
@@ -16704,7 +16803,7 @@ RWAK (Arg0)
                                 Store (SEC6, Index (BUFX, 0x06))
                                 Store (SEC7, Index (BUFX, 0x07))
                                 Store (SEC8, Index (BUFX, 0x08))
-                                Return (BUFX)
+                                Return (BUFX) /* \_SB_.EPC_._DSM.BUFX */
                             }
 
                         }
@@ -16734,7 +16833,7 @@ RWAK (Arg0)
     {
         Device (BTKL)
         {
-            Name (_HID, "INT3420")  // _HID: Hardware ID
+            Name (_HID, "INT3420" /* Intel Bluetooth RF Kill */)  // _HID: Hardware ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (Zero)
@@ -16828,71 +16927,71 @@ RWAK (Arg0)
         {
             Case (Zero)
             {
-                Store (Zero, CALE)
+                Store (Zero, CALE) /* \CALE */
                 Store (UXDV (Arg2), Local0)
                 If (LNotEqual (Local0, 0xFF))
                 {
-                    Store (Local0, CARN)
+                    Store (Local0, CARN) /* \CARN */
                 }
 
                 If (Arg1)
                 {
-                    Store (One, CALE)
+                    Store (One, CALE) /* \CALE */
                 }
             }
             Case (One)
             {
-                Store (Zero, CBLE)
+                Store (Zero, CBLE) /* \CBLE */
                 Store (UXDV (Arg2), Local0)
                 If (LNotEqual (Local0, 0xFF))
                 {
-                    Store (Local0, CBDR)
+                    Store (Local0, CBDR) /* \CBDR */
                 }
 
                 If (Arg1)
                 {
-                    Store (One, CBLE)
+                    Store (One, CBLE) /* \CBLE */
                 }
             }
             Case (0x02)
             {
-                Store (Zero, LTLE)
+                Store (Zero, LTLE) /* \LTLE */
                 If (LEqual (Arg2, 0x0378))
                 {
-                    Store (Zero, LTDR)
+                    Store (Zero, LTDR) /* \LTDR */
                 }
 
                 If (LEqual (Arg2, 0x0278))
                 {
-                    Store (One, LTDR)
+                    Store (One, LTDR) /* \LTDR */
                 }
 
                 If (LEqual (Arg2, 0x03BC))
                 {
-                    Store (0x02, LTDR)
+                    Store (0x02, LTDR) /* \LTDR */
                 }
 
                 If (Arg1)
                 {
-                    Store (One, LTLE)
+                    Store (One, LTLE) /* \LTLE */
                 }
             }
             Case (0x03)
             {
-                Store (Zero, FDLE)
+                Store (Zero, FDLE) /* \FDLE */
                 If (LEqual (Arg2, 0x03F0))
                 {
-                    Store (Zero, FDDR)
+                    Store (Zero, FDDR) /* \FDDR */
                 }
 
                 If (LEqual (Arg2, 0x0370))
                 {
-                    Store (One, FDDR)
+                    Store (One, FDDR) /* \FDDR */
                 }
 
                 If (Arg1)
                 {
-                    Store (One, FDLE)
+                    Store (One, FDLE) /* \FDLE */
                 }
             }
             Case (0x08)
@@ -16901,11 +17000,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, GLLE)
+                        Store (One, GLLE) /* \GLLE */
                     }
                     Else
                     {
-                        Store (Zero, GLLE)
+                        Store (Zero, GLLE) /* \GLLE */
                     }
                 }
 
@@ -16913,11 +17012,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, GHLE)
+                        Store (One, GHLE) /* \GHLE */
                     }
                     Else
                     {
-                        Store (Zero, GHLE)
+                        Store (Zero, GHLE) /* \GHLE */
                     }
                 }
             }
@@ -16927,11 +17026,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, GLLE)
+                        Store (One, GLLE) /* \GLLE */
                     }
                     Else
                     {
-                        Store (Zero, GLLE)
+                        Store (Zero, GLLE) /* \GLLE */
                     }
                 }
 
@@ -16939,11 +17038,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, GHLE)
+                        Store (One, GHLE) /* \GHLE */
                     }
                     Else
                     {
-                        Store (Zero, GHLE)
+                        Store (Zero, GHLE) /* \GHLE */
                     }
                 }
             }
@@ -16953,11 +17052,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, KCLE)
+                        Store (One, KCLE) /* \KCLE */
                     }
                     Else
                     {
-                        Store (Zero, KCLE)
+                        Store (Zero, KCLE) /* \KCLE */
                     }
                 }
             }
@@ -16967,11 +17066,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, MCLE)
+                        Store (One, MCLE) /* \MCLE */
                     }
                     Else
                     {
-                        Store (Zero, MCLE)
+                        Store (Zero, MCLE) /* \MCLE */
                     }
                 }
             }
@@ -16981,11 +17080,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, C1LE)
+                        Store (One, C1LE) /* \C1LE */
                     }
                     Else
                     {
-                        Store (Zero, C1LE)
+                        Store (Zero, C1LE) /* \C1LE */
                     }
                 }
 
@@ -16993,11 +17092,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, C2LE)
+                        Store (One, C2LE) /* \C2LE */
                     }
                     Else
                     {
-                        Store (Zero, C2LE)
+                        Store (Zero, C2LE) /* \C2LE */
                     }
                 }
             }
@@ -17007,11 +17106,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, C1LE)
+                        Store (One, C1LE) /* \C1LE */
                     }
                     Else
                     {
-                        Store (Zero, C1LE)
+                        Store (Zero, C1LE) /* \C1LE */
                     }
                 }
 
@@ -17019,11 +17118,11 @@ RWAK (Arg0)
                 {
                     If (Arg1)
                     {
-                        Store (One, C2LE)
+                        Store (One, C2LE) /* \C2LE */
                     }
                     Else
                     {
-                        Store (Zero, C2LE)
+                        Store (Zero, C2LE) /* \C2LE */
                     }
                 }
             }
@@ -17037,151 +17136,151 @@ RWAK (Arg0)
 
     Scope (_GPE)
     {
-        Method (_L69, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        Method (_L69, 0, NotSerialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
             If (LNotEqual (\_SB.PCI0.RP01.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP01.HPME ()
-                Notify (\_SB.PCI0.RP01, 0x02)
+                Notify (\_SB.PCI0.RP01, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP02.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP02.HPME ()
-                Notify (\_SB.PCI0.RP02, 0x02)
+                Notify (\_SB.PCI0.RP02, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP03.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP03.HPME ()
-                Notify (\_SB.PCI0.RP03, 0x02)
+                Notify (\_SB.PCI0.RP03, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP04.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP04.HPME ()
-                Notify (\_SB.PCI0.RP04, 0x02)
+                Notify (\_SB.PCI0.RP04, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP05.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP05.HPME ()
-                Notify (\_SB.PCI0.RP05, 0x02)
+                Notify (\_SB.PCI0.RP05, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP06.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP06.HPME ()
-                Notify (\_SB.PCI0.RP06, 0x02)
+                Notify (\_SB.PCI0.RP06, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP07.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP07.HPME ()
-                Notify (\_SB.PCI0.RP07, 0x02)
+                Notify (\_SB.PCI0.RP07, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP08.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP08.HPME ()
-                Notify (\_SB.PCI0.RP08, 0x02)
+                Notify (\_SB.PCI0.RP08, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP09.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP09.HPME ()
-                Notify (\_SB.PCI0.RP09, 0x02)
+                Notify (\_SB.PCI0.RP09, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP10.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP10.HPME ()
-                Notify (\_SB.PCI0.RP10, 0x02)
+                Notify (\_SB.PCI0.RP10, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP11.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP11.HPME ()
-                Notify (\_SB.PCI0.RP11, 0x02)
+                Notify (\_SB.PCI0.RP11, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP12.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP12.HPME ()
-                Notify (\_SB.PCI0.RP12, 0x02)
+                Notify (\_SB.PCI0.RP12, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP13.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP13.HPME ()
-                Notify (\_SB.PCI0.RP13, 0x02)
+                Notify (\_SB.PCI0.RP13, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP14.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP14.HPME ()
-                Notify (\_SB.PCI0.RP14, 0x02)
+                Notify (\_SB.PCI0.RP14, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP15.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP15.HPME ()
-                Notify (\_SB.PCI0.RP15, 0x02)
+                Notify (\_SB.PCI0.RP15, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP16.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP16.HPME ()
-                Notify (\_SB.PCI0.RP16, 0x02)
+                Notify (\_SB.PCI0.RP16, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP17.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP17.HPME ()
-                Notify (\_SB.PCI0.RP17, 0x02)
+                Notify (\_SB.PCI0.RP17, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP18.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP18.HPME ()
-                Notify (\_SB.PCI0.RP18, 0x02)
+                Notify (\_SB.PCI0.RP18, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP19.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP19.HPME ()
-                Notify (\_SB.PCI0.RP19, 0x02)
+                Notify (\_SB.PCI0.RP19, 0x02) // Device Wake
             }
 
             If (LNotEqual (\_SB.PCI0.RP20.VDID, 0xFFFFFFFF))
             {
                 \_SB.PCI0.RP20.HPME ()
-                Notify (\_SB.PCI0.RP20, 0x02)
+                Notify (\_SB.PCI0.RP20, 0x02) // Device Wake
             }
 
             If (LEqual (D1F0, One))
             {
                 \_SB.PCI0.PEG0.HPME ()
-                Notify (\_SB.PCI0.PEG0, 0x02)
-                Notify (\_SB.PCI0.PEG0.PEGP, 0x02)
+                Notify (\_SB.PCI0.PEG0, 0x02) // Device Wake
+                Notify (\_SB.PCI0.PEG0.PEGP, 0x02) // Device Wake
             }
 
             If (LEqual (D1F1, One))
             {
                 \_SB.PCI0.PEG1.HPME ()
-                Notify (\_SB.PCI0.PEG1, 0x02)
+                Notify (\_SB.PCI0.PEG1, 0x02) // Device Wake
             }
 
             If (LEqual (D1F2, One))
             {
                 \_SB.PCI0.PEG2.HPME ()
-                Notify (\_SB.PCI0.PEG2, 0x02)
+                Notify (\_SB.PCI0.PEG2, 0x02) // Device Wake
             }
         }
 
-        Method (_L61, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        Method (_L61, 0, NotSerialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
-            Add (L01C, One, L01C)
+            Add (L01C, One, L01C) /* \L01C */
             P8XH (Zero, One)
             P8XH (One, L01C)
             If (LAnd (LNotEqual (\_SB.PCI0.RP01.VDID, 0xFFFFFFFF), \_SB.PCI0.RP01.HPSX))
@@ -17202,7 +17301,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, One)))
                     {
-                        Notify (\_SB.PCI0.RP01, Zero)
+                        Notify (\_SB.PCI0.RP01, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17229,7 +17328,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x02)))
                     {
-                        Notify (\_SB.PCI0.RP02, Zero)
+                        Notify (\_SB.PCI0.RP02, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17256,7 +17355,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x03)))
                     {
-                        Notify (\_SB.PCI0.RP03, Zero)
+                        Notify (\_SB.PCI0.RP03, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17283,7 +17382,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x04)))
                     {
-                        Notify (\_SB.PCI0.RP04, Zero)
+                        Notify (\_SB.PCI0.RP04, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17310,7 +17409,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x05)))
                     {
-                        Notify (\_SB.PCI0.RP05, Zero)
+                        Notify (\_SB.PCI0.RP05, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17337,7 +17436,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x06)))
                     {
-                        Notify (\_SB.PCI0.RP06, Zero)
+                        Notify (\_SB.PCI0.RP06, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17366,7 +17465,7 @@ RWAK (Arg0)
                     {
                         If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x07)))
                         {
-                            Notify (\_SB.PCI0.RP07, Zero)
+                            Notify (\_SB.PCI0.RP07, Zero) // Bus Check
                         }
                     }
                     ElseIf (ECON){}
@@ -17397,7 +17496,7 @@ RWAK (Arg0)
                     {
                         If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x08)))
                         {
-                            Notify (\_SB.PCI0.RP08, Zero)
+                            Notify (\_SB.PCI0.RP08, Zero) // Bus Check
                         }
                     }
                     ElseIf (ECON){}
@@ -17426,7 +17525,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x09)))
                     {
-                        Notify (\_SB.PCI0.RP09, Zero)
+                        Notify (\_SB.PCI0.RP09, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17453,7 +17552,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x0A)))
                     {
-                        Notify (\_SB.PCI0.RP10, Zero)
+                        Notify (\_SB.PCI0.RP10, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17480,7 +17579,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x0B)))
                     {
-                        Notify (\_SB.PCI0.RP11, Zero)
+                        Notify (\_SB.PCI0.RP11, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17507,7 +17606,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x0C)))
                     {
-                        Notify (\_SB.PCI0.RP12, Zero)
+                        Notify (\_SB.PCI0.RP12, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17534,7 +17633,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x0D)))
                     {
-                        Notify (\_SB.PCI0.RP13, Zero)
+                        Notify (\_SB.PCI0.RP13, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17561,7 +17660,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x0E)))
                     {
-                        Notify (\_SB.PCI0.RP14, Zero)
+                        Notify (\_SB.PCI0.RP14, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17588,7 +17687,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x0F)))
                     {
-                        Notify (\_SB.PCI0.RP15, Zero)
+                        Notify (\_SB.PCI0.RP15, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17615,7 +17714,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x10)))
                     {
-                        Notify (\_SB.PCI0.RP16, Zero)
+                        Notify (\_SB.PCI0.RP16, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17642,7 +17741,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x11)))
                     {
-                        Notify (\_SB.PCI0.RP17, Zero)
+                        Notify (\_SB.PCI0.RP17, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17669,7 +17768,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x12)))
                     {
-                        Notify (\_SB.PCI0.RP18, Zero)
+                        Notify (\_SB.PCI0.RP18, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17696,7 +17795,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x13)))
                     {
-                        Notify (\_SB.PCI0.RP19, Zero)
+                        Notify (\_SB.PCI0.RP19, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17723,7 +17822,7 @@ RWAK (Arg0)
 
                     If (LOr (LNotEqual (TBTS, One), LNotEqual (TBSE, 0x14)))
                     {
-                        Notify (\_SB.PCI0.RP20, Zero)
+                        Notify (\_SB.PCI0.RP20, Zero) // Bus Check
                     }
                 }
                 Else
@@ -17733,9 +17832,9 @@ RWAK (Arg0)
             }
         }
 
-        Method (_L62, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        Method (_L62, 0, NotSerialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
-            Store (Zero, GPEC)
+            Store (Zero, GPEC) /* \GPEC */
             If (CondRefOf (\_PR.DTSE))
             {
                 If (LGreaterEqual (\_PR.DTSE, One)){}
@@ -17747,7 +17846,7 @@ RWAK (Arg0)
             }
         }
 
-        Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        Method (_L66, 0, NotSerialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
             If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
             {
@@ -17755,12 +17854,12 @@ RWAK (Arg0)
             }
         }
 
-        Method (_L67, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        Method (_L67, 0, NotSerialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
             Store (0x20, \_SB.PCI0.SBUS.HSTS)
         }
 
-        Method (_L6F, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
+        Method (_L6F, 0, NotSerialized)  // _Lxx: Level-Triggered GPE, xx=0x00-0xFF
         {
             \_SB.UGPS ()
             If (LEqual (RTD3, One))
@@ -17821,14 +17920,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x03                                           
+                                 0x03                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -17844,7 +17943,7 @@ RWAK (Arg0)
                             {
                                 If (CondRefOf (\_SB.SLPB))
                                 {
-                                    Notify (SLPB, 0x80)
+                                    Notify (SLPB, 0x80) // Status Change
                                 }
                             }
                             Case (0x02)
@@ -17857,7 +17956,7 @@ RWAK (Arg0)
                             {
                                 If (CondRefOf (\_SB.SLPB))
                                 {
-                                    Notify (SLPB, 0x02)
+                                    Notify (SLPB, 0x02) // Device Wake
                                 }
                             }
 
@@ -17876,14 +17975,14 @@ RWAK (Arg0)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x07                                           
+                                     0x07                                             // .
                                 })
                             }
                             Else
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x00                                           
+                                     0x00                                             // .
                                 })
                             }
                         }
@@ -17899,7 +17998,7 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
 
@@ -17909,7 +18008,7 @@ RWAK (Arg0)
                 {
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
             }
@@ -17962,7 +18061,7 @@ RWAK (Arg0)
                 Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
                 Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
                 Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-                Return (SPLX)
+                Return (SPLX) /* \_SB_.PCI0.RP01.PXSX.SPLX */
             }
 
             PowerResource (WRST, 0x05, 0x0000)
@@ -17989,7 +18088,7 @@ RWAK (Arg0)
                     {
                         Store (DCTR, Local0)
                         Or (Local0, 0x8000, Local0)
-                        Store (Local0, DCTR)
+                        Store (Local0, DCTR) /* \_SB_.PCI0.RP01.PXSX.DCTR */
                     }
                 }
             }
@@ -18023,7 +18122,7 @@ RWAK (Arg0)
                 Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
                 Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
                 Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-                Return (WANX)
+                Return (WANX) /* \_SB_.PCI0.RP01.PXSX.WANX */
             }
 
             Name (WRDX, Package (0x03)
@@ -18047,7 +18146,7 @@ RWAK (Arg0)
                 Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
                 Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
                 Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-                Return (WRDX)
+                Return (WRDX) /* \_SB_.PCI0.RP01.PXSX.WRDX */
             }
 
             Method (WIST, 0, Serialized)
@@ -18136,14 +18235,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -18159,7 +18258,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -18172,7 +18271,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -18191,14 +18290,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -18214,7 +18313,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -18224,7 +18323,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -18277,7 +18376,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP02.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -18304,7 +18403,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP02.PXSX.DCTR */
                 }
             }
         }
@@ -18338,7 +18437,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP02.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -18362,7 +18461,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP02.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -18450,14 +18549,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -18473,7 +18572,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -18486,7 +18585,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -18505,14 +18604,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -18528,7 +18627,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -18538,7 +18637,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -18591,7 +18690,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP03.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -18618,7 +18717,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP03.PXSX.DCTR */
                 }
             }
         }
@@ -18652,7 +18751,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP03.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -18676,7 +18775,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP03.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -18764,14 +18863,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -18787,7 +18886,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -18800,7 +18899,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -18819,14 +18918,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -18842,7 +18941,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -18852,7 +18951,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -18905,7 +19004,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP04.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -18932,7 +19031,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP04.PXSX.DCTR */
                 }
             }
         }
@@ -18966,7 +19065,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP04.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -18990,7 +19089,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP04.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -19080,14 +19179,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x03                                           
+                                 0x03                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -19103,7 +19202,7 @@ RWAK (Arg0)
                             {
                                 If (CondRefOf (\_SB.SLPB))
                                 {
-                                    Notify (SLPB, 0x80)
+                                    Notify (SLPB, 0x80) // Status Change
                                 }
                             }
                             Case (0x02)
@@ -19116,7 +19215,7 @@ RWAK (Arg0)
                             {
                                 If (CondRefOf (\_SB.SLPB))
                                 {
-                                    Notify (SLPB, 0x02)
+                                    Notify (SLPB, 0x02) // Device Wake
                                 }
                             }
 
@@ -19135,14 +19234,14 @@ RWAK (Arg0)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x07                                           
+                                     0x07                                             // .
                                 })
                             }
                             Else
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x00                                           
+                                     0x00                                             // .
                                 })
                             }
                         }
@@ -19158,7 +19257,7 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
 
@@ -19168,7 +19267,7 @@ RWAK (Arg0)
                 {
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
             }
@@ -19221,7 +19320,7 @@ RWAK (Arg0)
                 Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
                 Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
                 Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-                Return (SPLX)
+                Return (SPLX) /* \_SB_.PCI0.RP05.PXSX.SPLX */
             }
 
             PowerResource (WRST, 0x05, 0x0000)
@@ -19248,7 +19347,7 @@ RWAK (Arg0)
                     {
                         Store (DCTR, Local0)
                         Or (Local0, 0x8000, Local0)
-                        Store (Local0, DCTR)
+                        Store (Local0, DCTR) /* \_SB_.PCI0.RP05.PXSX.DCTR */
                     }
                 }
             }
@@ -19282,7 +19381,7 @@ RWAK (Arg0)
                 Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
                 Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
                 Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-                Return (WANX)
+                Return (WANX) /* \_SB_.PCI0.RP05.PXSX.WANX */
             }
 
             Name (WRDX, Package (0x03)
@@ -19306,7 +19405,7 @@ RWAK (Arg0)
                 Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
                 Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
                 Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-                Return (WRDX)
+                Return (WRDX) /* \_SB_.PCI0.RP05.PXSX.WRDX */
             }
 
             Method (WIST, 0, Serialized)
@@ -19395,14 +19494,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -19418,7 +19517,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -19431,7 +19530,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -19450,14 +19549,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -19473,7 +19572,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -19483,7 +19582,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -19536,7 +19635,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP06.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -19563,7 +19662,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP06.PXSX.DCTR */
                 }
             }
         }
@@ -19597,7 +19696,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP06.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -19621,7 +19720,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP06.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -19709,14 +19808,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -19732,7 +19831,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -19745,7 +19844,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -19764,14 +19863,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -19787,7 +19886,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -19797,7 +19896,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -19850,7 +19949,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP07.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -19877,7 +19976,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP07.PXSX.DCTR */
                 }
             }
         }
@@ -19911,7 +20010,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP07.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -19935,7 +20034,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP07.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -20023,14 +20122,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -20046,7 +20145,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -20059,7 +20158,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -20078,14 +20177,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -20101,7 +20200,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -20111,7 +20210,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -20164,7 +20263,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP08.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -20191,7 +20290,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP08.PXSX.DCTR */
                 }
             }
         }
@@ -20225,7 +20324,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP08.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -20249,7 +20348,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP08.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -20339,14 +20438,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x03                                           
+                                 0x03                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -20362,7 +20461,7 @@ RWAK (Arg0)
                             {
                                 If (CondRefOf (\_SB.SLPB))
                                 {
-                                    Notify (SLPB, 0x80)
+                                    Notify (SLPB, 0x80) // Status Change
                                 }
                             }
                             Case (0x02)
@@ -20375,7 +20474,7 @@ RWAK (Arg0)
                             {
                                 If (CondRefOf (\_SB.SLPB))
                                 {
-                                    Notify (SLPB, 0x02)
+                                    Notify (SLPB, 0x02) // Device Wake
                                 }
                             }
 
@@ -20394,14 +20493,14 @@ RWAK (Arg0)
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x07                                           
+                                     0x07                                             // .
                                 })
                             }
                             Else
                             {
                                 Return (Buffer (One)
                                 {
-                                     0x00                                           
+                                     0x00                                             // .
                                 })
                             }
                         }
@@ -20417,7 +20516,7 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
 
@@ -20427,7 +20526,7 @@ RWAK (Arg0)
                 {
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
             }
@@ -20480,7 +20579,7 @@ RWAK (Arg0)
                 Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
                 Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
                 Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-                Return (SPLX)
+                Return (SPLX) /* \_SB_.PCI0.RP09.PXSX.SPLX */
             }
 
             PowerResource (WRST, 0x05, 0x0000)
@@ -20507,7 +20606,7 @@ RWAK (Arg0)
                     {
                         Store (DCTR, Local0)
                         Or (Local0, 0x8000, Local0)
-                        Store (Local0, DCTR)
+                        Store (Local0, DCTR) /* \_SB_.PCI0.RP09.PXSX.DCTR */
                     }
                 }
             }
@@ -20541,7 +20640,7 @@ RWAK (Arg0)
                 Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
                 Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
                 Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-                Return (WANX)
+                Return (WANX) /* \_SB_.PCI0.RP09.PXSX.WANX */
             }
 
             Name (WRDX, Package (0x03)
@@ -20565,7 +20664,7 @@ RWAK (Arg0)
                 Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
                 Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
                 Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-                Return (WRDX)
+                Return (WRDX) /* \_SB_.PCI0.RP09.PXSX.WRDX */
             }
 
             Method (WIST, 0, Serialized)
@@ -20654,14 +20753,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -20677,7 +20776,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -20690,7 +20789,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -20709,14 +20808,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -20732,7 +20831,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -20742,7 +20841,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -20795,7 +20894,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP10.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -20822,7 +20921,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP10.PXSX.DCTR */
                 }
             }
         }
@@ -20856,7 +20955,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP10.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -20880,7 +20979,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP10.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -20968,14 +21067,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -20991,7 +21090,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -21004,7 +21103,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -21023,14 +21122,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -21046,7 +21145,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -21056,7 +21155,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -21109,7 +21208,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP11.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -21136,7 +21235,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP11.PXSX.DCTR */
                 }
             }
         }
@@ -21170,7 +21269,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP11.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -21194,7 +21293,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP11.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -21282,14 +21381,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -21305,7 +21404,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -21318,7 +21417,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -21337,14 +21436,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -21360,7 +21459,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -21370,7 +21469,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -21423,7 +21522,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP12.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -21450,7 +21549,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP12.PXSX.DCTR */
                 }
             }
         }
@@ -21484,7 +21583,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP12.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -21508,7 +21607,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP12.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -21596,14 +21695,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -21619,7 +21718,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -21632,7 +21731,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -21651,14 +21750,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -21674,7 +21773,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -21684,7 +21783,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -21737,7 +21836,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP13.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -21764,7 +21863,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP13.PXSX.DCTR */
                 }
             }
         }
@@ -21798,7 +21897,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP13.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -21822,7 +21921,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP13.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -21910,14 +22009,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -21933,7 +22032,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -21946,7 +22045,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -21965,14 +22064,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -21988,7 +22087,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -21998,7 +22097,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -22051,7 +22150,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP14.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -22078,7 +22177,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP14.PXSX.DCTR */
                 }
             }
         }
@@ -22112,7 +22211,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP14.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -22136,7 +22235,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP14.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -22224,14 +22323,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -22247,7 +22346,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -22260,7 +22359,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -22279,14 +22378,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -22302,7 +22401,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -22312,7 +22411,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -22365,7 +22464,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP15.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -22392,7 +22491,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP15.PXSX.DCTR */
                 }
             }
         }
@@ -22426,7 +22525,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP15.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -22450,7 +22549,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP15.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -22538,14 +22637,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -22561,7 +22660,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -22574,7 +22673,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -22593,14 +22692,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -22616,7 +22715,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -22626,7 +22725,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -22679,7 +22778,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP16.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -22706,7 +22805,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP16.PXSX.DCTR */
                 }
             }
         }
@@ -22740,7 +22839,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP16.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -22764,7 +22863,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP16.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -22852,14 +22951,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -22875,7 +22974,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -22888,7 +22987,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -22907,14 +23006,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -22930,7 +23029,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -22940,7 +23039,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -22993,7 +23092,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP17.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -23020,7 +23119,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP17.PXSX.DCTR */
                 }
             }
         }
@@ -23054,7 +23153,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP17.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -23078,7 +23177,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP17.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -23166,14 +23265,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -23189,7 +23288,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -23202,7 +23301,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -23221,14 +23320,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -23244,7 +23343,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -23254,7 +23353,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -23307,7 +23406,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP18.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -23334,7 +23433,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP18.PXSX.DCTR */
                 }
             }
         }
@@ -23368,7 +23467,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP18.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -23392,7 +23491,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP18.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -23480,14 +23579,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -23503,7 +23602,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -23516,7 +23615,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -23535,14 +23634,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -23558,7 +23657,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -23568,7 +23667,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -23621,7 +23720,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP19.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -23648,7 +23747,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP19.PXSX.DCTR */
                 }
             }
         }
@@ -23682,7 +23781,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP19.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -23706,7 +23805,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP19.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -23794,14 +23893,14 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Else
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
                 }
@@ -23817,7 +23916,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x80)
+                                Notify (SLPB, 0x80) // Status Change
                             }
                         }
                         Case (0x02)
@@ -23830,7 +23929,7 @@ RWAK (Arg0)
                         {
                             If (CondRefOf (\_SB.SLPB))
                             {
-                                Notify (SLPB, 0x02)
+                                Notify (SLPB, 0x02) // Device Wake
                             }
                         }
 
@@ -23849,14 +23948,14 @@ RWAK (Arg0)
                         {
                             Return (Buffer (One)
                             {
-                                 0x07                                           
+                                 0x07                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -23872,7 +23971,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x00                                           
+                             0x00                                             // .
                         })
                     }
 
@@ -23882,7 +23981,7 @@ RWAK (Arg0)
             {
                 Return (Buffer (One)
                 {
-                     0x00                                           
+                     0x00                                             // .
                 })
             }
         }
@@ -23935,7 +24034,7 @@ RWAK (Arg0)
             Store (DOM3, Index (DerefOf (Index (SPLX, 0x03)), Zero))
             Store (LIM3, Index (DerefOf (Index (SPLX, 0x03)), One))
             Store (TIM3, Index (DerefOf (Index (SPLX, 0x03)), 0x02))
-            Return (SPLX)
+            Return (SPLX) /* \_SB_.PCI0.RP20.PXSX.SPLX */
         }
 
         PowerResource (WRST, 0x05, 0x0000)
@@ -23962,7 +24061,7 @@ RWAK (Arg0)
                 {
                     Store (DCTR, Local0)
                     Or (Local0, 0x8000, Local0)
-                    Store (Local0, DCTR)
+                    Store (Local0, DCTR) /* \_SB_.PCI0.RP20.PXSX.DCTR */
                 }
             }
         }
@@ -23996,7 +24095,7 @@ RWAK (Arg0)
             Store (One, Index (DerefOf (Index (WANX, 0x02)), Zero))
             Store (TRD1, Index (DerefOf (Index (WANX, 0x02)), One))
             Store (TRL1, Index (DerefOf (Index (WANX, 0x02)), 0x02))
-            Return (WANX)
+            Return (WANX) /* \_SB_.PCI0.RP20.PXSX.WANX */
         }
 
         Name (WRDX, Package (0x03)
@@ -24020,7 +24119,7 @@ RWAK (Arg0)
             Store (CID1, Index (DerefOf (Index (WRDX, One)), One))
             Store (WDM2, Index (DerefOf (Index (WRDX, 0x02)), Zero))
             Store (CID2, Index (DerefOf (Index (WRDX, 0x02)), One))
-            Return (WRDX)
+            Return (WRDX) /* \_SB_.PCI0.RP20.PXSX.WRDX */
         }
 
         Method (WIST, 0, Serialized)
@@ -24140,7 +24239,8 @@ RWAK (Arg0)
     {
         Method (_DEP, 0, NotSerialized)  // _DEP: Dependencies
         {
-            If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LNotEqual (And (PEPC, 0x03), Zero)))
+            If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LNotEqual (
+                And (PEPC, 0x03), Zero)))
             {
                 Return (Package (0x01)
                 {
@@ -24271,7 +24371,8 @@ RWAK (Arg0)
             {
                 If (LOr (PAHC (), PNVM ()))
                 {
-                    If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                    If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                        And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                     {
                         Return (Package (0x01)
                         {
@@ -24331,7 +24432,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24390,7 +24492,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24449,7 +24552,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24510,7 +24614,8 @@ RWAK (Arg0)
             {
                 If (LOr (PAHC (), PNVM ()))
                 {
-                    If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                    If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                        And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                     {
                         Return (Package (0x01)
                         {
@@ -24570,7 +24675,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24629,7 +24735,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24688,7 +24795,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24749,7 +24857,8 @@ RWAK (Arg0)
             {
                 If (LOr (PAHC (), PNVM ()))
                 {
-                    If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                    If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                        And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                     {
                         Return (Package (0x01)
                         {
@@ -24809,7 +24918,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24868,7 +24978,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24927,7 +25038,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -24986,7 +25098,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25045,7 +25158,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25104,7 +25218,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25163,7 +25278,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25222,7 +25338,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25281,7 +25398,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25340,7 +25458,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25399,7 +25518,8 @@ RWAK (Arg0)
         {
             If (LOr (PAHC (), PNVM ()))
             {
-                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
+                If (LAnd (LOr (LEqual (S0ID, One), LGreaterEqual (OSYS, 0x07DF)), LOr (LEqual (
+                    And (PEPC, 0x0400), 0x0400), LEqual (And (PEPC, 0x0800), 0x0800))))
                 {
                     Return (Package (0x01)
                     {
@@ -25624,8 +25744,8 @@ RWAK (Arg0)
     {
         Device (PEPD)
         {
-            Name (_HID, "INT33A1")  // _HID: Hardware ID
-            Name (_CID, EisaId ("PNP0D80"))  // _CID: Compatible ID
+            Name (_HID, "INT33A1" /* Intel Power Engine */)  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0D80") /* Windows-compatible System Power Management Controller */)  // _CID: Compatible ID
             Name (_UID, One)  // _UID: Unique ID
             Name (DEVY, Package (0x29)
             {
@@ -26975,7 +27095,8 @@ RWAK (Arg0)
             })
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                If (LOr (LGreaterEqual (OSYS, 0x07DF), LAnd (LGreaterEqual (OSYS, 0x07DC), LEqual (S0ID, One))))
+                If (LOr (LGreaterEqual (OSYS, 0x07DF), LAnd (LGreaterEqual (OSYS, 0x07DC), LEqual (
+                    S0ID, One))))
                 {
                     Return (0x0F)
                 }
@@ -26992,7 +27113,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x7F                                           
+                             0x7F                                             // .
                         })
                     }
 
@@ -27215,30 +27336,38 @@ RWAK (Arg0)
                             {
                                 If (^^PCI0.RP01.PXSX.WIST ())
                                 {
-                                    Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x15)), 0x02)), One)), One))
-                                    Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x15)), 0x02)), One)), 0x02))
+                                    Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x15)), 
+                                        0x02)), One)), One))
+                                    Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x15)), 
+                                        0x02)), One)), 0x02))
                                     Store (One, Index (DerefOf (Index (DEVY, 0x15)), One))
                                 }
                             }
 
                             If (^^PCI0.RP02.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x16)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x16)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x16)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x16)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x16)), One))
                             }
 
                             If (^^PCI0.RP03.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x17)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x17)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x17)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x17)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x17)), One))
                             }
 
                             If (^^PCI0.RP04.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x18)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x18)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x18)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x18)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x18)), One))
                             }
 
@@ -27246,30 +27375,38 @@ RWAK (Arg0)
                             {
                                 If (^^PCI0.RP05.PXSX.WIST ())
                                 {
-                                    Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x19)), 0x02)), One)), One))
-                                    Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x19)), 0x02)), One)), 0x02))
+                                    Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x19)), 
+                                        0x02)), One)), One))
+                                    Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x19)), 
+                                        0x02)), One)), 0x02))
                                     Store (One, Index (DerefOf (Index (DEVY, 0x19)), One))
                                 }
                             }
 
                             If (^^PCI0.RP06.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1A)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1A)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1A)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1A)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x1A)), One))
                             }
 
                             If (^^PCI0.RP07.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1B)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1B)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1B)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1B)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x1B)), One))
                             }
 
                             If (^^PCI0.RP08.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1C)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1C)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1C)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1C)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x1C)), One))
                             }
 
@@ -27277,96 +27414,120 @@ RWAK (Arg0)
                             {
                                 If (^^PCI0.RP09.PXSX.WIST ())
                                 {
-                                    Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1D)), 0x02)), One)), One))
-                                    Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1D)), 0x02)), One)), 0x02))
+                                    Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1D)), 
+                                        0x02)), One)), One))
+                                    Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1D)), 
+                                        0x02)), One)), 0x02))
                                     Store (One, Index (DerefOf (Index (DEVY, 0x1D)), One))
                                 }
                             }
 
                             If (^^PCI0.RP10.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1E)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1E)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1E)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1E)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x1E)), One))
                             }
 
                             If (^^PCI0.RP11.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1F)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1F)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1F)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x1F)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x1F)), One))
                             }
 
                             If (^^PCI0.RP12.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x20)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x20)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x20)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x20)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x20)), One))
                             }
 
                             If (^^PCI0.RP13.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x21)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x21)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x21)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x21)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x21)), One))
                             }
 
                             If (^^PCI0.RP14.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x22)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x22)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x22)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x22)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x22)), One))
                             }
 
                             If (^^PCI0.RP15.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x23)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x23)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x23)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x23)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x23)), One))
                             }
 
                             If (^^PCI0.RP16.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x24)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x24)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x24)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x24)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x24)), One))
                             }
 
                             If (^^PCI0.RP17.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x25)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x25)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x25)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x25)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x25)), One))
                             }
 
                             If (^^PCI0.RP18.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x26)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x26)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x26)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x26)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x26)), One))
                             }
 
                             If (^^PCI0.RP19.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x27)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x27)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x27)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x27)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x27)), One))
                             }
 
                             If (^^PCI0.RP20.PXSX.WIST ())
                             {
-                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x28)), 0x02)), One)), One))
-                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x28)), 0x02)), One)), 0x02))
+                                Store (0x03, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x28)), 
+                                    0x02)), One)), One))
+                                Store (Zero, Index (DerefOf (Index (DerefOf (Index (DerefOf (Index (DEVY, 0x28)), 
+                                    0x02)), One)), 0x02))
                                 Store (One, Index (DerefOf (Index (DEVY, 0x28)), One))
                             }
                         }
 
-                        Return (DEVY)
+                        Return (DEVY) /* \_SB_.PEPD.DEVY */
                     }
 
                     If (LEqual (Arg2, 0x02))
                     {
-                        Return (BCCD)
+                        Return (BCCD) /* \_SB_.PEPD.BCCD */
                     }
 
                     If (LEqual (Arg2, 0x03)){}
@@ -27397,7 +27558,7 @@ RWAK (Arg0)
     {
         Device (FWHD)
         {
-            Name (_HID, EisaId ("INT0800"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("INT0800") /* Intel 82802 Firmware Hub Device */)  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
                 Memory32Fixed (ReadOnly,
@@ -27409,31 +27570,27 @@ RWAK (Arg0)
 
         Device (HPET)
         {
-            Name (_HID, EisaId ("PNP0103"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0103") /* HPET System Timer */)  // _HID: Hardware ID
             Name (_UID, Zero)  // _UID: Unique ID
-            Name (BUF0, ResourceTemplate()
-{
-    IRQNoFlags() { 0, 8, 11, 15 }
-
+            Name (BUF0, ResourceTemplate ()
+            {
+                IRQNoFlags ()
+                    {0,8,11,15}
                 Memory32Fixed (ReadWrite,
                     0xFED00000,         // Address Base
                     0x00000400,         // Address Length
-                    _Y2F)
+                    )
             })
-
-            
-
-            
-            Name (_STA, 0x0F)
-            Method (_CRS, 0, NotSerialized)
+            Name (_STA, 0x0F)  // _STA: Status
+            Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                Return (BUF0)
+                Return (BUF0) /* \_SB_.PCI0.LPCB.HPET.BUF0 */
             }
         }
 
         Device (IPIC)
         {
-            Name (_HID, EisaId ("PNP0000"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0000") /* 8259-compatible Programmable Interrupt Controller */)  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
                 IO (Decode16,
@@ -27538,13 +27695,12 @@ RWAK (Arg0)
                     0x01,               // Alignment
                     0x02,               // Length
                     )
-                
             })
         }
 
         Device (MATH)
         {
-            Name (_HID, EisaId ("PNP0C04"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C04") /* x87-compatible Floating Point Processing Unit */)  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
                 IO (Decode16,
@@ -27571,7 +27727,7 @@ RWAK (Arg0)
 
         Device (LDRC)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_UID, 0x02)  // _UID: Unique ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
@@ -27676,7 +27832,7 @@ RWAK (Arg0)
 
         Device (LDR2)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_UID, 0x05)  // _UID: Unique ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
@@ -27702,7 +27858,7 @@ RWAK (Arg0)
 
         Device (RTC)
         {
-            Name (_HID, EisaId ("PNP0B00"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0B00") /* AT Real-Time Clock */)  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
                 IO (Decode16,
@@ -27711,13 +27867,12 @@ RWAK (Arg0)
                     0x01,               // Alignment
                     0x02,               // Length
                     )
-                
             })
         }
 
         Device (TIMR)
         {
-            Name (_HID, EisaId ("PNP0100"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0100") /* PC-class System Timer */)  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
                 IO (Decode16,
@@ -27732,14 +27887,13 @@ RWAK (Arg0)
                     0x10,               // Alignment
                     0x04,               // Length
                     )
-                
             })
         }
 
         Device (CWDT)
         {
-            Name (_HID, EisaId ("INT3F0D"))  // _HID: Hardware ID
-            Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
+            Name (_HID, EisaId ("INT3F0D") /* ACPI Motherboard Resources */)  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _CID: Compatible ID
             Name (BUF0, ResourceTemplate ()
             {
                 IO (Decode16,
@@ -27756,12 +27910,12 @@ RWAK (Arg0)
 
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                Return (BUF0)
+                Return (BUF0) /* \_SB_.PCI0.LPCB.CWDT.BUF0 */
             }
         }
     }
 
-    OperationRegion (ABNV, SystemMemory, 0x7730F000, 0x000D)
+    OperationRegion (ABNV, SystemMemory, 0x7730F000, 0x0D)
     Field (ABNV, AnyAcc, Lock, Preserve)
     {
         ABMA,   64, 
@@ -27789,61 +27943,61 @@ RWAK (Arg0)
             Memory32Fixed (ReadOnly,
                 0x00000000,         // Address Base
                 0x00001000,         // Address Length
-                _Y30)
+                _Y2F)
             Memory32Fixed (ReadOnly,
                 0xFED70000,         // Address Base
                 0x00001000,         // Address Length
-                _Y31)
+                _Y30)
         })
         Name (CRSD, ResourceTemplate ()
         {
             Memory32Fixed (ReadOnly,
                 0xFED40000,         // Address Base
                 0x00001000,         // Address Length
-                _Y32)
+                _Y31)
         })
         Name (CRSI, ResourceTemplate ()
         {
             Memory32Fixed (ReadOnly,
                 0xFED40000,         // Address Base
                 0x00001000,         // Address Length
-                _Y33)
+                _Y32)
         })
         Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
         {
             If (LEqual (AMDT, One))
             {
-                CreateDWordField (CRST, \_SB.TPM._Y30._BAS, MTFB)  // _BAS: Base Address
-                CreateDWordField (CRST, \_SB.TPM._Y30._LEN, LTFB)  // _LEN: Length
-                Store (TPMB, MTFB)
-                Store (0x1000, LTFB)
-                CreateDWordField (CRST, \_SB.TPM._Y31._BAS, MTFC)  // _BAS: Base Address
-                CreateDWordField (CRST, \_SB.TPM._Y31._LEN, LTFC)  // _LEN: Length
-                Store (TPMC, MTFC)
-                Store (0x1000, LTFC)
-                Return (CRST)
+                CreateDWordField (CRST, \_SB.TPM._Y2F._BAS, MTFB)  // _BAS: Base Address
+                CreateDWordField (CRST, \_SB.TPM._Y2F._LEN, LTFB)  // _LEN: Length
+                Store (TPMB, MTFB) /* \_SB_.TPM_._CRS.MTFB */
+                Store (0x1000, LTFB) /* \_SB_.TPM_._CRS.LTFB */
+                CreateDWordField (CRST, \_SB.TPM._Y30._BAS, MTFC)  // _BAS: Base Address
+                CreateDWordField (CRST, \_SB.TPM._Y30._LEN, LTFC)  // _LEN: Length
+                Store (TPMC, MTFC) /* \_SB_.TPM_._CRS.MTFC */
+                Store (0x1000, LTFC) /* \_SB_.TPM_._CRS.LTFC */
+                Return (CRST) /* \_SB_.TPM_.CRST */
             }
             ElseIf (LEqual (DTPT, One))
             {
-                CreateDWordField (CRSD, \_SB.TPM._Y32._BAS, MTFE)  // _BAS: Base Address
-                CreateDWordField (CRSD, \_SB.TPM._Y32._LEN, LTFE)  // _LEN: Length
-                Store (0xFED40000, MTFE)
-                Store (0x0880, LTFE)
-                Return (CRSD)
+                CreateDWordField (CRSD, \_SB.TPM._Y31._BAS, MTFE)  // _BAS: Base Address
+                CreateDWordField (CRSD, \_SB.TPM._Y31._LEN, LTFE)  // _LEN: Length
+                Store (0xFED40000, MTFE) /* \_SB_.TPM_._CRS.MTFE */
+                Store (0x0880, LTFE) /* \_SB_.TPM_._CRS.LTFE */
+                Return (CRSD) /* \_SB_.TPM_.CRSD */
             }
             ElseIf (LEqual (TTPF, One))
             {
-                CreateDWordField (CRSI, \_SB.TPM._Y33._BAS, MTFD)  // _BAS: Base Address
-                CreateDWordField (CRSI, \_SB.TPM._Y33._LEN, LTFD)  // _LEN: Length
-                Store (0xFED40000, MTFD)
-                Store (0x5000, LTFD)
-                Return (CRSI)
+                CreateDWordField (CRSI, \_SB.TPM._Y32._BAS, MTFD)  // _BAS: Base Address
+                CreateDWordField (CRSI, \_SB.TPM._Y32._LEN, LTFD)  // _LEN: Length
+                Store (0xFED40000, MTFD) /* \_SB_.TPM_._CRS.MTFD */
+                Store (0x5000, LTFD) /* \_SB_.TPM_._CRS.LTFD */
+                Return (CRSI) /* \_SB_.TPM_.CRSI */
             }
             ElseIf (LEqual (TTPF, Zero))
             {
-                CreateDWordField (CRSI, \_SB.TPM._Y33._BAS, MTFF)  // _BAS: Base Address
-                Store (TPMM, MTFF)
-                Return (CRSI)
+                CreateDWordField (CRSI, \_SB.TPM._Y32._BAS, MTFF)  // _BAS: Base Address
+                Store (TPMM, MTFF) /* \_SB_.TPM_._CRS.MTFF */
+                Return (CRSI) /* \_SB_.TPM_.CRSI */
             }
         }
 
@@ -27910,12 +28064,12 @@ RWAK (Arg0)
                 {
                     Return (Buffer (One)
                     {
-                         0x03                                           
+                         0x03                                             // .
                     })
                 }
                 Case (One)
                 {
-                    Store (Zero, TIMR)
+                    Store (Zero, TIMR) /* \_SB_.TPM_.STRT.TIMR */
                     If (LEqual (AMDT, One))
                     {
                         While (LAnd (LEqual (BEGN, One), LLess (TIMR, 0x0200)))
@@ -27931,14 +28085,15 @@ RWAK (Arg0)
                     }
                     Else
                     {
-                        If (LEqual (Or (And (HSTS, 0x02), And (HSTS, One)), 0x03))
+                        If (LEqual (Or (And (HSTS, 0x02), And (HSTS, One)), 
+                            0x03))
                         {
-                            Store (One, HCMD)
+                            Store (One, HCMD) /* \_SB_.TPM_.HCMD */
                         }
                         Else
                         {
-                            Store (One, FERR)
-                            Store (Zero, BEGN)
+                            Store (One, FERR) /* \_SB_.TPM_.STRT.FERR */
+                            Store (Zero, BEGN) /* \_SB_.TPM_.STRT.BEGN */
                         }
 
                         Return (Zero)
@@ -27958,7 +28113,7 @@ RWAK (Arg0)
                 {
                     Return (Buffer (One)
                     {
-                         0x03                                           
+                         0x03                                             // .
                     })
                 }
                 Case (One)
@@ -27980,14 +28135,14 @@ RWAK (Arg0)
                         })
                     }
 
-                    Return (TPMV)
+                    Return (TPMV) /* \_SB_.TPM_.CRYF.TPMV */
                 }
 
             }
 
             Return (Buffer (One)
             {
-                 0x00                                           
+                 0x00                                             // .
             })
         }
     }
@@ -28010,7 +28165,7 @@ RWAK (Arg0)
                     {
                         Return (Buffer (0x02)
                         {
-                             0xFF, 0x01                                     
+                             0xFF, 0x01                                       // ..
                         })
                     }
                     Case (One)
@@ -28019,22 +28174,22 @@ RWAK (Arg0)
                     }
                     Case (0x02)
                     {
-                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF2)
-                        Store (OFST, TMF1)
-                        Or (0x1200, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF2) /* \TMF2 */
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x1200, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
                         }
 
-                        ShiftLeft (TMF2, 0x08, TMF2)
-                        Or (OFST, TMF2, TMF2)
-                        Store (TMF2, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        ShiftLeft (TMF2, 0x08, TMF2) /* \TMF2 */
+                        Or (OFST, TMF2, TMF2) /* \TMF2 */
+                        Store (TMF2, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
@@ -28054,22 +28209,22 @@ RWAK (Arg0)
                             Zero, 
                             Zero
                         })
-                        Store (OFST, TMF1)
-                        Or (0x1100, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x1100, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (One)
                         }
 
                         Store (TMF1, Index (PPI1, One))
-                        Return (PPI1)
+                        Return (PPI1) /* \_SB_.TPM_._DSM.PPI1 */
                     }
                     Case (0x04)
                     {
-                        Return (TRST)
+                        Return (TRST) /* \TRST */
                     }
                     Case (0x05)
                     {
@@ -28079,22 +28234,22 @@ RWAK (Arg0)
                             Zero, 
                             Zero
                         })
-                        Store (OFST, TMF1)
-                        Or (0x2100, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x2100, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
                         }
 
                         Store (TMF1, Index (PPI2, One))
-                        Store (OFST, TMF1)
-                        Or (0x3100, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x3100, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
@@ -28102,28 +28257,28 @@ RWAK (Arg0)
 
                         If (LEqual (TMF1, 0xF0))
                         {
-                            Store (OFST, TMF1)
-                            Or (0x5100, TMF1, TMF1)
-                            Store (TMF1, SMI)
-                            Store (SMI, TMF1)
-                            ShiftRight (TMF1, 0x08, TMF1)
+                            Store (OFST, TMF1) /* \TMF1 */
+                            Or (0x5100, TMF1, TMF1) /* \TMF1 */
+                            Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                            Store (SMI, TMF1) /* \TMF1 */
+                            ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                             If (LEqual (TMF1, 0xFF))
                             {
                                 Store (0xFFFFFFF0, Index (PPI2, 0x02))
-                                Return (PPI2)
+                                Return (PPI2) /* \_SB_.TPM_._DSM.PPI2 */
                             }
                         }
                         ElseIf (LEqual (TMF1, 0xF1))
                         {
-                            Store (OFST, TMF1)
-                            Or (0x5100, TMF1, TMF1)
-                            Store (TMF1, SMI)
-                            Store (SMI, TMF1)
-                            ShiftRight (TMF1, 0x08, TMF1)
+                            Store (OFST, TMF1) /* \TMF1 */
+                            Or (0x5100, TMF1, TMF1) /* \TMF1 */
+                            Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                            Store (SMI, TMF1) /* \TMF1 */
+                            ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                             If (LEqual (TMF1, 0xFF))
                             {
                                 Store (0xFFFFFFF1, Index (PPI2, 0x02))
-                                Return (PPI2)
+                                Return (PPI2) /* \_SB_.TPM_._DSM.PPI2 */
                             }
                         }
                         Else
@@ -28131,7 +28286,7 @@ RWAK (Arg0)
                             Store (TMF1, Index (PPI2, 0x02))
                         }
 
-                        Return (PPI2)
+                        Return (PPI2) /* \_SB_.TPM_._DSM.PPI2 */
                     }
                     Case (0x06)
                     {
@@ -28139,22 +28294,22 @@ RWAK (Arg0)
                     }
                     Case (0x07)
                     {
-                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF2)
-                        Store (OFST, TMF1)
-                        Or (0x1200, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF2) /* \TMF2 */
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x1200, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
                         }
 
-                        ShiftLeft (TMF2, 0x08, TMF2)
-                        Or (OFST, TMF2, TMF2)
-                        Store (TMF2, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        ShiftLeft (TMF2, 0x08, TMF2) /* \TMF2 */
+                        Or (OFST, TMF2, TMF2) /* \TMF2 */
+                        Store (TMF2, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
@@ -28169,17 +28324,17 @@ RWAK (Arg0)
                     }
                     Case (0x08)
                     {
-                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF2)
-                        Store (OFST, TMF1)
-                        Or (0x4300, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftLeft (TMF2, 0x08, TMF2)
-                        Or (OFST, TMF2, TMF2)
-                        Store (TMF2, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
-                        Return (TMF1)
+                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF2) /* \TMF2 */
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x4300, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftLeft (TMF2, 0x08, TMF2) /* \TMF2 */
+                        Or (OFST, TMF2, TMF2) /* \TMF2 */
+                        Store (TMF2, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
+                        Return (TMF1) /* \TMF1 */
                     }
                     Default
                     {
@@ -28195,27 +28350,27 @@ RWAK (Arg0)
                     {
                         Return (Buffer (One)
                         {
-                             0x03                                           
+                             0x03                                             // .
                         })
                     }
                     Case (One)
                     {
-                        Store (OFST, TMF1)
-                        Or (0x2200, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        Store (OFST, TMF1) /* \TMF1 */
+                        Or (0x2200, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
                         }
 
-                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF1)
-                        ShiftLeft (TMF1, 0x08, TMF1)
-                        Or (OFST, TMF1, TMF1)
-                        Store (TMF1, SMI)
-                        Store (SMI, TMF1)
-                        ShiftRight (TMF1, 0x08, TMF1)
+                        ToInteger (DerefOf (Index (Arg3, Zero)), TMF1) /* \TMF1 */
+                        ShiftLeft (TMF1, 0x08, TMF1) /* \TMF1 */
+                        Or (OFST, TMF1, TMF1) /* \TMF1 */
+                        Store (TMF1, SMI) /* \_SB_.TPM_.SMI_ */
+                        Store (SMI, TMF1) /* \TMF1 */
+                        ShiftRight (TMF1, 0x08, TMF1) /* \TMF1 */
                         If (LEqual (TMF1, 0xFF))
                         {
                             Return (0x02)
@@ -28232,7 +28387,7 @@ RWAK (Arg0)
 
             Return (Buffer (One)
             {
-                 0x00                                           
+                 0x00                                             // .
             })
         }
     }
@@ -28251,7 +28406,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS01._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28260,15 +28415,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS01._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (One, GPOS)
-                Return (XPLD)
+                Store (One, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS01._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS01._PLD.XPLD */
             }
         }
 
@@ -28284,7 +28439,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS02._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28293,15 +28448,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS02._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x02, GPOS)
-                Return (XPLD)
+                Store (0x02, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS02._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS02._PLD.XPLD */
             }
         }
 
@@ -28317,7 +28472,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS03._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28326,15 +28481,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS03._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x03, GPOS)
-                Return (XPLD)
+                Store (0x03, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS03._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS03._PLD.XPLD */
             }
         }
 
@@ -28350,7 +28505,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS04._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28359,15 +28514,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS04._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x04, GPOS)
-                Return (XPLD)
+                Store (0x04, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS04._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS04._PLD.XPLD */
             }
         }
 
@@ -28383,7 +28538,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS05._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28392,15 +28547,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS05._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x05, GPOS)
-                Return (XPLD)
+                Store (0x05, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS05._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS05._PLD.XPLD */
             }
         }
 
@@ -28416,7 +28571,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS06._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28425,15 +28580,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS06._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x06, GPOS)
-                Return (XPLD)
+                Store (0x06, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS06._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS06._PLD.XPLD */
             }
         }
 
@@ -28449,7 +28604,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS07._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28458,15 +28613,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS07._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x07, GPOS)
-                Return (XPLD)
+                Store (0x07, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS07._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS07._PLD.XPLD */
             }
         }
 
@@ -28482,7 +28637,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS08._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28491,15 +28646,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS08._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x08, GPOS)
-                Return (XPLD)
+                Store (0x08, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS08._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS08._PLD.XPLD */
             }
         }
 
@@ -28515,7 +28670,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS09._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28524,15 +28679,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS09._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x09, GPOS)
-                Return (XPLD)
+                Store (0x09, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS09._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS09._PLD.XPLD */
             }
         }
 
@@ -28548,7 +28703,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS0A._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28557,15 +28712,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS0A._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x0A, GPOS)
-                Return (XPLD)
+                Store (0x0A, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS0A._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS0A._PLD.XPLD */
             }
         }
 
@@ -28581,7 +28736,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS0B._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28590,15 +28745,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS0B._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x0B, GPOS)
-                Return (XPLD)
+                Store (0x0B, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS0B._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS0B._PLD.XPLD */
             }
         }
 
@@ -28614,7 +28769,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS0C._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28623,15 +28778,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS0C._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x0C, GPOS)
-                Return (XPLD)
+                Store (0x0C, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS0C._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS0C._PLD.XPLD */
             }
         }
 
@@ -28647,7 +28802,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS0D._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28656,15 +28811,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS0D._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x0D, GPOS)
-                Return (XPLD)
+                Store (0x0D, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS0D._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS0D._PLD.XPLD */
             }
         }
 
@@ -28680,7 +28835,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS0E._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28689,15 +28844,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS0E._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x0E, GPOS)
-                Return (XPLD)
+                Store (0x0E, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS0E._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS0E._PLD.XPLD */
             }
         }
 
@@ -28713,7 +28868,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS0F._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28722,15 +28877,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS0F._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x0F, GPOS)
-                Return (XPLD)
+                Store (0x0F, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS0F._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS0F._PLD.XPLD */
             }
         }
 
@@ -28746,7 +28901,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS10._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28755,15 +28910,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS10._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x10, GPOS)
-                Return (XPLD)
+                Store (0x10, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS10._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS10._PLD.XPLD */
             }
         }
 
@@ -28779,7 +28934,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS11._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28788,15 +28943,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS11._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (One, GPOS)
-                Return (XPLD)
+                Store (One, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS11._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS11._PLD.XPLD */
             }
         }
 
@@ -28812,7 +28967,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS12._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28821,15 +28976,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS12._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x02, GPOS)
-                Return (XPLD)
+                Store (0x02, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS12._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS12._PLD.XPLD */
             }
         }
 
@@ -28845,7 +29000,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS13._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28854,15 +29009,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS13._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x02, GPOS)
-                Return (XPLD)
+                Store (0x02, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS13._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS13._PLD.XPLD */
             }
         }
 
@@ -28878,7 +29033,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS14._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28887,15 +29042,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS14._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x14, GPOS)
-                Return (XPLD)
+                Store (0x14, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS14._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS14._PLD.XPLD */
             }
         }
 
@@ -28911,7 +29066,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS15._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28920,15 +29075,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (One, VISI)
+                Store (One, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS15._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x05, GPOS)
-                Return (XPLD)
+                Store (0x05, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS15._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS15._PLD.XPLD */
             }
         }
 
@@ -28944,7 +29099,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS16._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28953,15 +29108,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS16._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x16, GPOS)
-                Return (XPLD)
+                Store (0x16, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS16._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS16._PLD.XPLD */
             }
         }
 
@@ -28977,7 +29132,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS17._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -28986,15 +29141,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS17._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x17, GPOS)
-                Return (XPLD)
+                Store (0x17, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS17._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS17._PLD.XPLD */
             }
         }
 
@@ -29010,7 +29165,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS18._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -29019,15 +29174,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS18._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x18, GPOS)
-                Return (XPLD)
+                Store (0x18, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS18._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS18._PLD.XPLD */
             }
         }
 
@@ -29043,7 +29198,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS19._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -29052,15 +29207,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS19._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x19, GPOS)
-                Return (XPLD)
+                Store (0x19, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS19._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS19._PLD.XPLD */
             }
         }
 
@@ -29076,7 +29231,7 @@ RWAK (Arg0)
                     Zero, 
                     Zero
                 })
-                Return (XUPC)
+                Return (XUPC) /* \_SB_.PCI0.XHC_.RHUB.SS1A._UPC.XUPC */
             }
 
             Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
@@ -29085,15 +29240,15 @@ RWAK (Arg0)
                 {
                     Buffer (0x10)
                     {
-                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 
+                        /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // ........
+                        /* 0008 */  0x61, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   // a.......
                     }
                 })
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x40, One, VISI)
-                Store (Zero, VISI)
+                Store (Zero, VISI) /* \_SB_.PCI0.XHC_.RHUB.SS1A._PLD.VISI */
                 CreateField (DerefOf (Index (XPLD, Zero)), 0x57, 0x08, GPOS)
-                Store (0x1A, GPOS)
-                Return (XPLD)
+                Store (0x1A, GPOS) /* \_SB_.PCI0.XHC_.RHUB.SS1A._PLD.GPOS */
+                Return (XPLD) /* \_SB_.PCI0.XHC_.RHUB.SS1A._PLD.XPLD */
             }
         }
     }
@@ -29102,7 +29257,7 @@ RWAK (Arg0)
     {
         Device (EC0)
         {
-            Name (_HID, EisaId ("PNP0C09"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C09") /* Embedded Controller Device */)  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
             {
                 IO (Decode16,
@@ -29124,8 +29279,8 @@ RWAK (Arg0)
                 Return (Local0)
             }
 
-            Mutex(MUEC, 0)
-            Mutex(MU4T, 0)
+            Mutex (MUEC, 0x00)
+            Mutex (MU4T, 0x00)
             Name (ECFL, Ones)
             Method (ECAV, 0, NotSerialized)
             {
@@ -29153,7 +29308,7 @@ RWAK (Arg0)
                     Return (Zero)
                 }
 
-                Return (ECFL)
+                Return (ECFL) /* \_SB_.PCI0.LPCB.EC0_.ECFL */
             }
 
             OperationRegion (PECO, SystemIO, 0x0260, 0x08)
@@ -29182,123 +29337,123 @@ RWAK (Arg0)
                     Sleep (0x0A)
                 }
 
-                And (PBSY, 0xFD, PBSY)
-                Store (Arg0, HTAR)
-                Store (Arg1, HWLR)
-                Store (Arg2, HRLR)
-                Store (Arg3, HCMD)
+                And (PBSY, 0xFD, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
+                Store (Arg0, HTAR) /* \_SB_.PCI0.LPCB.EC0_.HTAR */
+                Store (Arg1, HWLR) /* \_SB_.PCI0.LPCB.EC0_.HWLR */
+                Store (Arg2, HRLR) /* \_SB_.PCI0.LPCB.EC0_.HRLR */
+                Store (Arg3, HCMD) /* \_SB_.PCI0.LPCB.EC0_.HCMD */
                 Name (TEMP, Zero)
-                Store (Zero, TEMP)
+                Store (Zero, TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                 If (LNotEqual (Arg1, Zero))
                 {
                     Switch (ToInteger (HCMD))
                     {
                         Case (0xF7)
                         {
-                            Store (Zero, TEMP)
+                            Store (Zero, TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (One)
                         {
-                            Store (Zero, TEMP)
+                            Store (Zero, TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0x02)
                         {
-                            Store (Zero, TEMP)
+                            Store (Zero, TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xA1)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xA2)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xB1)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xB2)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0x61)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0x62)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xE1)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xE2)
                         {
-                            Store (Subtract (Arg1, One), TEMP)
+                            Store (Subtract (Arg1, One), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xA5)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xA6)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xB5)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xB6)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0x65)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0x66)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xE5)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Case (0xE6)
                         {
-                            Or (HCTL, 0x40, HCTL)
-                            Store (Subtract (Arg1, 0x02), TEMP)
+                            Or (HCTL, 0x40, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
+                            Store (Subtract (Arg1, 0x02), TEMP) /* \_SB_.PCI0.LPCB.EC0_.PECI.TEMP */
                             Break
                         }
                         Default
                         {
-                            And (PBSY, 0xFE, PBSY)
+                            And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                             Return (Zero)
                         }
 
@@ -29310,61 +29465,61 @@ RWAK (Arg0)
                     Store (Zero, Local0)
                     While (LLess (Local0, TEMP))
                     {
-                        Store (DerefOf (Index (Arg4, Local0)), HWDR)
+                        Store (DerefOf (Index (Arg4, Local0)), HWDR) /* \_SB_.PCI0.LPCB.EC0_.HWDR */
                         Add (Local0, One, Local0)
                     }
                 }
 
-                Or (HCTL, One, HCTL)
+                Or (HCTL, One, HCTL) /* \_SB_.PCI0.LPCB.EC0_.HCTL */
                 Name (TIME, 0x5000)
                 Store (Zero, Local0)
                 While (LLess (Local0, TIME))
                 {
                     If (And (HSTS, 0x80))
                     {
-                        Store (0x80, HSTS)
-                        And (PBSY, 0xFE, PBSY)
+                        Store (0x80, HSTS) /* \_SB_.PCI0.LPCB.EC0_.HSTS */
+                        And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                         Return (Zero)
                     }
 
                     If (And (HSTS, 0x40))
                     {
-                        Store (0x40, HSTS)
-                        And (PBSY, 0xFE, PBSY)
+                        Store (0x40, HSTS) /* \_SB_.PCI0.LPCB.EC0_.HSTS */
+                        And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                         Return (Zero)
                     }
 
                     If (And (HSTS, 0x20))
                     {
-                        Store (0x20, HSTS)
-                        And (PBSY, 0xFE, PBSY)
+                        Store (0x20, HSTS) /* \_SB_.PCI0.LPCB.EC0_.HSTS */
+                        And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                         Return (Zero)
                     }
 
                     If (And (HSTS, 0x08))
                     {
-                        Store (0x08, HSTS)
-                        And (PBSY, 0xFE, PBSY)
+                        Store (0x08, HSTS) /* \_SB_.PCI0.LPCB.EC0_.HSTS */
+                        And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                         Return (Zero)
                     }
 
                     If (And (HSTS, 0x04))
                     {
-                        Store (0x04, HSTS)
-                        And (PBSY, 0xFE, PBSY)
+                        Store (0x04, HSTS) /* \_SB_.PCI0.LPCB.EC0_.HSTS */
+                        And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                         Return (Zero)
                     }
 
                     If (And (HSTS, 0x02))
                     {
-                        Store (0x02, HSTS)
+                        Store (0x02, HSTS) /* \_SB_.PCI0.LPCB.EC0_.HSTS */
                         Break
                     }
                 }
 
                 If (LEqual (Local0, TIME))
                 {
-                    And (PBSY, 0xFE, PBSY)
+                    And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                     Return (Zero)
                 }
                 Else
@@ -29377,11 +29532,11 @@ RWAK (Arg0)
                         Add (Local0, One, Local0)
                     }
 
-                    And (PBSY, 0xFE, PBSY)
+                    And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
                     Return (One)
                 }
 
-                And (PBSY, 0xFE, PBSY)
+                And (PBSY, 0xFE, PBSY) /* \_SB_.PCI0.LPCB.EC0_.PBSY */
             }
 
             OperationRegion (ECOR, EmbeddedControl, Zero, 0xFF)
@@ -29403,8 +29558,10 @@ RWAK (Arg0)
                 Offset (0x88), 
                 Offset (0x89), 
                 Offset (0x93), 
-                AH00,8,AH01,8, 
-                AH10,8,AH11,8, 
+                AH00,   8, 
+                AH01,   8, 
+                AH10,   8, 
+                AH11,   8, 
                 TSTP,   8, 
                 Offset (0x9C), 
                 CDT4,   8, 
@@ -29419,39 +29576,53 @@ RWAK (Arg0)
                 TH0R,   8, 
                 TH0L,   8, 
                 Offset (0xB0), 
-                B0P0,8,B0P1,8, 
+                B0P0,   8, 
+                B0P1,   8, 
                 Offset (0xB4), 
                 Offset (0xB6), 
                 Offset (0xB8), 
                 Offset (0xBA), 
                 Offset (0xBC), 
                 Offset (0xBE), 
-                B0T0,8,B0T1,8, 
-                B010,8,B011,8, 
-                B020,8,B021,8, 
-                B030,8,B031,8, 
-                B040,8,B041,8, 
+                B0T0,   8, 
+                B0T1,   8, 
+                B010,   8, 
+                B011,   8, 
+                B020,   8, 
+                B021,   8, 
+                B030,   8, 
+                B031,   8, 
+                B040,   8, 
+                B041,   8, 
                 Offset (0xD0), 
-                B1P0,8,B1P1,8, 
+                B1P0,   8, 
+                B1P1,   8, 
                 Offset (0xD4), 
                 Offset (0xD6), 
                 Offset (0xD8), 
                 Offset (0xDA), 
                 Offset (0xDC), 
                 Offset (0xDE), 
-                B1T0,8,B1T1,8, 
-                B110,8,B111,8, 
-                B120,8,B121,8, 
-                B130,8,B131,8, 
-                B140,8,B141,8, 
+                B1T0,   8, 
+                B1T1,   8, 
+                B110,   8, 
+                B111,   8, 
+                B120,   8, 
+                B121,   8, 
+                B130,   8, 
+                B131,   8, 
+                B140,   8, 
+                B141,   8, 
                 Offset (0xF0), 
                 Offset (0xF2), 
                 Offset (0xF4), 
-                B0N0,8,B0N1,8, 
+                B0N0,   8, 
+                B0N1,   8, 
                 Offset (0xF8), 
                 Offset (0xFA), 
                 Offset (0xFC), 
-                B1N0,8,B1N1,8,
+                B1N0,   8, 
+                B1N1,   8
             }
 
             Name (SMBF, Zero)
@@ -29465,7 +29636,7 @@ RWAK (Arg0)
                 CDFG,   1, 
                 ADDR,   8, 
                 CMDB,   8, 
-                BDAX,	256, 
+                BDAX,   256, 
                 BCNT,   8, 
                     ,   1, 
                 ALAD,   7, 
@@ -29483,7 +29654,7 @@ RWAK (Arg0)
                 CDF2,   1, 
                 ADD2,   8, 
                 CMD2,   8, 
-                BDAY,	256, 
+                BDAY,   256, 
                 BCN2,   8, 
                     ,   1, 
                 ALA2,   7, 
@@ -29508,7 +29679,8 @@ RWAK (Arg0)
             Field (SMBX, ByteAcc, NoLock, Preserve)
             {
                 Offset (0x04), 
-                T2B0,8,T2B1,8,
+                T2B0,   8, 
+                T2B1,   8
             }
 
             OperationRegion (NSBS, EmbeddedControl, 0x40, 0x04)
@@ -29541,22 +29713,38 @@ RWAK (Arg0)
                 ECRT,   8, 
                 EPSV,   8, 
                 Offset (0xA0), 
-                B0V0,8,B0V1,8, 
-                B0R0,8,B0R1,8, 
-                B0F0,8,B0F1,8, 
-                B0M0,8,B0M1,8, 
-                B0S0,8,B0S1,8, 
-                B0C0,8,B0C1,8, 
-                B0D0,8,B0D1,8, 
-                B0D2,8,B0D3,8, 
-                B1V0,8,B1V1,8, 
-                B1R0,8,B1R1,8, 
-                B1F0,8,B1F1,8, 
-                B1M0,8,B1M1,8, 
-                B1S0,8,B1S1,8, 
-                B1C0,8,B1C1,8, 
-                B1D0,8,B1D1,8, 
-                B1D2,8,B1D3,8
+                B0V0,   8, 
+                B0V1,   8, 
+                B0R0,   8, 
+                B0R1,   8, 
+                B0F0,   8, 
+                B0F1,   8, 
+                B0M0,   8, 
+                B0M1,   8, 
+                B0S0,   8, 
+                B0S1,   8, 
+                B0C0,   8, 
+                B0C1,   8, 
+                B0D0,   8, 
+                B0D1,   8, 
+                B0D2,   8, 
+                B0D3,   8, 
+                B1V0,   8, 
+                B1V1,   8, 
+                B1R0,   8, 
+                B1R1,   8, 
+                B1F0,   8, 
+                B1F1,   8, 
+                B1M0,   8, 
+                B1M1,   8, 
+                B1S0,   8, 
+                B1S1,   8, 
+                B1C0,   8, 
+                B1C1,   8, 
+                B1D0,   8, 
+                B1D1,   8, 
+                B1D2,   8, 
+                B1D3,   8
             }
 
             OperationRegion (CRIH, SystemIO, 0x0381, One)
@@ -29608,12 +29796,12 @@ RWAK (Arg0)
                 THH1,   8
             }
 
-            Mutex(CMUT, 0)
+            Mutex (CMUT, 0x00)
             Method (_INI, 0, NotSerialized)  // _INI: Initialize
             {
                 If (LLessEqual (MSOS (), OSME))
                 {
-                    Store (One, ECFL)
+                    Store (One, ECFL) /* \_SB_.PCI0.LPCB.EC0_.ECFL */
                 }
 
                 KINI ()
@@ -29623,47 +29811,60 @@ RWAK (Arg0)
             {
                 If (LEqual (Arg0, 0x03))
                 {
-                    Store (Arg1, ECFL)
+                    Store (Arg1, ECFL) /* \_SB_.PCI0.LPCB.EC0_.ECFL */
                 }
             }
+
             Method (RE1B, 1, NotSerialized)
             {
-                OperationRegion(ERAM, EmbeddedControl, Arg0, 1)
-                Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
-                Return(BYTE)
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
+                {
+                    BYTE,   8
+                }
+
+                Return (BYTE) /* \_SB_.PCI0.LPCB.EC0_.RE1B.BYTE */
             }
+
             Method (RECB, 2, Serialized)
             {
-                ShiftRight(Arg1, 3, Arg1)
-                Name(TEMP, Buffer(Arg1) { })
-                Add(Arg0, Arg1, Arg1)
-                Store(0, Local0)
-                While (LLess(Arg0, Arg1))
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1){})
+                Add (Arg0, Arg1, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
                 {
-                    Store(RE1B(Arg0), Index(TEMP, Local0))
-                    Increment(Arg0)
-                    Increment(Local0)
+                    Store (RE1B (Arg0), Index (TEMP, Local0))
+                    Increment (Arg0)
+                    Increment (Local0)
                 }
-                Return(TEMP)
+
+                Return (TEMP) /* \_SB_.PCI0.LPCB.EC0_.RECB.TEMP */
             }
+
             Method (WE1B, 2, NotSerialized)
             {
-                OperationRegion(ERAM, EmbeddedControl, Arg0, 1)
-                Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
-                Store(Arg1, BYTE)
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
+                {
+                    BYTE,   8
+                }
+
+                Store (Arg1, BYTE) /* \_SB_.PCI0.LPCB.EC0_.WE1B.BYTE */
             }
+
             Method (WECB, 3, Serialized)
             {
-                ShiftRight(Arg1, 3, Arg1)
-                Name(TEMP, Buffer(Arg1) { })
-                Store(Arg2, TEMP)
-                Add(Arg0, Arg1, Arg1)
-                Store(0, Local0)
-                While (LLess(Arg0, Arg1))
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1){})
+                Store (Arg2, TEMP) /* \_SB_.PCI0.LPCB.EC0_.WECB.TEMP */
+                Add (Arg0, Arg1, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
                 {
-                    WE1B(Arg0, DerefOf(Index(TEMP, Local0)))
-                    Increment(Arg0)
-                    Increment(Local0)
+                    WE1B (Arg0, DerefOf (Index (TEMP, Local0)))
+                    Increment (Arg0)
+                    Increment (Local0)
                 }
             }
         }
@@ -29686,13 +29887,13 @@ RWAK (Arg0)
 
         Method (ISMI, 1, Serialized)
         {
-            Store (Arg0, SMCM)
+            Store (Arg0, SMCM) /* \SMCM */
         }
 
         Method (ASMI, 1, Serialized)
         {
             Store (Arg0, \_SB.ALPR)
-            Store (0xA3, SMCM)
+            Store (0xA3, SMCM) /* \SMCM */
             Return (\_SB.ALPR)
         }
 
@@ -29985,12 +30186,13 @@ RWAK (Arg0)
             Add (SizeOf (Arg0), One, Local0)
             Name (BUF0, Buffer (Local0){})
             Name (BUF1, Buffer (Local0){})
-            Store (Arg0, BUF0)
-            Store (Arg1, BUF1)
+            Store (Arg0, BUF0) /* \MCTH.BUF0 */
+            Store (Arg1, BUF1) /* \MCTH.BUF1 */
             While (Local0)
             {
                 Decrement (Local0)
-                If (LNotEqual (DerefOf (Index (BUF0, Local0)), DerefOf (Index (BUF1, Local0))))
+                If (LNotEqual (DerefOf (Index (BUF0, Local0)), DerefOf (Index (BUF1, Local0
+                    ))))
                 {
                     Return (Zero)
                 }
@@ -30003,34 +30205,34 @@ RWAK (Arg0)
         {
             If (LGreaterEqual (OSYS, 0x07DC))
             {
-                Store (OSW8, OSFG)
+                Store (OSW8, OSFG) /* \OSFG */
             }
             ElseIf (LEqual (OSYS, 0x07D9))
             {
-                Store (OSW7, OSFG)
+                Store (OSW7, OSFG) /* \OSFG */
             }
             ElseIf (LEqual (OSYS, 0x07D6))
             {
-                Store (OSVT, OSFG)
+                Store (OSVT, OSFG) /* \OSFG */
             }
             ElseIf (LAnd (LGreaterEqual (OSYS, 0x07D1), LLessEqual (OSYS, 0x07D3)))
             {
-                Store (OSXP, OSFG)
+                Store (OSXP, OSFG) /* \OSFG */
             }
             ElseIf (LEqual (OSYS, 0x07D0))
             {
-                Store (OSME, OSFG)
+                Store (OSME, OSFG) /* \OSFG */
             }
             ElseIf (LEqual (OSYS, 0x07CE))
             {
-                Store (OS98, OSFG)
+                Store (OS98, OSFG) /* \OSFG */
             }
             Else
             {
-                Store (OSW8, OSFG)
+                Store (OSW8, OSFG) /* \OSFG */
             }
 
-            Return (OSFG)
+            Return (OSFG) /* \OSFG */
         }
 
         Name (ONAM, "ASUSTeK")
@@ -30043,7 +30245,7 @@ RWAK (Arg0)
 
             If (\_SB.PCI0.PEG0.PEGP.PRST)
             {
-                Return (\_SB.PCI0.PEG0.PEGP.ADVD)
+                Return (\_SB.PCI0.PEG0.PEGP.ADVD) /* External reference */
             }
 
             Return (0x03)
@@ -30058,7 +30260,7 @@ RWAK (Arg0)
 
             If (\_SB.PCI0.PEG0.PEGP.PRST)
             {
-                Return (\_SB.PCI0.PEG0.PEGP.GCDS)
+                Return (\_SB.PCI0.PEG0.PEGP.GCDS) /* External reference */
             }
 
             Return (One)
@@ -30090,7 +30292,7 @@ RWAK (Arg0)
 
             If (\_SB.PCI0.PEG0.PEGP.PRST)
             {
-                Return (\_SB.PCI0.PEG0.PEGP.NATK)
+                Return (\_SB.PCI0.PEG0.PEGP.NATK) /* External reference */
             }
 
             Return (One)
@@ -30108,7 +30310,7 @@ RWAK (Arg0)
         Name (FNIV, Zero)
         Device (ATKD)
         {
-            Name (_HID, "PNP0C14")  // _HID: Hardware ID
+            Name (_HID, "PNP0C14" /* Windows Management Instrumentation Device */)  // _HID: Hardware ID
             Name (_UID, "ATK")  // _UID: Unique ID
             Name (ATKQ, Package (0x10)
             {
@@ -30150,7 +30352,7 @@ RWAK (Arg0)
                 }
 
                 Increment (AQTI)
-                And (AQTI, 0x0F, AQTI)
+                And (AQTI, 0x0F, AQTI) /* \_SB_.ATKD.AQTI */
                 Store (Arg0, Index (ATKQ, AQTI))
                 Increment (AQNO)
                 Return (One)
@@ -30163,7 +30365,7 @@ RWAK (Arg0)
                     Decrement (AQNO)
                     Store (DerefOf (Index (ATKQ, AQHI)), Local0)
                     Increment (AQHI)
-                    And (AQHI, 0x0F, AQHI)
+                    And (AQHI, 0x0F, AQHI) /* \_SB_.ATKD.AQHI */
                     Return (Local0)
                 }
 
@@ -30172,11 +30374,11 @@ RWAK (Arg0)
 
             Name (_WDG, Buffer (0x28)
             {
-                /* 0000 */  0xD0, 0x5E, 0x84, 0x97, 0x6D, 0x4E, 0xDE, 0x11,
-                /* 0008 */  0x8A, 0x39, 0x08, 0x00, 0x20, 0x0C, 0x9A, 0x66,
-                /* 0010 */  0x4E, 0x42, 0x01, 0x02, 0x35, 0xBB, 0x3C, 0x0B,
-                /* 0018 */  0xC2, 0xE3, 0xED, 0x45, 0x91, 0xC2, 0x4C, 0x5A,
-                /* 0020 */  0x6D, 0x19, 0x5D, 0x1C, 0xFF, 0x00, 0x01, 0x08 
+                /* 0000 */  0xD0, 0x5E, 0x84, 0x97, 0x6D, 0x4E, 0xDE, 0x11,  // .^..mN..
+                /* 0008 */  0x8A, 0x39, 0x08, 0x00, 0x20, 0x0C, 0x9A, 0x66,  // .9.. ..f
+                /* 0010 */  0x4E, 0x42, 0x01, 0x02, 0x35, 0xBB, 0x3C, 0x0B,  // NB..5.<.
+                /* 0018 */  0xC2, 0xE3, 0xED, 0x45, 0x91, 0xC2, 0x4C, 0x5A,  // ...E..LZ
+                /* 0020 */  0x6D, 0x19, 0x5D, 0x1C, 0xFF, 0x00, 0x01, 0x08   // m.].....
             })
             Method (WMNB, 3, Serialized)
             {
@@ -30222,12 +30424,12 @@ RWAK (Arg0)
                         Name (LASV, Zero)
                         If (LEqual (NVLK, One))
                         {
-                            Return (LASV)
+                            Return (LASV) /* \_SB_.ATKD.WMNB.LASV */
                         }
 
                         Store (Zero, Local0)
-                        Store (0xFFFF, FSTA)
-                        Store (0x55534243, FADR)
+                        Store (0xFFFF, FSTA) /* \_SB_.FSTA */
+                        Store (0x55534243, FADR) /* \_SB_.FADR */
                         FSMI (0x05)
                         If (LEqual (FSTA, 0x03))
                         {
@@ -30247,7 +30449,7 @@ RWAK (Arg0)
                             }
                         }
 
-                        Store (Local0, LASV)
+                        Store (Local0, LASV) /* \_SB_.ATKD.WMNB.LASV */
                         Return (Local0)
                     }
 
@@ -30362,7 +30564,7 @@ RWAK (Arg0)
                     {
                         If (LGreaterEqual (MSOS (), OSW8))
                         {
-                            Subtract (0x64, Zero, Local0)
+                            Store (0x64, Local0)
                             ShiftLeft (Local0, 0x08, Local0)
                             Add (Local0, 0x64, Local1)
                         }
@@ -30553,20 +30755,20 @@ RWAK (Arg0)
                         }
 
                         Store (Zero, Local0)
-                        Store (0xFFFF, FSTA)
-                        Store (0x55534243, FADR)
+                        Store (0xFFFF, FSTA) /* \_SB_.FSTA */
+                        Store (0x55534243, FADR) /* \_SB_.FADR */
                         FSMI (0x05)
                         ShiftRight (IIA1, 0x09, Local0)
                         If (LEqual (And (Local0, One), One))
                         {
-                            Store (One, VBOF)
+                            Store (One, VBOF) /* \_SB_.VBOF */
                             ShiftRight (IIA1, 0x18, Local0)
                             Multiply (Local0, 0x0100, Local0)
-                            Or (Local0, VBOF, VBOF)
+                            Or (Local0, VBOF, VBOF) /* \_SB_.VBOF */
                         }
                         Else
                         {
-                            Store (Zero, VBOF)
+                            Store (Zero, VBOF) /* \_SB_.VBOF */
                         }
 
                         And (IIA1, 0xFF, Local0)
@@ -30577,23 +30779,23 @@ RWAK (Arg0)
                         {
                             Or (Local1, 0x02, Local1)
                             And (Local1, 0x0F, Local2)
-                            Store (Local2, USBC)
+                            Store (Local2, USBC) /* \_SB_.USBC */
                             ^^PCI0.LPCB.EC0.STA9 (Zero, Local1)
                         }
                         Else
                         {
                             And (Local1, 0xFD, Local1)
                             And (Local1, 0x0F, Local2)
-                            Store (Local2, USBC)
+                            Store (Local2, USBC) /* \_SB_.USBC */
                             ^^PCI0.LPCB.EC0.STA9 (Zero, Local1)
                         }
 
-                        Store (0xFFFF, FSTA)
-                        Store (0x55534243, FADR)
+                        Store (0xFFFF, FSTA) /* \_SB_.FSTA */
+                        Store (0x55534243, FADR) /* \_SB_.FADR */
                         FSMI (0x04)
                         If (LEqual (FSTA, 0x03))
                         {
-                            Store (0xFFFF, FSTA)
+                            Store (0xFFFF, FSTA) /* \_SB_.FSTA */
                             FSMI (0x06)
                             If (LNotEqual (FSTA, Zero))
                             {
@@ -30607,31 +30809,31 @@ RWAK (Arg0)
                     If (LEqual (IIA0, 0x00060026))
                     {
                         Store (Zero, Local0)
-                        Store (0xFFFF, FSTA)
-                        Store (0x55534243, FADR)
+                        Store (0xFFFF, FSTA) /* \_SB_.FSTA */
+                        Store (0x55534243, FADR) /* \_SB_.FADR */
                         FSMI (0x05)
                         Store (^^PCI0.LPCB.EC0.STA8 (Zero), Local0)
                         If (LEqual (IIA1, One))
                         {
                             Or (0x04, USBC, Local2)
-                            Store (Local2, USBC)
+                            Store (Local2, USBC) /* \_SB_.USBC */
                             Or (Local0, 0x04, Local0)
                             ^^PCI0.LPCB.EC0.STA9 (Zero, Local0)
                         }
                         Else
                         {
                             And (0xFB, USBC, Local2)
-                            Store (Local2, USBC)
+                            Store (Local2, USBC) /* \_SB_.USBC */
                             And (Local0, 0xFB, Local0)
                             ^^PCI0.LPCB.EC0.STA9 (Zero, Local0)
                         }
 
-                        Store (0xFFFF, FSTA)
-                        Store (0x55534243, FADR)
+                        Store (0xFFFF, FSTA) /* \_SB_.FSTA */
+                        Store (0x55534243, FADR) /* \_SB_.FADR */
                         FSMI (0x04)
                         If (LEqual (FSTA, 0x03))
                         {
-                            Store (0xFFFF, FSTA)
+                            Store (0xFFFF, FSTA) /* \_SB_.FSTA */
                             FSMI (0x06)
                             If (LNotEqual (FSTA, Zero))
                             {
@@ -30682,7 +30884,7 @@ RWAK (Arg0)
                         If (LEqual (IIA1, 0x02))
                         {
                             ^^PCI0.LPCB.EC0.SPIN (0x72, One)
-                            Store (One, ^^PCI0.LPCB.EC0.BLCT)
+                            Store (One, ^^PCI0.LPCB.EC0.BLCT) /* \_SB_.PCI0.LPCB.EC0_.BLCT */
                         }
 
                         Return (One)
@@ -30770,7 +30972,7 @@ RWAK (Arg0)
                         {
                             ^^PCI0.LPCB.EC0.STB1 (0x04)
                             ^^PCI0.LPCB.EC0.STB1 (0x05)
-                            Store (One, FNIV)
+                            Store (One, FNIV) /* \_SB_.FNIV */
                             Return (One)
                         }
                         Else
@@ -30995,7 +31197,7 @@ RWAK (Arg0)
                 Return (0xFFFFFFFE)
             }
 
-            Method (_WED, 1, NotSerialized)  // _Wxx: Wake Event
+            Method (_WED, 1, NotSerialized)  // _Wxx: Wake Event, xx=0x00-0xFF
             {
                 If (LEqual (Arg0, 0xFF))
                 {
@@ -31008,13 +31210,13 @@ RWAK (Arg0)
             Method (IANE, 1, Serialized)
             {
                 IANQ (Arg0)
-                Notify (ATKD, 0xFF)
+                Notify (ATKD, 0xFF) // Hardware-Specific
             }
 
             Method (INIT, 1, NotSerialized)
             {
-                Store (One, ATKP)
-                Return (MNAM)
+                Store (One, ATKP) /* \_SB_.ATKP */
+                Return (MNAM) /* \_SB_.MNAM */
             }
 
             Method (BSTS, 0, NotSerialized)
@@ -31100,18 +31302,18 @@ RWAK (Arg0)
             {
                 If (LEqual (OSFG, Zero))
                 {
-                    Store (Arg0, OSFG)
+                    Store (Arg0, OSFG) /* \OSFG */
                 }
             }
 
             Method (GPLV, 0, NotSerialized)
             {
-                Return (LBTN)
+                Return (LBTN) /* \_SB_.LBTN */
             }
 
             Method (SPLV, 1, NotSerialized)
             {
-                Store (Arg0, LBTN)
+                Store (Arg0, LBTN) /* \_SB_.LBTN */
                 ^^PCI0.LPCB.EC0.STBR ()
                 Return (One)
             }
@@ -31120,7 +31322,7 @@ RWAK (Arg0)
             {
                 If (LEqual (Arg0, 0x0100))
                 {
-                    Subtract (0x0B, One, Local0)
+                    Store (0x0A, Local0)
                     Return (Local0)
                 }
 
@@ -31261,7 +31463,7 @@ RWAK (Arg0)
 
             Method (GPID, 0, NotSerialized)
             {
-                Return (LCDR)
+                Return (LCDR) /* \_SB_.LCDR */
             }
 
             Method (HWRS, 0, NotSerialized)
@@ -31271,13 +31473,13 @@ RWAK (Arg0)
 
             Method (GLCD, 0, NotSerialized)
             {
-                Return (LCDV)
+                Return (LCDV) /* \_SB_.LCDV */
             }
 
             Name (WAPF, Zero)
             Method (CWAP, 1, NotSerialized)
             {
-                Or (Arg0, WAPF, WAPF)
+                Or (Arg0, WAPF, WAPF) /* \_SB_.ATKD.WAPF */
                 Return (One)
             }
 
@@ -31322,35 +31524,35 @@ RWAK (Arg0)
                     Return (0xFFFFFFFE)
                 }
 
-                Store (Arg0, SLMT)
+                Store (Arg0, SLMT) /* \_SB_.SLMT */
                 Switch (TCNT)
                 {
                     Case (0x08)
                     {
-                        Notify (\_PR.CPU0, 0x80)
-                        Notify (\_PR.CPU1, 0x80)
-                        Notify (\_PR.CPU2, 0x80)
-                        Notify (\_PR.CPU3, 0x80)
-                        Notify (\_PR.CPU4, 0x80)
-                        Notify (\_PR.CPU5, 0x80)
-                        Notify (\_PR.CPU6, 0x80)
-                        Notify (\_PR.CPU7, 0x80)
+                        Notify (\_PR.CPU0, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU1, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU2, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU3, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU4, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU5, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU6, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU7, 0x80) // Performance Capability Change
                     }
                     Case (0x04)
                     {
-                        Notify (\_PR.CPU0, 0x80)
-                        Notify (\_PR.CPU1, 0x80)
-                        Notify (\_PR.CPU2, 0x80)
-                        Notify (\_PR.CPU3, 0x80)
+                        Notify (\_PR.CPU0, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU1, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU2, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU3, 0x80) // Performance Capability Change
                     }
                     Case (0x02)
                     {
-                        Notify (\_PR.CPU0, 0x80)
-                        Notify (\_PR.CPU1, 0x80)
+                        Notify (\_PR.CPU0, 0x80) // Performance Capability Change
+                        Notify (\_PR.CPU1, 0x80) // Performance Capability Change
                     }
                     Default
                     {
-                        Notify (\_PR.CPU0, 0x80)
+                        Notify (\_PR.CPU0, 0x80) // Performance Capability Change
                     }
 
                 }
@@ -31440,10 +31642,10 @@ RWAK (Arg0)
                 And (Local2, 0xFF, Local2)
                 And (Arg0, 0xFF, Local3)
                 Acquire (^^PCI0.LPCB.EC0.MUEC, 0xFFFF)
-                Store (Local0, ^^PCI0.LPCB.EC0.CDT3)
-                Store (Local1, ^^PCI0.LPCB.EC0.CDT2)
-                Store (Local2, ^^PCI0.LPCB.EC0.CDT1)
-                Store (Local3, ^^PCI0.LPCB.EC0.CMD1)
+                Store (Local0, ^^PCI0.LPCB.EC0.CDT3) /* \_SB_.PCI0.LPCB.EC0_.CDT3 */
+                Store (Local1, ^^PCI0.LPCB.EC0.CDT2) /* \_SB_.PCI0.LPCB.EC0_.CDT2 */
+                Store (Local2, ^^PCI0.LPCB.EC0.CDT1) /* \_SB_.PCI0.LPCB.EC0_.CDT1 */
+                Store (Local3, ^^PCI0.LPCB.EC0.CMD1) /* \_SB_.PCI0.LPCB.EC0_.CMD1 */
                 Store (0x05, Local0)
                 While (LAnd (Local0, ^^PCI0.LPCB.EC0.CMD1))
                 {
@@ -31467,15 +31669,15 @@ RWAK (Arg0)
 
             Method (CBIF, 1, Serialized)
             {
-                Store (Arg0, TMPB)
-                Store (0x03, ALPR)
+                Store (Arg0, TMPB) /* \_SB_.TMPB */
+                Store (0x03, ALPR) /* \_SB_.ALPR */
                 ISMI (0xA3)
                 Return (One)
             }
 
             Method (CFIF, 1, Serialized)
             {
-                Store (Arg0, TMPB)
+                Store (Arg0, TMPB) /* \_SB_.TMPB */
                 ISMI (0xA6)
                 Return (One)
             }
@@ -31497,7 +31699,7 @@ RWAK (Arg0)
                 }
                 ElseIf (LEqual (Arg0, 0x02))
                 {
-                    Return (KBLV)
+                    Return (KBLV) /* \_SB_.KBLV */
                 }
                 ElseIf (LEqual (Arg0, 0x03))
                 {
@@ -31509,11 +31711,11 @@ RWAK (Arg0)
 
             Name (PWKB, Buffer (0x04)
             {
-                 0x00, 0x55, 0xAA, 0xFF                         
+                 0x00, 0x55, 0xAA, 0xFF                           // .U..
             })
             Method (SLKB, 1, NotSerialized)
             {
-                Store (And (Arg0, 0x7F), KBLV)
+                Store (And (Arg0, 0x7F), KBLV) /* \_SB_.KBLV */
                 If (And (Arg0, 0x80))
                 {
                     Store (DerefOf (Index (PWKB, KBLV)), Local0)
@@ -31569,7 +31771,7 @@ RWAK (Arg0)
                     MEMI,   32
                 }
 
-                Store (Arg1, MEMI)
+                Store (Arg1, MEMI) /* \_SB_.ATKD.WMEM.MEMI */
             }
 
             Name (MEMD, Package (0x41)
@@ -31642,14 +31844,15 @@ RWAK (Arg0)
             })
             Method (SCDG, 1, NotSerialized)
             {
-                Store (CALB, CA1M)
-                If (LNot (LAnd (LGreaterEqual (ToInteger (Arg0), Zero), LLessEqual (ToInteger (Arg0), 0x09))))
+                Store (CALB, CA1M) /* \_SB_.ATKD.CA1M */
+                If (LNot (LAnd (LGreaterEqual (ToInteger (Arg0), Zero), LLessEqual (ToInteger (
+                    Arg0), 0x09))))
                 {
                     Store (Zero, Index (MEMD, Zero))
-                    Return (MEMD)
+                    Return (MEMD) /* \_SB_.ATKD.MEMD */
                 }
 
-                Store (Add (CALB, Multiply (0x0100, ToInteger (Arg0))), CA1M)
+                Store (Add (CALB, Multiply (0x0100, ToInteger (Arg0))), CA1M) /* \_SB_.ATKD.CA1M */
                 Store (Zero, Local2)
                 Store (One, Local3)
                 Store (CA1M, Local1)
@@ -31661,8 +31864,9 @@ RWAK (Arg0)
                     Add (Local3, One, Local3)
                 }
 
-                Return (MEMD)
+                Return (MEMD) /* \_SB_.ATKD.MEMD */
             }
+
             Method (SKBV, 1, NotSerialized)
             {
                 ^^PCI0.LPCB.EC0.WRAM (0x04B1, Arg0)
@@ -31738,7 +31942,7 @@ RWAK (Arg0)
     {
         Device (AC0)
         {
-            Name (_HID, "ACPI0003")  // _HID: Hardware ID
+            Name (_HID, "ACPI0003" /* Power Source Device */)  // _HID: Hardware ID
             Method (_PSR, 0, NotSerialized)  // _PSR: Power Source
             {
                 Return (^^LPCB.EC0.ACAP ())
@@ -31755,7 +31959,7 @@ RWAK (Arg0)
     {
         Method (ACAP, 0, Serialized)
         {
-            Return (ACPF)
+            Return (ACPF) /* \_SB_.ACPF */
         }
     }
 
@@ -31763,7 +31967,7 @@ RWAK (Arg0)
     {
         Device (BAT0)
         {
-            Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0A") /* Control Method Battery */)  // _HID: Hardware ID
             Name (_UID, Zero)  // _UID: Unique ID
             Name (_PCL, Package (0x01)  // _PCL: Power Consumer List
             {
@@ -31871,7 +32075,7 @@ RWAK (Arg0)
             })
             Method (FBIF, 5, NotSerialized)
             {
-                Store (Arg0, PUNT)
+                Store (Arg0, PUNT) /* \_SB_.PCI0.BAT0.PUNT */
                 Store (Arg1, Local1)
                 Store (Arg2, Local2)
                 If (LEqual (PUNT, Zero))
@@ -31883,14 +32087,14 @@ RWAK (Arg0)
                 Store (Arg0, Index (PBIF, Zero))
                 Store (Local1, Index (PBIF, One))
                 Store (Local2, Index (PBIF, 0x02))
-                Store (Local2, LFCC)
+                Store (Local2, LFCC) /* \_SB_.PCI0.BAT0.LFCC */
                 Store (Arg3, Index (PBIF, 0x03))
                 Store (Arg4, Index (PBIF, 0x04))
                 Divide (Local1, 0x0A, Local3, Local5)
                 Store (Local5, Index (PBIF, 0x05))
                 Divide (Local1, 0x64, Local3, Local6)
                 Store (Local6, Index (PBIF, 0x06))
-                Store (Local6, LOW2)
+                Store (Local6, LOW2) /* \_SB_.PCI0.BAT0.LOW2 */
                 Divide (Local1, 0x64, Local3, Local7)
                 Store (Local7, Index (PBIF, 0x07))
                 Store (Local7, Index (PBIF, 0x08))
@@ -31921,12 +32125,12 @@ RWAK (Arg0)
             {
                 If (LNot (^^LPCB.EC0.BATP (Zero)))
                 {
-                    Return (NBIF)
+                    Return (NBIF) /* \_SB_.PCI0.BAT0.NBIF */
                 }
 
                 If (LEqual (^^LPCB.EC0.GBTT (Zero), 0xFF))
                 {
-                    Return (NBIF)
+                    Return (NBIF) /* \_SB_.PCI0.BAT0.NBIF */
                 }
 
                 BATO ()
@@ -31961,9 +32165,9 @@ RWAK (Arg0)
                     Multiply (Local2, 0x0A, Local2)
                 }
 
-                Store (Local2, LFCC)
+                Store (Local2, LFCC) /* \_SB_.PCI0.BAT0.LFCC */
                 BATR ()
-                Return (PBIF)
+                Return (PBIF) /* \_SB_.PCI0.BAT0.PBIF */
             }
 
             Method (FBST, 4, NotSerialized)
@@ -31978,13 +32182,13 @@ RWAK (Arg0)
                 If (Local0)
                 {
                     If (CHGS (Zero))
-{
-    Store (0x02, Local0)
-}
-Else
-{
-    Store (Zero, Local0)
-}
+                    {
+                        Store (0x02, Local0)
+                    }
+                    Else
+                    {
+                        Store (Zero, Local0)
+                    }
                 }
                 Else
                 {
@@ -31993,13 +32197,13 @@ Else
 
                 If (BLLO)
                 {
-                    ShiftLeft (One, 0x02, Local2)
+                    Store (0x04, Local2)
                     Or (Local0, Local2, Local0)
                 }
 
                 If (And (^^LPCB.EC0.EB0S, 0x08))
                 {
-                    ShiftLeft (One, 0x02, Local2)
+                    Store (0x04, Local2)
                     Or (Local0, Local2, Local0)
                 }
 
@@ -32011,7 +32215,7 @@ Else
                 Store (Arg2, Local2)
                 If (LEqual (PUNT, Zero))
                 {
-                    Multiply (Local1, B1B2(^^LPCB.EC0.B0D2,^^LPCB.EC0.B0D3), Local1)
+                    Multiply (Local1, B1B2 (^^LPCB.EC0.B0D2, ^^LPCB.EC0.B0D3), Local1)
                     Multiply (Local2, 0x0A, Local2)
                 }
 
@@ -32054,7 +32258,7 @@ Else
             {
                 If (PUNT)
                 {
-                    Store (B1B2(^^LPCB.EC0.B0D2,^^LPCB.EC0.B0D3), Index (PBST, 0x03))
+                    Store (B1B2 (^^LPCB.EC0.B0D2, ^^LPCB.EC0.B0D3), Index (PBST, 0x03))
                     Store (DerefOf (Index (PBST, 0x03)), Local0)
                     Multiply (DerefOf (Index (PBST, One)), Local0, Index (PBST, One))
                     Divide (DerefOf (Index (PBST, One)), 0x03E8, Local1, Index (PBST, One))
@@ -32072,18 +32276,18 @@ Else
                 If (LNot (^^LPCB.EC0.BATP (Zero)))
                 {
                     Store (One, Index (PBST, Zero))
-                    Return (PBST)
+                    Return (PBST) /* \_SB_.PCI0.BAT0.PBST */
                 }
 
                 If (LEqual (^^LPCB.EC0.GBTT (Zero), 0xFF))
                 {
-                    Return (PBST)
+                    Return (PBST) /* \_SB_.PCI0.BAT0.PBST */
                 }
 
                 If (MES4)
                 {
                     Decrement (MES4)
-                    Return (PBST)
+                    Return (PBST) /* \_SB_.PCI0.BAT0.PBST */
                 }
 
                 BATO ()
@@ -32108,19 +32312,19 @@ Else
                 }
 
                 BATR ()
-                Return (PBST)
+                Return (PBST) /* \_SB_.PCI0.BAT0.PBST */
             }
 
             Method (_BIX, 0, NotSerialized)  // _BIX: Battery Information Extended
             {
                 If (LNot (^^LPCB.EC0.BATP (Zero)))
                 {
-                    Return (NBIX)
+                    Return (NBIX) /* \_SB_.PCI0.BAT0.NBIX */
                 }
 
                 If (LEqual (^^LPCB.EC0.GBTT (Zero), 0xFF))
                 {
-                    Return (NBIX)
+                    Return (NBIX) /* \_SB_.PCI0.BAT0.NBIX */
                 }
 
                 _BIF ()
@@ -32155,9 +32359,9 @@ Else
                     Divide (DerefOf (Index (BIXT, 0x0F)), 0x03E8, Local0, Index (BIXT, 0x0F))
                 }
 
-                Store (B1B2(^^LPCB.EC0.B030,^^LPCB.EC0.B031), Index (BIXT, 0x08))
+                Store (B1B2 (^^LPCB.EC0.B030, ^^LPCB.EC0.B031), Index (BIXT, 0x08))
                 Store (0x0001869F, Index (BIXT, 0x09))
-                Return (BIXT)
+                Return (BIXT) /* \_SB_.PCI0.BAT0.BIXT */
             }
 
             Method (_BTP, 1, NotSerialized)  // _BTP: Battery Trip Point
@@ -32209,11 +32413,11 @@ Else
 
             If (Arg0)
             {
-                Store (Local0, B1CR)
+                Store (Local0, B1CR) /* \_SB_.PCI0.B1CR */
             }
             Else
             {
-                Store (Local0, B0CR)
+                Store (Local0, B0CR) /* \_SB_.PCI0.B0CR */
             }
 
             Return (Local0)
@@ -32253,11 +32457,11 @@ Else
             {
                 If (BSLF)
                 {
-                    Store (B1B2(B1M0,B1M1), Local0)
+                    Store (B1B2 (B1M0, B1M1), Local0)
                 }
                 Else
                 {
-                    Store (B1B2(B0M0,B0M1), Local0)
+                    Store (B1B2 (B0M0, B0M1), Local0)
                 }
 
                 If (LNotEqual (Local0, 0xFFFF))
@@ -32281,11 +32485,11 @@ Else
             {
                 If (BSLF)
                 {
-                    Store (B1B2(B1D0,B1D1), Local0)
+                    Store (B1B2 (B1D0, B1D1), Local0)
                 }
                 Else
                 {
-                    Store (B1B2(B0D0,B0D1), Local0)
+                    Store (B1B2 (B0D0, B0D1), Local0)
                 }
 
                 And (Local0, 0xFFFF, Local0)
@@ -32304,11 +32508,11 @@ Else
             {
                 If (BSLF)
                 {
-                    Store (B1B2(B1F0,B1F1), Local0)
+                    Store (B1B2 (B1F0, B1F1), Local0)
                 }
                 Else
                 {
-                    Store (B1B2(B0F0,B0F1), Local0)
+                    Store (B1B2 (B0F0, B0F1), Local0)
                 }
 
                 And (Local0, 0xFFFF, Local0)
@@ -32327,11 +32531,11 @@ Else
             {
                 If (BSLF)
                 {
-                    Store (B1B2(B1M0,B1M1), Local0)
+                    Store (B1B2 (B1M0, B1M1), Local0)
                 }
                 Else
                 {
-                    Store (B1B2(B0M0,B0M1), Local0)
+                    Store (B1B2 (B0M0, B0M1), Local0)
                 }
 
                 If (LNotEqual (Local0, 0xFFFF))
@@ -32355,11 +32559,11 @@ Else
             {
                 If (BSLF)
                 {
-                    Store (B1B2(B1D2,B1D3), Local0)
+                    Store (B1B2 (B1D2, B1D3), Local0)
                 }
                 Else
                 {
-                    Store (B1B2(B0D2,B0D3), Local0)
+                    Store (B1B2 (B0D2, B0D3), Local0)
                 }
             }
             Else
@@ -32374,8 +32578,8 @@ Else
         {
             Name (BSTR, Buffer (0x20){})
             Name (DDDD, "ASUS Battery")
-            Store (DDDD, BSTR)
-            Return (BSTR)
+            Store (DDDD, BSTR) /* \_SB_.PCI0.LPCB.EC0_.BIF9.BSTR */
+            Return (BSTR) /* \_SB_.PCI0.LPCB.EC0_.BIF9.BSTR */
         }
 
         Method (BIFA, 0, NotSerialized)
@@ -32384,11 +32588,11 @@ Else
             {
                 If (BSLF)
                 {
-                    Store (B1B2(B1N0,B1N1), Local0)
+                    Store (B1B2 (B1N0, B1N1), Local0)
                 }
                 Else
                 {
-                    Store (B1B2(B0N0,B0N1), Local0)
+                    Store (B1B2 (B0N0, B0N1), Local0)
                 }
             }
             Else
@@ -32403,11 +32607,11 @@ Else
         {
             If (BSLF)
             {
-                Store (B1B2(B1S0,B1S1), Local0)
+                Store (B1B2 (B1S0, B1S1), Local0)
             }
             Else
             {
-                Store (B1B2(B0S0,B0S1), Local0)
+                Store (B1B2 (B0S0, B0S1), Local0)
             }
 
             Return (Local0)
@@ -32417,11 +32621,11 @@ Else
         {
             If (BSLF)
             {
-                Store (B1B2(B1C0,B1C1), Local0)
+                Store (B1B2 (B1C0, B1C1), Local0)
             }
             Else
             {
-                Store (B1B2(B0C0,B0C1), Local0)
+                Store (B1B2 (B0C0, B0C1), Local0)
             }
 
             Return (Local0)
@@ -32431,11 +32635,11 @@ Else
         {
             If (BSLF)
             {
-                Store (B1B2(B1R0,B1R1), Local0)
+                Store (B1B2 (B1R0, B1R1), Local0)
             }
             Else
             {
-                Store (B1B2(B0R0,B0R1), Local0)
+                Store (B1B2 (B0R0, B0R1), Local0)
             }
 
             If (LEqual (Local0, 0xFFFF))
@@ -32450,11 +32654,11 @@ Else
         {
             If (BSLF)
             {
-                Store (B1B2(B1V0,B1V1), Local0)
+                Store (B1B2 (B1V0, B1V1), Local0)
             }
             Else
             {
-                Store (B1B2(B0V0,B0V1), Local0)
+                Store (B1B2 (B0V0, B0V1), Local0)
             }
 
             Return (Local0)
@@ -32474,15 +32678,15 @@ Else
         {
             If (Arg0)
             {
-                Store (One, BSLF)
+                Store (One, BSLF) /* \BSLF */
             }
             Else
             {
-                Store (Zero, BSLF)
+                Store (Zero, BSLF) /* \BSLF */
             }
         }
 
-        Mutex(MMPX, 0)
+        Mutex (MMPX, 0x00)
         Method (BATO, 0, Serialized)
         {
             Acquire (MMPX, 0xFFFF)
@@ -32498,44 +32702,44 @@ Else
 
     Scope (_SB.PCI0.LPCB.EC0)
     {
-        Method (_QA1, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QA1, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            Store (DCPS (Zero), DCPF)
+            Store (DCPS (Zero), DCPF) /* \_SB_.DCPF */
             If (DCPF)
             {
                 Sleep (0x07D0)
             }
 
-            Notify (BAT0, 0x80)
-            Notify (BAT0, 0x81)
+            Notify (BAT0, 0x80) // Status Change
+            Notify (BAT0, 0x81) // Information Change
         }
 
-        Method (_QA5, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QA5, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            Store (One, BLLO)
+            Store (One, BLLO) /* \BLLO */
             If (ATKP)
             {
                 ^^^^ATKD.IANE (0x6E)
             }
             ElseIf (BATP (Zero))
             {
-                Notify (BAT0, 0x80)
+                Notify (BAT0, 0x80) // Status Change
             }
         }
 
-        Method (_QA3, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QA3, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (BATP (Zero))
             {
                 Store (BCLE (Zero), Local0)
                 If (LEqual (Local0, Zero))
                 {
-                    Notify (BAT0, 0x80)
+                    Notify (BAT0, 0x80) // Status Change
                 }
                 Else
                 {
-                    Notify (BAT0, 0x81)
-                    Notify (AC0, 0x80)
+                    Notify (BAT0, 0x81) // Information Change
+                    Notify (AC0, 0x80) // Status Change
                 }
             }
         }
@@ -32544,11 +32748,11 @@ Else
         {
             If (Arg0)
             {
-                Return (DCP2)
+                Return (DCP2) /* \_SB_.DCP2 */
             }
             Else
             {
-                Return (DCPF)
+                Return (DCPF) /* \_SB_.DCPF */
             }
         }
 
@@ -32569,7 +32773,7 @@ Else
             If (LEqual (ECUP, Zero))
             {
                 \_SB.PCI0.LPCB.EC0.CSEE (0xAF)
-                Store (One, ECUP)
+                Store (One, ECUP) /* \ECUP */
             }
 
             \_SB.PCI0.GFX0.OPTS (Arg0)
@@ -32624,18 +32828,18 @@ Else
             {
                 If (LLessEqual (MSOS (), OSME))
                 {
-                    Store (0x02, MES4)
+                    Store (0x02, MES4) /* \MES4 */
                 }
                 Else
                 {
-                    Store (Zero, MES4)
+                    Store (Zero, MES4) /* \MES4 */
                 }
             }
 
             SBRW (Arg0)
             If (LEqual (Arg0, 0x04))
             {
-                Notify (\_SB.SLPB, 0x02)
+                Notify (\_SB.SLPB, 0x02) // Device Wake
             }
 
             PRJW (Arg0)
@@ -32652,26 +32856,26 @@ Else
             {
                 SWRB (0x90, 0x1E, Zero)
                 SWRB (0x90, 0x07, 0x80)
-                Store (Zero, MFLG)
+                Store (Zero, MFLG) /* \_SB_.PCI0.SBUS.MFLG */
             }
             ElseIf (LEqual (Arg0, One))
             {
                 SWRB (0x90, 0x1E, Zero)
                 SWRB (0x90, 0x07, 0xA0)
-                Store (One, MFLG)
+                Store (One, MFLG) /* \_SB_.PCI0.SBUS.MFLG */
             }
             ElseIf (LEqual (Arg0, 0x02))
             {
                 SWRB (0x90, 0x1E, Zero)
                 SWRB (0x90, 0x07, 0xC0)
-                Store (0x02, MFLG)
+                Store (0x02, MFLG) /* \_SB_.PCI0.SBUS.MFLG */
             }
             ElseIf (LEqual (Arg0, 0x03))
             {
                 SWRB (0x90, 0x1E, Zero)
                 SWRB (0x90, 0x07, 0xA0)
                 SWRB (0x90, 0x1E, One)
-                Store (0x03, MFLG)
+                Store (0x03, MFLG) /* \_SB_.PCI0.SBUS.MFLG */
             }
 
             Return (One)
@@ -32689,8 +32893,8 @@ Else
             Name (OBUF, Buffer (0x10){})
             Name (IBUF, Buffer (0x0F){})
             Name (ERRN, Zero)
-            Name (_HID, EisaId ("INT340E"))  // _HID: Hardware ID
-            Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
+            Name (_HID, EisaId ("INT340E") /* Motherboard Resources */)  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _CID: Compatible ID
             Name (IVER, 0x00030000)
             Name (TSDL, Package (0x04)
             {
@@ -32733,11 +32937,11 @@ Else
             Method (TSDD, 0, NotSerialized)
             {
                 Name (TMPC, Zero)
-                Store (^^PCI0.LPCB.EC0.ECPU, TMPC)
+                Store (^^PCI0.LPCB.EC0.ECPU, TMPC) /* \_SB_.PTID.TSDD.TMPC */
                 Store (TMPC, Index (TMPV, Zero))
-                Store (^^PCI0.LPCB.EC0.ECPU, TMPC)
+                Store (^^PCI0.LPCB.EC0.ECPU, TMPC) /* \_SB_.PTID.TSDD.TMPC */
                 Store (TMPC, Index (TMPV, One))
-                Return (TMPV)
+                Return (TMPV) /* \_SB_.PTID.TMPV */
             }
 
             Method (PWRG, 0, NotSerialized)
@@ -32748,11 +32952,11 @@ Else
             Method (PSDD, 0, NotSerialized)
             {
                 Name (PWRC, Zero)
-                Store (PWRG (), PWRC)
+                Store (PWRG (), PWRC) /* \_SB_.PTID.PSDD.PWRC */
                 Store (PWRC, Index (PWRV, Zero))
-                Store (PWRG (), PWRC)
+                Store (PWRG (), PWRC) /* \_SB_.PTID.PSDD.PWRC */
                 Store (PWRC, Index (PWRV, One))
-                Return (PWRV)
+                Return (PWRV) /* \_SB_.PTID.PWRV */
             }
 
             Method (OSDG, 0, NotSerialized)
@@ -32763,11 +32967,11 @@ Else
             Method (OSDD, 0, NotSerialized)
             {
                 Name (OSDC, Zero)
-                Store (OSDG (), OSDC)
+                Store (OSDG (), OSDC) /* \_SB_.PTID.OSDD.OSDC */
                 Store (OSDC, Index (OSDV, Zero))
-                Store (OSDG (), OSDC)
+                Store (OSDG (), OSDC) /* \_SB_.PTID.OSDD.OSDC */
                 Store (OSDC, Index (OSDV, One))
-                Return (OSDV)
+                Return (OSDV) /* \_SB_.PTID.OSDV */
             }
 
             Method (SDSP, 0, NotSerialized)
@@ -32807,10 +33011,10 @@ Else
                 And (^^PCI0.LPCB.EC0.PBSY, 0x80, Local0)
                 If (LEqual (Local0, Zero))
                 {
-                    Return (PADD)
+                    Return (PADD) /* \_SB_.PTID.PADD */
                 }
 
-                Return (PADA)
+                Return (PADA) /* \_SB_.PTID.PADA */
             }
 
             Method (RPMD, 0, NotSerialized)
@@ -32825,7 +33029,7 @@ Else
                     Add (One, Local1, Local1)
                 }
 
-                Return (MBOX)
+                Return (MBOX) /* \_SB_.PTID.MBOX */
             }
 
             Method (WPMD, 1, NotSerialized)
@@ -32842,17 +33046,17 @@ Else
                     Add (One, Local0, Local0)
                 }
 
-                Store (DerefOf (Index (Arg0, 0x06)), CADR)
-                Store (DerefOf (Index (Arg0, 0x07)), WLEN)
-                Store (DerefOf (Index (Arg0, 0x08)), RLEN)
-                Store (DerefOf (Index (Arg0, 0x09)), CAMD)
+                Store (DerefOf (Index (Arg0, 0x06)), CADR) /* \_SB_.PTID.CADR */
+                Store (DerefOf (Index (Arg0, 0x07)), WLEN) /* \_SB_.PTID.WLEN */
+                Store (DerefOf (Index (Arg0, 0x08)), RLEN) /* \_SB_.PTID.RLEN */
+                Store (DerefOf (Index (Arg0, 0x09)), CAMD) /* \_SB_.PTID.CAMD */
                 Name (CUNT, Zero)
-                Store (Zero, CUNT)
+                Store (Zero, CUNT) /* \_SB_.PTID.WPMD.CUNT */
                 Store (0x0A, Local0)
                 While (LLess (CUNT, WLEN))
                 {
                     Store (DerefOf (Index (Arg0, Local0)), Index (OBUF, CUNT))
-                    Add (CUNT, One, CUNT)
+                    Add (CUNT, One, CUNT) /* \_SB_.PTID.WPMD.CUNT */
                     Add (Local0, One, Local0)
                 }
 
@@ -32862,13 +33066,13 @@ Else
             Name (CYCT, Zero)
             Method (ISPC, 0, NotSerialized)
             {
-                Store (DerefOf (Index (MBOX, 0x03)), CYCT)
-                ShiftLeft (CYCT, 0x08, CYCT)
-                Add (CYCT, DerefOf (Index (MBOX, 0x02)), CYCT)
-                ShiftLeft (CYCT, 0x08, CYCT)
-                Add (CYCT, DerefOf (Index (MBOX, One)), CYCT)
-                ShiftLeft (CYCT, 0x08, CYCT)
-                Add (CYCT, DerefOf (Index (MBOX, Zero)), CYCT)
+                Store (DerefOf (Index (MBOX, 0x03)), CYCT) /* \_SB_.PTID.CYCT */
+                ShiftLeft (CYCT, 0x08, CYCT) /* \_SB_.PTID.CYCT */
+                Add (CYCT, DerefOf (Index (MBOX, 0x02)), CYCT) /* \_SB_.PTID.CYCT */
+                ShiftLeft (CYCT, 0x08, CYCT) /* \_SB_.PTID.CYCT */
+                Add (CYCT, DerefOf (Index (MBOX, One)), CYCT) /* \_SB_.PTID.CYCT */
+                ShiftLeft (CYCT, 0x08, CYCT) /* \_SB_.PTID.CYCT */
+                Add (CYCT, DerefOf (Index (MBOX, Zero)), CYCT) /* \_SB_.PTID.CYCT */
                 If (LGreaterEqual (CYCT, One))
                 {
                     Store (DerefOf (Index (MBOX, 0x04)), Local0)
@@ -32881,7 +33085,7 @@ Else
                 {
                     If (LGreater (CYCT, Zero))
                     {
-                        Subtract (CYCT, One, CYCT)
+                        Subtract (CYCT, One, CYCT) /* \_SB_.PTID.CYCT */
                         And (CYCT, 0xFF, Index (MBOX, Zero))
                         And (CYCT, 0xFF00, Local0)
                         ShiftRight (Local0, 0x08, Index (MBOX, One))
@@ -32895,7 +33099,7 @@ Else
 
             Method (ENPC, 0, NotSerialized)
             {
-                Store (Zero, CYCT)
+                Store (Zero, CYCT) /* \_SB_.PTID.CYCT */
             }
 
             Method (RPCS, 0, NotSerialized)
@@ -32903,22 +33107,22 @@ Else
                 Name (TPCS, Zero)
                 If (LGreater (CYCT, Zero))
                 {
-                    Store (One, TPCS)
+                    Store (One, TPCS) /* \_SB_.PTID.RPCS.TPCS */
                     ISPC ()
                 }
                 Else
                 {
-                    Store (Zero, TPCS)
+                    Store (Zero, TPCS) /* \_SB_.PTID.RPCS.TPCS */
                 }
 
-                Return (TPCS)
+                Return (TPCS) /* \_SB_.PTID.RPCS.TPCS */
             }
 
             Method (RPEC, 0, NotSerialized)
             {
                 Name (TPEC, Zero)
-                Store (ERRN, TPEC)
-                Return (TPEC)
+                Store (ERRN, TPEC) /* \_SB_.PTID.RPEC.TPEC */
+                Return (TPEC) /* \_SB_.PTID.RPEC.TPEC */
             }
         }
     }
@@ -32929,7 +33133,7 @@ Else
         {
             If (LEqual (Arg0, Zero))
             {
-                Return (GNBF)
+                Return (GNBF) /* \_SB_.GNBF */
             }
 
             Store (Zero, Local0)
@@ -32943,12 +33147,12 @@ Else
                 EROR,   8
             }
 
-            Store (Zero, EROR)
-            Store (One, STAS)
+            Store (Zero, EROR) /* \_SB_.ATKD.AGFN.EROR */
+            Store (One, STAS) /* \_SB_.ATKD.AGFN.STAS */
             If (LEqual (MFUN, 0x02))
             {
                 BSMI (Arg0)
-                And (STAS, 0xFE, STAS)
+                And (STAS, 0xFE, STAS) /* \_SB_.ATKD.AGFN.STAS */
             }
 
             And (MFUN, 0xF0, Local0)
@@ -32960,29 +33164,29 @@ Else
             If (LEqual (MFUN, 0x42))
             {
                 MF42 (Arg0, SFUN, LEN)
-                And (STAS, 0xFE, STAS)
+                And (STAS, 0xFE, STAS) /* \_SB_.ATKD.AGFN.STAS */
             }
 
             If (LEqual (MFUN, One))
             {
                 GVER (Arg0, LEN)
-                And (STAS, 0xFE, STAS)
+                And (STAS, 0xFE, STAS) /* \_SB_.ATKD.AGFN.STAS */
             }
 
             If (LEqual (MFUN, 0x30))
             {
                 MF30 (Arg0, SFUN, LEN)
-                And (STAS, 0xFE, STAS)
+                And (STAS, 0xFE, STAS) /* \_SB_.ATKD.AGFN.STAS */
             }
 
             If (LEqual (STAS, One))
             {
-                Store (One, EROR)
-                Or (STAS, 0x02, STAS)
+                Store (One, EROR) /* \_SB_.ATKD.AGFN.EROR */
+                Or (STAS, 0x02, STAS) /* \_SB_.ATKD.AGFN.STAS */
             }
 
-            And (STAS, 0xFE, STAS)
-            Or (STAS, 0x80, STAS)
+            And (STAS, 0xFE, STAS) /* \_SB_.ATKD.AGFN.STAS */
+            Or (STAS, 0x80, STAS) /* \_SB_.ATKD.AGFN.STAS */
             Return (Zero)
         }
 
@@ -33027,11 +33231,11 @@ Else
 
             If (Local0)
             {
-                Store (Local0, EM30)
-                Or (SM30, 0x02, SM30)
+                Store (Local0, EM30) /* \_SB_.ATKD.MF30.EM30 */
+                Or (SM30, 0x02, SM30) /* \_SB_.ATKD.MF30.SM30 */
             }
 
-            Or (SM30, 0x80, SM30)
+            Or (SM30, 0x80, SM30) /* \_SB_.ATKD.MF30.SM30 */
             Return (Zero)
         }
 
@@ -33050,8 +33254,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G30V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G30V.SVER */
             Return (Zero)
         }
 
@@ -33075,11 +33279,11 @@ Else
             }
 
             Store (^^PCI0.LPCB.EC0.ECXT (ECMD, EDA1, EDA2, EDA3, EDA4, EDA5), Local0)
-            Store (DerefOf (Index (Local0, One)), EDA1)
-            Store (DerefOf (Index (Local0, 0x02)), EDA2)
-            Store (DerefOf (Index (Local0, 0x03)), EDA3)
-            Store (DerefOf (Index (Local0, 0x04)), EDA4)
-            Store (DerefOf (Index (Local0, 0x05)), EDA5)
+            Store (DerefOf (Index (Local0, One)), EDA1) /* \_SB_.ATKD.EC01.EDA1 */
+            Store (DerefOf (Index (Local0, 0x02)), EDA2) /* \_SB_.ATKD.EC01.EDA2 */
+            Store (DerefOf (Index (Local0, 0x03)), EDA3) /* \_SB_.ATKD.EC01.EDA3 */
+            Store (DerefOf (Index (Local0, 0x04)), EDA4) /* \_SB_.ATKD.EC01.EDA4 */
+            Store (DerefOf (Index (Local0, 0x05)), EDA5) /* \_SB_.ATKD.EC01.EDA5 */
             Return (DerefOf (Index (Local0, Zero)))
         }
 
@@ -33115,10 +33319,10 @@ Else
             Store (^^PCI0.LPCB.EC0.ECSB (BUSN, PROT, DADD, DREG, DAT0, DAT1, Local1), Local0)
             If (LEqual (DerefOf (Index (Local0, Zero)), Zero))
             {
-                Store (DerefOf (Index (Local0, One)), DAT0)
-                Store (DerefOf (Index (Local0, 0x02)), DAT1)
-                Store (DerefOf (Index (Local0, 0x03)), BLEN)
-                Store (DerefOf (Index (Local0, 0x04)), BLKK)
+                Store (DerefOf (Index (Local0, One)), DAT0) /* \_SB_.ATKD.EC02.DAT0 */
+                Store (DerefOf (Index (Local0, 0x02)), DAT1) /* \_SB_.ATKD.EC02.DAT1 */
+                Store (DerefOf (Index (Local0, 0x03)), BLEN) /* \_SB_.ATKD.EC02.BLEN */
+                Store (DerefOf (Index (Local0, 0x04)), BLKK) /* \_SB_.ATKD.EC02.BLKK */
             }
 
             Store (DerefOf (Index (Local0, Zero)), Local2)
@@ -33128,12 +33332,12 @@ Else
 
         Method (GENW, 1, NotSerialized)
         {
-            Store (Zero, RTCW)
+            Store (Zero, RTCW) /* \_SB_.RTCW */
         }
 
         Method (BSMI, 1, Serialized)
         {
-            Store (Arg0, BIPA)
+            Store (Arg0, BIPA) /* \_SB_.BIPA */
             ISMI (0xA1)
         }
     }
@@ -33206,14 +33410,14 @@ Else
                 Store (MF1F (Arg0, Arg1, Arg3), Local0)
             }
 
-            And (SM1X, 0xFE, SM1X)
+            And (SM1X, 0xFE, SM1X) /* \_SB_.ATKD.MF1X.SM1X */
             If (Local0)
             {
-                Store (Local0, EM1X)
-                Or (SM1X, 0x02, SM1X)
+                Store (Local0, EM1X) /* \_SB_.ATKD.MF1X.EM1X */
+                Or (SM1X, 0x02, SM1X) /* \_SB_.ATKD.MF1X.SM1X */
             }
 
-            Or (SM1X, 0x80, SM1X)
+            Or (SM1X, 0x80, SM1X) /* \_SB_.ATKD.MF1X.SM1X */
         }
 
         Method (MF10, 3, NotSerialized)
@@ -33247,8 +33451,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G10V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G10V.SVER */
             Return (Zero)
         }
 
@@ -33266,7 +33470,7 @@ Else
                 DLTM,   16
             }
 
-            Store (DLTM, RTCW)
+            Store (DLTM, RTCW) /* \_SB_.RTCW */
             Return (Zero)
         }
 
@@ -33316,8 +33520,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G11V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G11V.SVER */
             Return (Zero)
         }
 
@@ -33336,8 +33540,8 @@ Else
                 BTTP,   8
             }
 
-            Store (One, BTNM)
-            Store (Zero, BTTP)
+            Store (One, BTNM) /* \_SB_.ATKD.GBAT.BTNM */
+            Store (Zero, BTTP) /* \_SB_.ATKD.GBAT.BTTP */
             Return (Zero)
         }
 
@@ -33376,7 +33580,7 @@ Else
             If (LEqual (BATA, Zero))
             {
                 Store (^^PCI0.LPCB.EC0.SMBR (^^PCI0.LPCB.EC0.RDWD, ^^PCI0.LPCB.EC0.BADR, REGS), Local0)
-                Store (DerefOf (Index (Local0, 0x02)), BDAT)
+                Store (DerefOf (Index (Local0, 0x02)), BDAT) /* \_SB_.ATKD.ASBR.BDAT */
                 Store (DerefOf (Index (Local0, Zero)), Local2)
                 And (Local2, 0x1F, Local2)
                 If (Local2)
@@ -33412,16 +33616,16 @@ Else
                 CreateDWordField (BKUF, 0x14, DAT6)
                 CreateDWordField (BKUF, 0x18, DAT7)
                 CreateDWordField (BKUF, 0x1C, DAT8)
-                Store (DerefOf (Index (Local0, 0x02)), BKUF)
-                Store (DAT1, BLK1)
-                Store (DAT2, BLK2)
-                Store (DAT3, BLK3)
-                Store (DAT4, BLK4)
-                Store (DAT5, BLK5)
-                Store (DAT6, BLK6)
-                Store (DAT7, BLK7)
-                Store (DAT8, BLK8)
-                Store (DerefOf (Index (Local0, One)), BLEN)
+                Store (DerefOf (Index (Local0, 0x02)), BKUF) /* \_SB_.ATKD.ASBR.BKUF */
+                Store (DAT1, BLK1) /* \_SB_.ATKD.ASBR.BLK1 */
+                Store (DAT2, BLK2) /* \_SB_.ATKD.ASBR.BLK2 */
+                Store (DAT3, BLK3) /* \_SB_.ATKD.ASBR.BLK3 */
+                Store (DAT4, BLK4) /* \_SB_.ATKD.ASBR.BLK4 */
+                Store (DAT5, BLK5) /* \_SB_.ATKD.ASBR.BLK5 */
+                Store (DAT6, BLK6) /* \_SB_.ATKD.ASBR.BLK6 */
+                Store (DAT7, BLK7) /* \_SB_.ATKD.ASBR.BLK7 */
+                Store (DAT8, BLK8) /* \_SB_.ATKD.ASBR.BLK8 */
+                Store (DerefOf (Index (Local0, One)), BLEN) /* \_SB_.ATKD.ASBR.BLEN */
                 Store (DerefOf (Index (Local0, Zero)), Local2)
                 And (Local2, 0x1F, Local2)
                 If (Local2)
@@ -33461,7 +33665,7 @@ Else
             {
                 Store (^^PCI0.LPCB.EC0.RBEP (REGS), Local2)
                 And (Local2, 0xFF, Local3)
-                Store (Local3, BDAT)
+                Store (Local3, BDAT) /* \_SB_.ATKD.ASBE.BDAT */
                 ShiftRight (Local2, 0x08, Local2)
                 And (Local2, 0x1F, Local2)
                 If (Local2)
@@ -33541,8 +33745,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G12V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G12V.SVER */
             Return (Zero)
         }
 
@@ -33564,7 +33768,7 @@ Else
             Store (Zero, Local0)
             Or (Local0, 0x10, Local0)
             Or (Local0, 0x20, Local0)
-            Store (Local0, LDI0)
+            Store (Local0, LDI0) /* \_SB_.ATKD.GLDI.LDI0 */
             Return (Zero)
         }
 
@@ -33653,8 +33857,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G13V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G13V.SVER */
             Return (Zero)
         }
 
@@ -33695,7 +33899,7 @@ Else
             }
 
             Or (Local0, 0x01000000, Local0)
-            Store (Local0, THRI)
+            Store (Local0, THRI) /* \_SB_.ATKD.GTSI.THRI */
             Return (Zero)
         }
 
@@ -33715,10 +33919,10 @@ Else
                 TSST,   8
             }
 
-            Store (Zero, TSST)
+            Store (Zero, TSST) /* \_SB_.ATKD.GTSV.TSST */
             If (LEqual (TSNM, Zero))
             {
-                Store (\_TZ.RTMP (), TSVL)
+                Store (\_TZ.RTMP (), TSVL) /* \_SB_.ATKD.GTSV.TSVL */
                 Return (Zero)
             }
 
@@ -33763,7 +33967,7 @@ Else
                 NMVS,   8
             }
 
-            Store (Zero, NMVS)
+            Store (Zero, NMVS) /* \_SB_.ATKD.GVSN.NMVS */
             Return (Zero)
         }
 
@@ -33804,7 +34008,7 @@ Else
                 NMFN,   32
             }
 
-            Store (One, NMFN)
+            Store (One, NMFN) /* \_SB_.ATKD.GFNN.NMFN */
             Return (Zero)
         }
 
@@ -33829,7 +34033,7 @@ Else
             }
 
             Store (FNNM, Local0)
-            Store (\_TZ.RFAN (Decrement (Local0)), GFNS)
+            Store (\_TZ.RFAN (Decrement (Local0)), GFNS) /* \_SB_.ATKD.GFNS.GFNS */
             Return (Zero)
         }
 
@@ -33893,8 +34097,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G14V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G14V.SVER */
             Return (Zero)
         }
 
@@ -33912,7 +34116,7 @@ Else
                 NBBT,   8
             }
 
-            Store (0x05, NBBT)
+            Store (0x05, NBBT) /* \_SB_.ATKD.GNBT.NBBT */
             Return (Zero)
         }
 
@@ -33989,11 +34193,11 @@ Else
             If (LEqual (DerefOf (Index (Local1, One)), 0x03)){}
             If (LEqual (DerefOf (Index (Local1, 0x02)), Local2))
             {
-                Store (Zero, BTST)
+                Store (Zero, BTST) /* \_SB_.ATKD.GBTS.BTST */
             }
             Else
             {
-                Store (One, BTST)
+                Store (One, BTST) /* \_SB_.ATKD.GBTS.BTST */
             }
 
             Return (Zero)
@@ -34045,8 +34249,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G15V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G15V.SVER */
             Return (Zero)
         }
 
@@ -34065,8 +34269,8 @@ Else
                 MLDB,   8
             }
 
-            Store (GPLV (), LCDB)
-            Store (0x0B, MLDB)
+            Store (GPLV (), LCDB) /* \_SB_.ATKD.GLDB.LCDB */
+            Store (0x0B, MLDB) /* \_SB_.ATKD.GLDB.MLDB */
             Return (Zero)
         }
 
@@ -34123,7 +34327,7 @@ Else
             Store (Zero, Local0)
             Or (Local0, One, Local0)
             Or (Local0, 0x02, Local0)
-            Store (Local0, ODPI)
+            Store (Local0, ODPI) /* \_SB_.ATKD.GDPI.ODPI */
             BSMI (Arg0)
             Return (Zero)
         }
@@ -34191,8 +34395,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G16V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G16V.SVER */
             Return (Zero)
         }
 
@@ -34212,7 +34416,7 @@ Else
 
             If (OFBD (NXBD))
             {
-                Store (NXBD, UHDB)
+                Store (NXBD, UHDB) /* \_SB_.UHDB */
                 Return (Zero)
             }
             Else
@@ -34278,8 +34482,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G17V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G17V.SVER */
             Return (Zero)
         }
 
@@ -34301,22 +34505,22 @@ Else
                 MDL4,   32
             }
 
-            Store (Zero, MDL1)
-            Store (Zero, MDL2)
-            Store (Zero, MDL3)
-            Store (Zero, MDL4)
+            Store (Zero, MDL1) /* \_SB_.ATKD.GMDL.MDL1 */
+            Store (Zero, MDL2) /* \_SB_.ATKD.GMDL.MDL2 */
+            Store (Zero, MDL3) /* \_SB_.ATKD.GMDL.MDL3 */
+            Store (Zero, MDL4) /* \_SB_.ATKD.GMDL.MDL4 */
             Name (BBUF, Buffer (0x10){})
             CreateDWordField (BBUF, Zero, DAT1)
             CreateDWordField (BBUF, 0x04, DAT2)
             CreateDWordField (BBUF, 0x08, DAT3)
             CreateDWordField (BBUF, 0x0C, DAT4)
             Store (GBMN (), Local0)
-            Store (SizeOf (Local0), MLEN)
-            Store (GBMN (), BBUF)
-            Store (DAT1, MDL1)
-            Store (DAT2, MDL2)
-            Store (DAT3, MDL3)
-            Store (DAT4, MDL4)
+            Store (SizeOf (Local0), MLEN) /* \_SB_.ATKD.GMDL.MLEN */
+            Store (GBMN (), BBUF) /* \_SB_.ATKD.GMDL.BBUF */
+            Store (DAT1, MDL1) /* \_SB_.ATKD.GMDL.MDL1 */
+            Store (DAT2, MDL2) /* \_SB_.ATKD.GMDL.MDL2 */
+            Store (DAT3, MDL3) /* \_SB_.ATKD.GMDL.MDL3 */
+            Store (DAT4, MDL4) /* \_SB_.ATKD.GMDL.MDL4 */
             Return (Zero)
         }
 
@@ -34338,22 +34542,22 @@ Else
                 BDL4,   32
             }
 
-            Store (Zero, BDL1)
-            Store (Zero, BDL2)
-            Store (Zero, BDL3)
-            Store (Zero, BDL4)
+            Store (Zero, BDL1) /* \_SB_.ATKD.GBSI.BDL1 */
+            Store (Zero, BDL2) /* \_SB_.ATKD.GBSI.BDL2 */
+            Store (Zero, BDL3) /* \_SB_.ATKD.GBSI.BDL3 */
+            Store (Zero, BDL4) /* \_SB_.ATKD.GBSI.BDL4 */
             Name (BBUF, Buffer (0x10){})
             CreateDWordField (BBUF, Zero, DAT1)
             CreateDWordField (BBUF, 0x04, DAT2)
             CreateDWordField (BBUF, 0x08, DAT3)
             CreateDWordField (BBUF, 0x0C, DAT4)
             Store (GBRV (), Local0)
-            Store (SizeOf (Local0), BLEN)
-            Store (GBRV (), BBUF)
-            Store (DAT1, BDL1)
-            Store (DAT2, BDL2)
-            Store (DAT3, BDL3)
-            Store (DAT4, BDL4)
+            Store (SizeOf (Local0), BLEN) /* \_SB_.ATKD.GBSI.BLEN */
+            Store (GBRV (), BBUF) /* \_SB_.ATKD.GBSI.BBUF */
+            Store (DAT1, BDL1) /* \_SB_.ATKD.GBSI.BDL1 */
+            Store (DAT2, BDL2) /* \_SB_.ATKD.GBSI.BDL2 */
+            Store (DAT3, BDL3) /* \_SB_.ATKD.GBSI.BDL3 */
+            Store (DAT4, BDL4) /* \_SB_.ATKD.GBSI.BDL4 */
             Return (Zero)
         }
 
@@ -34375,10 +34579,10 @@ Else
                 EDL4,   32
             }
 
-            Store (Zero, EDL1)
-            Store (Zero, EDL2)
-            Store (Zero, EDL3)
-            Store (Zero, EDL4)
+            Store (Zero, EDL1) /* \_SB_.ATKD.GECI.EDL1 */
+            Store (Zero, EDL2) /* \_SB_.ATKD.GECI.EDL2 */
+            Store (Zero, EDL3) /* \_SB_.ATKD.GECI.EDL3 */
+            Store (Zero, EDL4) /* \_SB_.ATKD.GECI.EDL4 */
             BSMI (Arg0)
             Return (Zero)
         }
@@ -34397,7 +34601,7 @@ Else
                 SFII,   8
             }
 
-            Store (BECF, SFII)
+            Store (BECF, SFII) /* \_SB_.ATKD.GFII.SFII */
             Return (Zero)
         }
 
@@ -34442,8 +34646,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G18V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G18V.SVER */
             Return (Zero)
         }
 
@@ -34462,7 +34666,7 @@ Else
                 LDI1,   32
             }
 
-            Store (FEBL, LDI0)
+            Store (FEBL, LDI0) /* \_SB_.ATKD.GDVI.LDI0 */
             Return (Zero)
         }
 
@@ -34555,8 +34759,8 @@ Else
                 MVER,   16
             }
 
-            Store (Zero, MVER)
-            Store (Zero, SVER)
+            Store (Zero, MVER) /* \_SB_.ATKD.G19V.MVER */
+            Store (Zero, SVER) /* \_SB_.ATKD.G19V.SVER */
             Return (Zero)
         }
 
@@ -34580,7 +34784,7 @@ Else
                 CMAX,   16
             }
 
-            Store (0xFF, CMAX)
+            Store (0xFF, CMAX) /* \_SB_.ATKD.CSIN.CMAX */
             Return (Zero)
         }
 
@@ -34611,20 +34815,20 @@ Else
                 Offset (0x10)
             }
 
-            Store (0x1F, MFUN)
-            Store (0x14, SFUN)
-            Store (0x10, LEN)
+            Store (0x1F, MFUN) /* \_SB_.ATKD.BATF.MFUN */
+            Store (0x14, SFUN) /* \_SB_.ATKD.BATF.SFUN */
+            Store (0x10, LEN) /* \_SB_.ATKD.BATF.LEN_ */
             If (Arg0)
             {
-                Store (One, BATE)
+                Store (One, BATE) /* \_SB_.ATKD.BATF.BATE */
             }
             Else
             {
-                Store (Zero, BATE)
+                Store (Zero, BATE) /* \_SB_.ATKD.BATF.BATE */
             }
 
-            Store (Zero, EM1X)
-            Store (One, SM1X)
+            Store (Zero, EM1X) /* \_SB_.ATKD.BATF.EM1X */
+            Store (One, SM1X) /* \_SB_.ATKD.BATF.SM1X */
             MF1X (Local0, LEN, MFUN, SFUN)
         }
 
@@ -34792,11 +34996,11 @@ Else
 
             If (Local0)
             {
-                Store (Local0, EM42)
-                Or (SM42, 0x02, SM42)
+                Store (Local0, EM42) /* \_SB_.ATKD.MF42.EM42 */
+                Or (SM42, 0x02, SM42) /* \_SB_.ATKD.MF42.SM42 */
             }
 
-            Or (SM42, 0x80, SM42)
+            Or (SM42, 0x80, SM42) /* \_SB_.ATKD.MF42.SM42 */
             Return (Zero)
         }
 
@@ -34834,13 +35038,13 @@ Else
                 BOT2,   64
             }
 
-            Store (TBOT, BOT1)
+            Store (TBOT, BOT1) /* \_SB_.ATKD.GBST.BOT1 */
             Store (RTC3, Local0)
             ShiftLeft (Local0, 0x08, Local0)
             Add (RTC2, Local0, Local0)
             ShiftLeft (Local0, 0x08, Local0)
             Add (RTC1, Local0, Local0)
-            Store (Local0, BOT2)
+            Store (Local0, BOT2) /* \_SB_.ATKD.GBST.BOT2 */
             Return (Zero)
         }
     }
@@ -34849,7 +35053,7 @@ Else
     {
         Device (ADBG)
         {
-            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C02") /* PNP Motherboard Resources */)  // _HID: Hardware ID
             Name (_UID, 0x13)  // _UID: Unique ID
             Name (CRS1, ResourceTemplate ()
             {
@@ -34881,7 +35085,7 @@ Else
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-                Return (CRS1)
+                Return (CRS1) /* \_SB_.PCI0.LPCB.ADBG.CRS1 */
             }
 
             Method (CALL, 0, Serialized)
@@ -34895,7 +35099,7 @@ Else
                 And (ShiftRight (Arg0, 0x04), 0x0F, Local1)
                 And (Not (Local1), 0x0F, Local2)
                 Store (0x3FFF, Local4)
-                Store (Local0, PPDT)
+                Store (Local0, PPDT) /* \_SB_.PCI0.LPCB.ADBG.PPDT */
                 Store (ShiftRight (XOr (PPST, 0x80), 0x03), Local3)
                 While (LAnd (LNotEqual (Local3, 0x10), LNotEqual (Local4, Zero)))
                 {
@@ -34906,12 +35110,12 @@ Else
 
                 If (LEqual (Local4, Zero))
                 {
-                    Store (Zero, PPDT)
+                    Store (Zero, PPDT) /* \_SB_.PCI0.LPCB.ADBG.PPDT */
                     Return (Zero)
                 }
 
                 Store (0x3FFF, Local4)
-                Store (Local1, PPDT)
+                Store (Local1, PPDT) /* \_SB_.PCI0.LPCB.ADBG.PPDT */
                 Store (ShiftRight (XOr (PPST, 0x80), 0x03), Local3)
                 While (LAnd (LNotEqual (Local3, Zero), LNotEqual (Local4, Zero)))
                 {
@@ -34922,11 +35126,11 @@ Else
 
                 If (LEqual (Local4, Zero))
                 {
-                    Store (Zero, PPDT)
+                    Store (Zero, PPDT) /* \_SB_.PCI0.LPCB.ADBG.PPDT */
                     Return (Zero)
                 }
 
-                Store (Local2, PPDT)
+                Store (Local2, PPDT) /* \_SB_.PCI0.LPCB.ADBG.PPDT */
                 Return (One)
             }
 
@@ -34937,7 +35141,7 @@ Else
                     Add (SizeOf (Arg0), One, Local0)
                     Store (Zero, Local1)
                     Name (BUFF, Buffer (Local0){})
-                    Store (Arg0, BUFF)
+                    Store (Arg0, BUFF) /* \_SB_.PCI0.LPCB.ADBG.OUTS.BUFF */
                     Subtract (Local0, One, Local0)
                     If (LEqual (PUTD (0x53), Zero))
                     {
@@ -35054,7 +35258,7 @@ Else
             Method (OUTX, 1, NotSerialized)
             {
                 THRE ()
-                Store (Arg0, SOUT)
+                Store (Arg0, SOUT) /* \_SB_.PCI0.LPCB.ADBG.SOUT */
             }
 
             Method (OUTC, 1, NotSerialized)
@@ -35118,7 +35322,7 @@ Else
             Method (GETC, 2, NotSerialized)
             {
                 CreateByteField (Arg0, Arg1, DBGC)
-                Return (DBGC)
+                Return (DBGC) /* \_SB_.PCI0.LPCB.ADBG.GETC.DBGC */
             }
 
             Method (MNIO, 1, NotSerialized)
@@ -35147,7 +35351,7 @@ Else
 
                 If (LEqual (ObjectType (Arg0), 0x02))
                 {
-                    Store (Arg0, DBGZ)
+                    Store (Arg0, DBGZ) /* \_SB_.PCI0.LPCB.ADBG.DBGZ */
                     Store (Zero, Local1)
                     While (One)
                     {
@@ -35231,7 +35435,7 @@ Else
 
         Method (WEIE, 0, Serialized)
         {
-            Store (One, EDA1)
+            Store (One, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             ECAC ()
             If (LEqual (EDA1, 0xFF))
             {
@@ -35243,7 +35447,7 @@ Else
 
         Method (WEOF, 0, Serialized)
         {
-            Store (0x02, EDA1)
+            Store (0x02, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             ECAC ()
             If (LEqual (EDA1, 0xFF))
             {
@@ -35255,7 +35459,7 @@ Else
 
         Method (WEOE, 0, NotSerialized)
         {
-            Store (0x03, EDA1)
+            Store (0x03, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             ECAC ()
             If (LEqual (EDA1, 0xFF))
             {
@@ -35270,12 +35474,12 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x83, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x83, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
-                Return (EDA1)
+                Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             }
 
             Return (Ones)
@@ -35286,10 +35490,10 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x84, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x84, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35303,12 +35507,12 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x85, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x85, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
-                Return (EDA1)
+                Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             }
 
             Return (Ones)
@@ -35319,10 +35523,10 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x86, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x86, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35336,15 +35540,15 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x87, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x87, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
                 If (LEqual (Arg0, Zero))
                 {
-                    Return (EDA1)
+                    Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
                 }
 
                 Return (Zero)
@@ -35358,13 +35562,13 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x8E, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x8E, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
-                Return (EDA1)
+                Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             }
 
             Return (Ones)
@@ -35375,15 +35579,15 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x95, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x95, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
                 If (LEqual (Arg0, Zero))
                 {
-                    Return (EDA1)
+                    Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
                 }
 
                 Return (Zero)
@@ -35397,9 +35601,9 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x98, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x98, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35413,11 +35617,11 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x9E, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
-                Store (Arg2, EDA4)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x9E, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
+                Store (Arg2, EDA4) /* \_SB_.PCI0.LPCB.EC0_.EDA4 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35431,12 +35635,12 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0xA8, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0xA8, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
-                Return (EDA1)
+                Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             }
 
             Return (Ones)
@@ -35447,11 +35651,11 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0x9F, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
-                Store (Arg2, EDA4)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x9F, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
+                Store (Arg2, EDA4) /* \_SB_.PCI0.LPCB.EC0_.EDA4 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35465,10 +35669,10 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0xA9, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0xA9, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35482,9 +35686,9 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0xB0, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0xB0, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35498,9 +35702,9 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0xB1, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0xB1, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35514,9 +35718,9 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0xB2, EDA1)
-                Store (Arg0, EDA2)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0xB2, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -35544,7 +35748,7 @@ Else
             If (ECAV ())
             {
                 Acquire (MUEC, 0xFFFF)
-                Store (Arg0, CMD1)
+                Store (Arg0, CMD1) /* \_SB_.PCI0.LPCB.EC0_.CMD1 */
                 Release (MUEC)
             }
         }
@@ -35558,10 +35762,10 @@ Else
 
             Store (Ones, Local0)
             Acquire (MUEC, 0xFFFF)
-            Store (Arg0, CDT1)
-            Store (0x6B, CDT2)
-            Store (Zero, CDT3)
-            Store (0xBB, CMD1)
+            Store (Arg0, CDT1) /* \_SB_.PCI0.LPCB.EC0_.CDT1 */
+            Store (0x6B, CDT2) /* \_SB_.PCI0.LPCB.EC0_.CDT2 */
+            Store (Zero, CDT3) /* \_SB_.PCI0.LPCB.EC0_.CDT3 */
+            Store (0xBB, CMD1) /* \_SB_.PCI0.LPCB.EC0_.CMD1 */
             Store (0x7F, Local1)
             While (LAnd (Local1, CMD1))
             {
@@ -35587,13 +35791,13 @@ Else
                 And (Local0, 0xFF, Local1)
                 ShiftRight (Local0, 0x08, Local0)
                 And (Local0, 0xFF, Local0)
-                Store (0xFF, CMD)
-                Store (0x80, EDA1)
-                Store (Local0, EDA2)
-                Store (Local1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x80, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Local0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Local1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
-                Return (EDA1)
+                Return (EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
             }
 
             Return (Ones)
@@ -35608,11 +35812,11 @@ Else
                 And (Local0, 0xFF, Local1)
                 ShiftRight (Local0, 0x08, Local0)
                 And (Local0, 0xFF, Local0)
-                Store (0xFF, CMD)
-                Store (0x81, EDA1)
-                Store (Local0, EDA2)
-                Store (Local1, EDA3)
-                Store (Arg1, EDA4)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0x81, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Local0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Local1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
+                Store (Arg1, EDA4) /* \_SB_.PCI0.LPCB.EC0_.EDA4 */
                 ECAC ()
                 Release (MU4T)
                 Return (One)
@@ -35647,7 +35851,8 @@ Else
                         ShiftLeft (Local4, 0x04, Local4)
                         Store (LBTN, Local3)
                         Store (Add (Local4, Local3), Local3)
-                        ^^^GFX0.AINT (One, Divide (Multiply (DerefOf (Index (PWAC, Local3)), 0x64), 0xFF, ))
+                        ^^^GFX0.AINT (One, Divide (Multiply (DerefOf (Index (PWAC, Local3)), 0x64), 0xFF, 
+                            ))
                     }
                 }
                 Else
@@ -35710,7 +35915,7 @@ Else
                     WRAM (0x0522, Local0)
                 }
 
-                Store (Zero, DECF)
+                Store (Zero, DECF) /* \_SB_.PCI0.LPCB.EC0_.DECF */
                 Return (Zero)
             }
 
@@ -35719,7 +35924,7 @@ Else
                 Store (RRAM (0x0521), Local0)
                 And (Local0, 0x7F, Local0)
                 WRAM (0x0521, Local0)
-                Or (DECF, One, DECF)
+                Or (DECF, One, DECF) /* \_SB_.PCI0.LPCB.EC0_.DECF */
                 ST84 (Zero, Arg1)
                 Return (Zero)
             }
@@ -35729,7 +35934,7 @@ Else
                 Store (RRAM (0x0522), Local0)
                 And (Local0, 0x7F, Local0)
                 WRAM (0x0522, Local0)
-                Or (DECF, 0x02, DECF)
+                Or (DECF, 0x02, DECF) /* \_SB_.PCI0.LPCB.EC0_.DECF */
                 ST84 (One, Arg1)
                 Return (Zero)
             }
@@ -35773,11 +35978,11 @@ Else
             Store (0x03, Local0)
             While (Local0)
             {
-                Store (Arg0, CDT2)
+                Store (Arg0, CDT2) /* \_SB_.PCI0.LPCB.EC0_.CDT2 */
                 Store (Arg1, Local1)
                 ShiftLeft (Local1, One, Local1)
                 Add (Local1, 0xDA, Local1)
-                Store (Local1, CMD1)
+                Store (Local1, CMD1) /* \_SB_.PCI0.LPCB.EC0_.CMD1 */
                 Store (0x7F, Local1)
                 While (LAnd (CMD1, Local1))
                 {
@@ -35814,12 +36019,12 @@ Else
             Store (0x03, Local0)
             While (Local0)
             {
-                Store (Arg2, CDT1)
-                Store (Local3, CDT2)
+                Store (Arg2, CDT1) /* \_SB_.PCI0.LPCB.EC0_.CDT1 */
+                Store (Local3, CDT2) /* \_SB_.PCI0.LPCB.EC0_.CDT2 */
                 Store (Arg1, Local1)
                 ShiftLeft (Local1, One, Local1)
                 Add (Local1, 0xDA, Local1)
-                Store (Local1, CMD1)
+                Store (Local1, CMD1) /* \_SB_.PCI0.LPCB.EC0_.CMD1 */
                 Store (0x7F, Local1)
                 While (LAnd (CMD1, Local1))
                 {
@@ -35838,9 +36043,9 @@ Else
             If (ECAV ())
             {
                 Acquire (MUEC, 0xFFFF)
-                Store (Arg0, CDT2)
-                Store (Arg1, CDT1)
-                Store (0xC4, CMD1)
+                Store (Arg0, CDT2) /* \_SB_.PCI0.LPCB.EC0_.CDT2 */
+                Store (Arg1, CDT1) /* \_SB_.PCI0.LPCB.EC0_.CDT1 */
+                Store (0xC4, CMD1) /* \_SB_.PCI0.LPCB.EC0_.CMD1 */
                 Store (0x7F, Local0)
                 While (LAnd (Local0, CMD1))
                 {
@@ -35895,12 +36100,12 @@ Else
 
                 If (Local0)
                 {
-                    Store (Zero, PRTC)
+                    Store (Zero, PRTC) /* \_SB_.PCI0.LPCB.EC0_.PRTC */
                     Decrement (Local1)
                     If (Local1)
                     {
                         Sleep (One)
-                        Store (Arg0, PRTC)
+                        Store (Arg0, PRTC) /* \_SB_.PCI0.LPCB.EC0_.PRTC */
                     }
                 }
             }
@@ -35960,30 +36165,30 @@ Else
             {
                 ShiftLeft (Arg1, One, Local3)
                 Or (Local3, One, Local3)
-                Store (Local3, ADDR)
+                Store (Local3, ADDR) /* \_SB_.PCI0.LPCB.EC0_.ADDR */
                 If (LNotEqual (Arg0, RDQK))
                 {
                     If (LNotEqual (Arg0, RCBT))
                     {
-                        Store (Arg2, CMDB)
+                        Store (Arg2, CMDB) /* \_SB_.PCI0.LPCB.EC0_.CMDB */
                     }
                 }
 
-                WECB(0x1c,256,Zero)
-                Store (Arg0, PRTC)
+                WECB (0x1C, 0x0100, Zero)
+                Store (Arg0, PRTC) /* \_SB_.PCI0.LPCB.EC0_.PRTC */
                 Store (SWTC (Arg0), Index (Local0, Zero))
                 If (LEqual (DerefOf (Index (Local0, Zero)), Zero))
                 {
                     If (LEqual (Arg0, RDBL))
                     {
                         Store (BCNT, Index (Local0, One))
-                        Store (RECB(0x1c,256), Index (Local0, 0x02))
+                        Store (RECB (0x1C, 0x0100), Index (Local0, 0x02))
                     }
 
                     If (LEqual (Arg0, RDWD))
                     {
                         Store (0x02, Index (Local0, One))
-                        Store (B1B2(T2B0,T2B1), Index (Local0, 0x02))
+                        Store (B1B2 (T2B0, T2B1), Index (Local0, 0x02))
                     }
 
                     If (LEqual (Arg0, RDBT))
@@ -36052,39 +36257,40 @@ Else
 
             If (LLessEqual (Local2, 0x03E8))
             {
-                WECB(0x1c,256,Zero)
+                WECB (0x1C, 0x0100, Zero)
                 ShiftLeft (Arg1, One, Local3)
-                Store (Local3, ADDR)
+                Store (Local3, ADDR) /* \_SB_.PCI0.LPCB.EC0_.ADDR */
                 If (LNotEqual (Arg0, WRQK))
                 {
                     If (LNotEqual (Arg0, SDBT))
                     {
-                        Store (Arg2, CMDB)
+                        Store (Arg2, CMDB) /* \_SB_.PCI0.LPCB.EC0_.CMDB */
                     }
                 }
 
                 If (LEqual (Arg0, WRBL))
                 {
-                    Store (Arg3, BCNT)
-                    WECB(0x1c,256,Arg4)
+                    Store (Arg3, BCNT) /* \_SB_.PCI0.LPCB.EC0_.BCNT */
+                    WECB (0x1C, 0x0100, Arg4)
                 }
 
                 If (LEqual (Arg0, WRWD))
                 {
-                    Store(Arg4, T2B0) Store(ShiftRight(Arg4,8), T2B1)
+                    Store (Arg4, T2B0) /* \_SB_.PCI0.LPCB.EC0_.T2B0 */
+                    Store (ShiftRight (Arg4, 0x08), T2B1) /* \_SB_.PCI0.LPCB.EC0_.T2B1 */
                 }
 
                 If (LEqual (Arg0, WRBT))
                 {
-                    Store (Arg4, DAT0)
+                    Store (Arg4, DAT0) /* \_SB_.PCI0.LPCB.EC0_.DAT0 */
                 }
 
                 If (LEqual (Arg0, SDBT))
                 {
-                    Store (Arg4, DAT0)
+                    Store (Arg4, DAT0) /* \_SB_.PCI0.LPCB.EC0_.DAT0 */
                 }
 
-                Store (Arg0, PRTC)
+                Store (Arg0, PRTC) /* \_SB_.PCI0.LPCB.EC0_.PRTC */
                 Store (SWTC (Arg0), Index (Local0, Zero))
             }
 
@@ -36092,7 +36298,7 @@ Else
             Return (Local0)
         }
 
-        Mutex(MUEP, 0)
+        Mutex (MUEP, 0x00)
         Method (RBEP, 1, NotSerialized)
         {
             Store (0xFFFF, Local1)
@@ -36155,12 +36361,12 @@ Else
                         Zero, 
                         Zero
                     }, Local0)
-                Store (Arg0, CMD)
-                Store (Arg1, EDA1)
-                Store (Arg2, EDA2)
-                Store (Arg3, EDA3)
-                Store (Arg4, EDA4)
-                Store (Arg5, EDA5)
+                Store (Arg0, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (Arg1, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg2, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg3, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
+                Store (Arg4, EDA4) /* \_SB_.PCI0.LPCB.EC0_.EDA4 */
+                Store (Arg5, EDA5) /* \_SB_.PCI0.LPCB.EC0_.EDA5 */
                 ECAC ()
                 Store (CMD, Index (Local0, Zero))
                 Store (EDA1, Index (Local0, One))
@@ -36224,37 +36430,37 @@ Else
                 {
                     If (LEqual (Arg0, Zero))
                     {
-                        Store (Arg2, ADDR)
-                        Store (Arg3, CMDB)
+                        Store (Arg2, ADDR) /* \_SB_.PCI0.LPCB.EC0_.ADDR */
+                        Store (Arg3, CMDB) /* \_SB_.PCI0.LPCB.EC0_.CMDB */
                         If (LOr (LEqual (Arg1, 0x0A), LEqual (Arg1, 0x0B)))
                         {
-                            Store (DerefOf (Index (Arg6, Zero)), BCNT)
-                            WECB(0x1c,256,DerefOf (Index (Arg6, One)))
+                            Store (DerefOf (Index (Arg6, Zero)), BCNT) /* \_SB_.PCI0.LPCB.EC0_.BCNT */
+                            WECB (0x1C, 0x0100, DerefOf (Index (Arg6, One)))
                         }
                         Else
                         {
-                            Store (Arg4, DAT0)
-                            Store (Arg5, DAT1)
+                            Store (Arg4, DAT0) /* \_SB_.PCI0.LPCB.EC0_.DAT0 */
+                            Store (Arg5, DAT1) /* \_SB_.PCI0.LPCB.EC0_.DAT1 */
                         }
 
-                        Store (Arg1, PRTC)
+                        Store (Arg1, PRTC) /* \_SB_.PCI0.LPCB.EC0_.PRTC */
                     }
                     Else
                     {
-                        Store (Arg2, ADD2)
-                        Store (Arg3, CMD2)
+                        Store (Arg2, ADD2) /* \_SB_.PCI0.LPCB.EC0_.ADD2 */
+                        Store (Arg3, CMD2) /* \_SB_.PCI0.LPCB.EC0_.CMD2 */
                         If (LOr (LEqual (Arg1, 0x0A), LEqual (Arg1, 0x0B)))
                         {
-                            Store (DerefOf (Index (Arg6, Zero)), BCN2)
-                            WECB(0x44,256,DerefOf (Index (Arg6, One)))
+                            Store (DerefOf (Index (Arg6, Zero)), BCN2) /* \_SB_.PCI0.LPCB.EC0_.BCN2 */
+                            WECB (0x44, 0x0100, DerefOf (Index (Arg6, One)))
                         }
                         Else
                         {
-                            Store (Arg4, DA20)
-                            Store (Arg5, DA21)
+                            Store (Arg4, DA20) /* \_SB_.PCI0.LPCB.EC0_.DA20 */
+                            Store (Arg5, DA21) /* \_SB_.PCI0.LPCB.EC0_.DA21 */
                         }
 
-                        Store (Arg1, PRT2)
+                        Store (Arg1, PRT2) /* \_SB_.PCI0.LPCB.EC0_.PRT2 */
                     }
 
                     Store (0x7F, Local0)
@@ -36283,7 +36489,7 @@ Else
                             Store (DAT0, Index (Local1, One))
                             Store (DAT1, Index (Local1, 0x02))
                             Store (BCNT, Index (Local1, 0x03))
-                            Store (RECB(0x1c,256), Index (Local1, 0x04))
+                            Store (RECB (0x1C, 0x0100), Index (Local1, 0x04))
                         }
                         Else
                         {
@@ -36291,7 +36497,7 @@ Else
                             Store (DA20, Index (Local1, One))
                             Store (DA21, Index (Local1, 0x02))
                             Store (BCN2, Index (Local1, 0x03))
-                            Store (RECB(0x44,256), Index (Local1, 0x04))
+                            Store (RECB (0x44, 0x0100), Index (Local1, 0x04))
                         }
 
                         And (Local0, 0x1F, Local0)
@@ -36362,12 +36568,12 @@ Else
 
         Method (ECAC, 0, NotSerialized)
         {
-            Store (GNBF, BIPA)
-            Store (0x30, MFUN)
-            Store (One, SFUN)
-            Store (0x10, LEN)
-            Store (Zero, EROR)
-            Store (One, STAS)
+            Store (GNBF, BIPA) /* \_SB_.BIPA */
+            Store (0x30, MFUN) /* \_SB_.PCI0.LPCB.EC0_.MFUN */
+            Store (One, SFUN) /* \_SB_.PCI0.LPCB.EC0_.SFUN */
+            Store (0x10, LEN) /* \_SB_.PCI0.LPCB.EC0_.LEN_ */
+            Store (Zero, EROR) /* \_SB_.PCI0.LPCB.EC0_.EROR */
+            Store (One, STAS) /* \_SB_.PCI0.LPCB.EC0_.STAS */
             ISMI (0xA1)
         }
 
@@ -36376,8 +36582,8 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (Arg0, CMD)
-                Store (Arg0, EDA1)
+                Store (Arg0, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (Arg0, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -36391,10 +36597,10 @@ Else
             If (ECAV ())
             {
                 Acquire (MU4T, 0xFFFF)
-                Store (0xFF, CMD)
-                Store (0xB3, EDA1)
-                Store (Arg0, EDA2)
-                Store (Arg1, EDA3)
+                Store (0xFF, CMD) /* \_SB_.PCI0.LPCB.EC0_.CMD_ */
+                Store (0xB3, EDA1) /* \_SB_.PCI0.LPCB.EC0_.EDA1 */
+                Store (Arg0, EDA2) /* \_SB_.PCI0.LPCB.EC0_.EDA2 */
+                Store (Arg1, EDA3) /* \_SB_.PCI0.LPCB.EC0_.EDA3 */
                 ECAC ()
                 Release (MU4T)
                 Return (Zero)
@@ -36479,12 +36685,12 @@ Else
 
             Method (_TC1, 0, NotSerialized)  // _TC1: Thermal Constant 1
             {
-                Return (TC1)
+                Return (TC1) /* \TC1_ */
             }
 
             Method (_TC2, 0, NotSerialized)  // _TC2: Thermal Constant 2
             {
-                Return (TC2)
+                Return (TC2) /* \TC2_ */
             }
 
             Method (_PSV, 0, NotSerialized)  // _PSV: Passive Temperature
@@ -36502,8 +36708,8 @@ Else
 
             Method (_SCP, 1, NotSerialized)  // _SCP: Set Cooling Policy
             {
-                Store (Zero, PLCY)
-                Notify (THRM, 0x81)
+                Store (Zero, PLCY) /* \_TZ_.PLCY */
+                Notify (THRM, 0x81) // Thermal Trip Point Change
             }
         }
     }
@@ -36520,11 +36726,11 @@ Else
                 Store (\_SB.PCI0.LPCB.EC0.ECPU, Local0)
                 If (LLess (Local0, 0x80))
                 {
-                    Store (Local0, LTMP)
+                    Store (Local0, LTMP) /* \_TZ_.LTMP */
                 }
             }
 
-            Return (LTMP)
+            Return (LTMP) /* \_TZ_.LTMP */
         }
 
         Method (RCRT, 0, NotSerialized)
@@ -36566,7 +36772,7 @@ Else
                 Add (Local0, One, Local0)
                 If (LLessEqual (Local0, 0x3C))
                 {
-                    Store (Local0, FANS)
+                    Store (Local0, FANS) /* \_TZ_.FANS */
                 }
                 Else
                 {
@@ -36635,14 +36841,14 @@ Else
     {
         Name (PWAC, Buffer (0x40)
         {
-            /* 0000 */  0x0E, 0x2E, 0x3B, 0x48, 0x55, 0x61, 0x6E, 0x7B,
-            /* 0008 */  0x9A, 0xC5, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-            /* 0010 */  0x0E, 0x21, 0x2F, 0x40, 0x4E, 0x5F, 0x6D, 0x7B,
-            /* 0018 */  0x9A, 0xC5, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-            /* 0020 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-            /* 0028 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-            /* 0030 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-            /* 0038 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF 
+            /* 0000 */  0x0E, 0x2E, 0x3B, 0x48, 0x55, 0x61, 0x6E, 0x7B,  // ..;HUan{
+            /* 0008 */  0x9A, 0xC5, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
+            /* 0010 */  0x0E, 0x21, 0x2F, 0x40, 0x4E, 0x5F, 0x6D, 0x7B,  // .!/@N_m{
+            /* 0018 */  0x9A, 0xC5, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
+            /* 0020 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
+            /* 0028 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
+            /* 0030 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,  // ........
+            /* 0038 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF   // ........
         })
         Name (F8FG, Zero)
         Name (BLCT, Zero)
@@ -36814,7 +37020,7 @@ Else
                 Store (Acquire (CMUT, 0xFFFF), Local2)
                 If (LEqual (Local2, Zero))
                 {
-                    Store (0x09, CRAH)
+                    Store (0x09, CRAH) /* \_SB_.PCI0.LPCB.EC0_.CRAH */
                     Store (THH0, Local0)
                     ShiftLeft (Local0, 0x08, Local0)
                     Store (THL0, Local1)
@@ -36827,7 +37033,7 @@ Else
                 Store (Acquire (CMUT, 0xFFFF), Local2)
                 If (LEqual (Local2, Zero))
                 {
-                    Store (0x09, CRAH)
+                    Store (0x09, CRAH) /* \_SB_.PCI0.LPCB.EC0_.CRAH */
                     Store (THH1, Local0)
                     ShiftLeft (Local0, 0x08, Local0)
                     Store (THL1, Local1)
@@ -36848,8 +37054,8 @@ Else
             Store (Acquire (CMUT, 0xFFFF), Local1)
             If (LEqual (Local1, Zero))
             {
-                Store (0x09, CRAH)
-                Store (Arg0, CRAI)
+                Store (0x09, CRAH) /* \_SB_.PCI0.LPCB.EC0_.CRAH */
+                Store (Arg0, CRAI) /* \_SB_.PCI0.LPCB.EC0_.CRAI */
                 Store (CRAD, Local0)
                 Release (CMUT)
             }
@@ -36862,9 +37068,9 @@ Else
             Store (Acquire (CMUT, 0xFFFF), Local1)
             If (LEqual (Local1, Zero))
             {
-                Store (0x09, CRAH)
-                Store (Arg0, CRAI)
-                Store (Arg1, CRAD)
+                Store (0x09, CRAH) /* \_SB_.PCI0.LPCB.EC0_.CRAH */
+                Store (Arg0, CRAI) /* \_SB_.PCI0.LPCB.EC0_.CRAI */
+                Store (Arg1, CRAD) /* \_SB_.PCI0.LPCB.EC0_.CRAD */
                 Release (CMUT)
             }
         }
@@ -36916,8 +37122,8 @@ Else
         {
             If (LEqual (Arg0, 0x03))
             {
-                Store (RRAM (0x04B0), KBST)
-                Store (RRAM (0x04B1), KBBR)
+                Store (RRAM (0x04B0), KBST) /* \_SB_.PCI0.LPCB.EC0_.KBST */
+                Store (RRAM (0x04B1), KBBR) /* \_SB_.PCI0.LPCB.EC0_.KBBR */
             }
 
             If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)))
@@ -36953,11 +37159,11 @@ Else
 
             If (LLessEqual (Arg0, 0x04))
             {
-                Store (DCPS (Zero), DCPF)
+                Store (DCPS (Zero), DCPF) /* \_SB_.DCPF */
                 Store (ACPS (), Local0)
                 If (LNotEqual (Local0, ACPF))
                 {
-                    Store (ACPS (), ACPF)
+                    Store (ACPS (), ACPF) /* \_SB_.ACPF */
                     PNOT ()
                 }
             }
@@ -36987,15 +37193,15 @@ Else
                 Sleep (0x0A)
             }
 
-            Store (Zero, FHKM)
+            Store (Zero, FHKM) /* \_SB_.PCI0.LPCB.EC0_.FHKM */
         }
 
         Method (FHKS, 0, Serialized)
         {
-            Store (One, FHKM)
+            Store (One, FHKM) /* \_SB_.PCI0.LPCB.EC0_.FHKM */
         }
 
-        Method (_Q01, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q01, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37003,7 +37209,7 @@ Else
             }
         }
 
-        Method (_Q02, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q02, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37011,7 +37217,7 @@ Else
             }
         }
 
-        Method (_Q03, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q03, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37019,7 +37225,7 @@ Else
             }
         }
 
-        Method (_Q04, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q04, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37027,7 +37233,7 @@ Else
             }
         }
 
-        Method (_Q05, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q05, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37035,16 +37241,16 @@ Else
             }
         }
 
-        Method (_Q0A, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q0A, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            Notify (SLPB, 0x80)
+            Notify (SLPB, 0x80) // Status Change
         }
 
-        Method (_Q0B, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q0B, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LGreaterEqual (MSOS (), OSW8))
             {
-                Notify (ASHS, 0x88)
+                Notify (ASHS, 0x88) // Device-Specific
             }
             ElseIf (And (^^^^ATKD.WAPF, 0x04))
             {
@@ -37234,12 +37440,12 @@ Else
             0x02, 
             0x03
         })
-        Method (_Q0C, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q0C, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             ^^^^ATKD.IANE (0xC5)
         }
 
-        Method (_Q0D, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q0D, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             ^^^^ATKD.IANE (0xC4)
         }
@@ -37253,32 +37459,28 @@ Else
                 Subtract (0x0A, Local0, Local1)
                 If (LNotEqual (Local1, LBTN))
                 {
-                    Store (Local1, LBTN)
+                    Store (Local1, LBTN) /* \_SB_.LBTN */
                 }
             }
         }
 
-        Method (_Q0E, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q0E, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            
             If (ATKP)
             {
-                \_SB.ATKD.IANE (0x20)
+                ^^^^ATKD.IANE (0x20)
             }
-
         }
 
-        Method (_Q0F, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q0F, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            
             If (ATKP)
             {
-                \_SB.ATKD.IANE (0x10)
+                ^^^^ATKD.IANE (0x10)
             }
-
         }
 
-        Method (_Q10, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q10, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LEqual (BLCT, Zero))
             {
@@ -37301,13 +37503,13 @@ Else
             }
         }
 
-        Method (_Q11, 0, Serialized)  // _Qxx: EC Query
+        Method (_Q11, 0, Serialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LGreaterEqual (MSOS (), OSW8))
             {
                 If (LEqual (F8FG, Zero))
                 {
-                    Store (One, F8FG)
+                    Store (One, F8FG) /* \_SB_.PCI0.LPCB.EC0_.F8FG */
                     STB2 (0xE0)
                     STB2 (0x5B)
                 }
@@ -37387,7 +37589,7 @@ Else
             FHKS ()
         }
 
-        Method (_Q12, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q12, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LNot (And (DSYN, One)))
             {
@@ -37402,7 +37604,7 @@ Else
             }
         }
 
-        Method (_Q13, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q13, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LGreaterEqual (MSOS (), OSW8))
             {
@@ -37421,7 +37623,7 @@ Else
             Return (Zero)
         }
 
-        Method (_Q14, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q14, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LGreaterEqual (MSOS (), OSW8))
             {
@@ -37445,7 +37647,7 @@ Else
             Return (Zero)
         }
 
-        Method (_Q15, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q15, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LGreaterEqual (MSOS (), OSW8))
             {
@@ -37469,7 +37671,7 @@ Else
             Return (Zero)
         }
 
-        Method (_Q6F, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q6F, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37477,7 +37679,7 @@ Else
             }
         }
 
-        Method (_Q6E, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q6E, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37485,7 +37687,7 @@ Else
             }
         }
 
-        Method (_Q6C, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q6C, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37493,7 +37695,7 @@ Else
             }
         }
 
-        Method (_Q6D, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q6D, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37501,11 +37703,11 @@ Else
             }
         }
 
-        Method (_Q70, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q70, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
         }
 
-        Method (_Q71, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q71, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37513,7 +37715,7 @@ Else
             }
         }
 
-        Method (_Q72, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q72, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37521,7 +37723,7 @@ Else
             }
         }
 
-        Method (_Q74, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q74, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37529,7 +37731,7 @@ Else
             }
         }
 
-        Method (_Q76, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q76, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37537,7 +37739,7 @@ Else
             }
         }
 
-        Method (_Q77, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q77, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37545,7 +37747,7 @@ Else
             }
         }
 
-        Method (_Q85, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q85, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ATKP)
             {
@@ -37553,7 +37755,7 @@ Else
             }
         }
 
-        Method (_Q84, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q84, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             Store (OHWR (), Local0)
             If (And (Local0, 0x02))
@@ -37616,7 +37818,7 @@ Else
                     {
                         If (WLDP)
                         {
-                            Store (WRST, WRPS)
+                            Store (WRST, WRPS) /* \_SB_.WRPS */
                             ^^^^ATKD.IANE (0x5F)
                         }
 
@@ -37627,7 +37829,7 @@ Else
 
                         If (BTDP)
                         {
-                            Store (BRST, BRPS)
+                            Store (BRST, BRPS) /* \_SB_.BRPS */
                             OBTD (Zero)
                             ^^^^ATKD.IANE (0x7E)
                         }
@@ -37672,7 +37874,7 @@ Else
                 {
                     If (WLDP)
                     {
-                        Store (WRST, WRPS)
+                        Store (WRST, WRPS) /* \_SB_.WRPS */
                         OWLD (Zero)
                         ^^^^ATKD.IANE (0x5F)
                     }
@@ -37684,7 +37886,7 @@ Else
 
                     If (BTDP)
                     {
-                        Store (BRST, BRPS)
+                        Store (BRST, BRPS) /* \_SB_.BRPS */
                         OBTD (Zero)
                         ^^^^ATKD.IANE (0x7E)
                     }
@@ -37692,16 +37894,16 @@ Else
             }
         }
 
-        Method (_QB0, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QB0, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            Notify (\_TZ.THRM, 0x80)
+            Notify (\_TZ.THRM, 0x80) // Thermal Status Change
         }
 
-        Method (_QA0, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QA0, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (ACPS ())
             {
-                Store (One, ACPF)
+                Store (One, ACPF) /* \_SB_.ACPF */
                 Store (0x58, Local0)
                 If (ATKP)
                 {
@@ -37710,7 +37912,7 @@ Else
             }
             Else
             {
-                Store (Zero, ACPF)
+                Store (Zero, ACPF) /* \_SB_.ACPF */
                 Store (0x57, Local0)
             }
 
@@ -37719,7 +37921,7 @@ Else
                 STBR ()
             }
 
-            Notify (AC0, 0x80)
+            Notify (AC0, 0x80) // Status Change
             If (ATKP)
             {
                 ^^^^ATKD.IANE (Local0)
@@ -37731,21 +37933,21 @@ Else
             NBAT (0x80)
         }
 
-        Method (_Q20, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q20, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (CDFG)
             {
-                Store (One, SMBF)
-                Store (Zero, CDFG)
+                Store (One, SMBF) /* \_SB_.PCI0.LPCB.EC0_.SMBF */
+                Store (Zero, CDFG) /* \_SB_.PCI0.LPCB.EC0_.CDFG */
             }
 
             If (ALFG)
             {
-                Store (Zero, ALFG)
+                Store (Zero, ALFG) /* \_SB_.PCI0.LPCB.EC0_.ALFG */
             }
         }
 
-        Method (_QB3, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QB3, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             ^^^^ATKD.IANE (0x6D)
         }
@@ -37755,9 +37957,9 @@ Else
             If (ECAV ())
             {
                 Acquire (MUEC, 0xFFFF)
-                Store (Arg0, ADD2)
-                Store (Arg1, CMD2)
-                Store (0x07, PRT2)
+                Store (Arg0, ADD2) /* \_SB_.PCI0.LPCB.EC0_.ADD2 */
+                Store (Arg1, CMD2) /* \_SB_.PCI0.LPCB.EC0_.CMD2 */
+                Store (0x07, PRT2) /* \_SB_.PCI0.LPCB.EC0_.PRT2 */
                 Store (0x7F, Local0)
                 While (PRT2)
                 {
@@ -37785,10 +37987,10 @@ Else
             If (ECAV ())
             {
                 Acquire (MUEC, 0xFFFF)
-                Store (Arg0, ADD2)
-                Store (Arg1, CMD2)
-                Store (Arg2, DA20)
-                Store (0x06, PRT2)
+                Store (Arg0, ADD2) /* \_SB_.PCI0.LPCB.EC0_.ADD2 */
+                Store (Arg1, CMD2) /* \_SB_.PCI0.LPCB.EC0_.CMD2 */
+                Store (Arg2, DA20) /* \_SB_.PCI0.LPCB.EC0_.DA20 */
+                Store (0x06, PRT2) /* \_SB_.PCI0.LPCB.EC0_.PRT2 */
                 Store (0x07FF, Local0)
                 While (PRT2)
                 {
@@ -37802,48 +38004,48 @@ Else
             Return (Local0)
         }
 
-        Method (_QAC, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QAC, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             Store (ST8E (0x28, Zero), Local0)
             If (LEqual (And (Local0, One), One))
             {
-                Notify (BAT0, 0x80)
+                Notify (BAT0, 0x80) // Status Change
             }
         }
 
-        Method (_QD3, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QD3, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
         }
 
-        Method (_QD4, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QD4, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (LEqual (F8FG, One))
             {
-                Store (Zero, F8FG)
+                Store (Zero, F8FG) /* \_SB_.PCI0.LPCB.EC0_.F8FG */
                 STB2 (0xE0)
                 STB2 (0xDB)
             }
         }
 
-        Method (_QDB, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QDB, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             ^^^^ATKD.IANE (0x6D)
         }
 
-        Method (_QDC, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QDC, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             ^^^^ATKD.IANE (0x6D)
         }
 
         Name (CNTR, Zero)
-        Method (_QA8, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QA8, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            Notify (^^^PEG0.PEGP, 0xD4)
+            Notify (^^^PEG0.PEGP, 0xD4) // Hardware-Specific
         }
 
-        Method (_QA9, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_QA9, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
-            Notify (^^^PEG0.PEGP, 0xD1)
+            Notify (^^^PEG0.PEGP, 0xD1) // Hardware-Specific
         }
     }
 
@@ -37914,7 +38116,7 @@ Else
             {
                 I2cSerialBusV2 (0x004C, ControllerInitiated, 0x00061A80,
                     AddressingMode7Bit, "\\_SB.PCI0.I2C1",
-                    0x00, ResourceConsumer, _Y34, Exclusive,
+                    0x00, ResourceConsumer, _Y33, Exclusive,
                     )
             })
             Name (XBFI, ResourceTemplate ()
@@ -37930,23 +38132,23 @@ Else
                     "\\_SB.PCI0.GPI0", 0x00, ResourceConsumer, ,
                     )
                     {   // Pin list
-                        0x00000047
+                        0x0047
                     }
             })
-            CreateWordField (SBFB, \_SB.PCI0.I2C1.ETPD._Y34._ADR, BADR)  // _ADR: Address
+            CreateWordField (SBFB, \_SB.PCI0.I2C1.ETPD._Y33._ADR, BADR)  // _ADR: Address
             Name (_ADR, One)  // _ADR: Address
             Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
             {
                 If (ELAN)
                 {
-                    Store (0x15, BADR)
+                    Store (0x15, BADR) /* \_SB_.PCI0.I2C1.ETPD.BADR */
                     Return ("ELAN1000")
                 }
 
                 Return ("ELAN1000")
             }
 
-            Name (_CID, "PNP0C50")  // _CID: Compatible ID
+            Name (_CID, "PNP0C50" /* HID Protocol Device (I2C bus) */)  // _CID: Compatible ID
             Name (_UID, One)  // _UID: Unique ID
             Name (_S0W, 0x03)  // _S0W: S0 Device Wake State
             Method (_S3W, 0, NotSerialized)  // _S3W: S3 Device Wake State
@@ -37971,14 +38173,14 @@ Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x03                                           
+                                 0x03                                             // .
                             })
                         }
                         Else
                         {
                             Return (Buffer (One)
                             {
-                                 0x00                                           
+                                 0x00                                             // .
                             })
                         }
                     }
@@ -37992,7 +38194,7 @@ Else
                 {
                     Return (Buffer (One)
                     {
-                         0x00                                           
+                         0x00                                             // .
                     })
                 }
             }
@@ -38014,7 +38216,6 @@ Else
 
             Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
             {
-//                Return (ConcatenateResTemplate (SBFB, SBFI))
                 Return (ConcatenateResTemplate (SBFB, SBFG))
             }
         }
@@ -38024,7 +38225,7 @@ Else
     {
         Device (LID)
         {
-            Name (_HID, EisaId ("PNP0C0D"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0D") /* Lid Device */)  // _HID: Hardware ID
             Method (_LID, 0, NotSerialized)  // _LID: Lid Status
             {
                 Store (One, Local0)
@@ -38036,7 +38237,7 @@ Else
 
                 If (And (VGAF, One))
                 {
-                    Store (One, ^^PCI0.GFX0.CLID)
+                    Store (One, ^^PCI0.GFX0.CLID) /* External reference */
                 }
 
                 Return (Local0)
@@ -38051,7 +38252,7 @@ Else
     Scope (_SB.PCI0.LPCB.EC0)
     {
         Name (KLDT, Zero)
-        Method (_Q80, 0, NotSerialized)  // _Qxx: EC Query
+        Method (_Q80, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (GLID ())
             {
@@ -38059,15 +38260,15 @@ Else
             }
             Else
             {
-                Store (RRAM (0x04B1), KLDT)
+                Store (RRAM (0x04B1), KLDT) /* \_SB_.PCI0.LPCB.EC0_.KLDT */
                 WRAM (0x04B1, Zero)
             }
 
-            Notify (LID, 0x80)
+            Notify (LID, 0x80) // Status Change
             If (And (VGAF, One))
             {
                 Store (GLID (), Local0)
-                Store (Local0, LIDS)
+                Store (Local0, LIDS) /* External reference */
                 If (CondRefOf (\_SB.PCI0.GFX0.GLID))
                 {
                     ^^^GFX0.GLID (LIDS)
@@ -38080,7 +38281,7 @@ Else
     {
         Device (SLPB)
         {
-            Name (_HID, EisaId ("PNP0C0E"))  // _HID: Hardware ID
+            Name (_HID, EisaId ("PNP0C0E") /* Sleep Button Device */)  // _HID: Hardware ID
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (Package (0x02)
@@ -38096,65 +38297,65 @@ Else
     {
         Method (FSMI, 1, NotSerialized)
         {
-            Store (Arg0, FSFN)
+            Store (Arg0, FSFN) /* \_SB_.FSFN */
             Or (Arg0, 0xA0, Local0)
             ISMI (0x90)
-            Return (FSTA)
+            Return (FSTA) /* \_SB_.FSTA */
         }
 
         Method (FLSH, 1, NotSerialized)
         {
-            Store (Arg0, FSTA)
+            Store (Arg0, FSTA) /* \_SB_.FSTA */
             FSMI (Zero)
         }
 
         Method (FINI, 1, NotSerialized)
         {
-            Store (Arg0, FADR)
+            Store (Arg0, FADR) /* \_SB_.FADR */
             Return (FSMI (One))
         }
 
         Method (FERS, 1, NotSerialized)
         {
-            Store (Arg0, FSTA)
+            Store (Arg0, FSTA) /* \_SB_.FSTA */
             Return (FSMI (0x02))
         }
 
         Method (FWRI, 1, NotSerialized)
         {
-            Store (Arg0, FADR)
-            Store (0x1000, FSIZ)
+            Store (Arg0, FADR) /* \_SB_.FADR */
+            Store (0x1000, FSIZ) /* \_SB_.FSIZ */
             Return (Subtract (0x1000, FSMI (0x03)))
         }
 
         Method (FCPW, 1, NotSerialized)
         {
-            Store (Arg0, FADR)
-            Store (0x1000, FSIZ)
+            Store (Arg0, FADR) /* \_SB_.FADR */
+            Store (0x1000, FSIZ) /* \_SB_.FSIZ */
             Return (FSMI (0x0D))
         }
 
         Method (FCPP, 0, NotSerialized)
         {
-            Store (Zero, FSIZ)
+            Store (Zero, FSIZ) /* \_SB_.FSIZ */
             Return (FSMI (0x0D))
         }
 
         Method (FWRP, 0, NotSerialized)
         {
-            Store (Zero, FSIZ)
+            Store (Zero, FSIZ) /* \_SB_.FSIZ */
             Return (Subtract (0x1000, FSMI (0x03)))
         }
 
         Method (FEBW, 1, NotSerialized)
         {
-            Store (Arg0, FADR)
+            Store (Arg0, FADR) /* \_SB_.FADR */
             Return (FSMI (0x04))
         }
 
         Method (FEBR, 1, NotSerialized)
         {
-            Store (Arg0, FADR)
+            Store (Arg0, FADR) /* \_SB_.FADR */
             Return (FSMI (0x05))
         }
 
@@ -38165,36 +38366,36 @@ Else
 
         Method (ECSR, 1, NotSerialized)
         {
-            Store (Arg0, FSTA)
+            Store (Arg0, FSTA) /* \_SB_.FSTA */
             Return (FSMI (0x07))
         }
 
         Method (FLSC, 1, NotSerialized)
         {
-            Store (Arg0, FSTA)
+            Store (Arg0, FSTA) /* \_SB_.FSTA */
             Return (FSMI (0x08))
         }
 
         Method (FIME, 1, NotSerialized)
         {
-            Store (Arg0, FSTA)
+            Store (Arg0, FSTA) /* \_SB_.FSTA */
             If (Or (LEqual (Arg0, 0x04), LEqual (Arg0, 0x05)))
             {
                 FSMI (0x09)
                 If (LEqual (Arg0, 0x04))
                 {
-                    Store (FADR, ULCK)
+                    Store (FADR, ULCK) /* \_SB_.ATKD.ULCK */
                 }
 
-                Store (Zero, FSTA)
-                Return (FSTA)
+                Store (Zero, FSTA) /* \_SB_.FSTA */
+                Return (FSTA) /* \_SB_.FSTA */
             }
 
             If (LEqual (Arg0, 0x8000))
             {
-                Store (0x1000, FSIZ)
+                Store (0x1000, FSIZ) /* \_SB_.FSIZ */
                 FSMI (0x09)
-                Return (FSTA)
+                Return (FSTA) /* \_SB_.FSTA */
             }
 
             Return (FSMI (0x09))
@@ -38204,13 +38405,13 @@ Else
         {
             If (LEqual (Arg0, 0x8000))
             {
-                Store (Arg0, FSTA)
+                Store (Arg0, FSTA) /* \_SB_.FSTA */
                 FSMI (0x0A)
-                Store (0x1000, FSIZ)
-                Return (FSTA)
+                Store (0x1000, FSIZ) /* \_SB_.FSIZ */
+                Return (FSTA) /* \_SB_.FSTA */
             }
 
-            Store (Arg0, FSTA)
+            Store (Arg0, FSTA) /* \_SB_.FSTA */
             Return (FSMI (0x0A))
         }
 
@@ -38237,20 +38438,20 @@ Else
 
         Method (SBRW, 1, NotSerialized)
         {
-            Store (SBPS, PMEW)
+            Store (SBPS, PMEW) /* \PMEW */
         }
 
         Method (STRP, 1, NotSerialized)
         {
             If (Arg0)
             {
-                Store (One, SLPS)
-                Store (One, SLPE)
+                Store (One, SLPS) /* \SLPS */
+                Store (One, SLPE) /* \SLPE */
             }
             Else
             {
-                Store (Zero, SLPE)
-                Store (One, SLPS)
+                Store (Zero, SLPE) /* \SLPE */
+                Store (One, SLPS) /* \SLPS */
             }
         }
 
@@ -38258,7 +38459,7 @@ Else
         {
             If (THLS)
             {
-                Return (TTDT)
+                Return (TTDT) /* \TTDT */
             }
             Else
             {
@@ -38354,25 +38555,25 @@ Else
             Return (Zero)
         }
 
-        Mutex(P4SM, 0)
+        Mutex (P4SM, 0x00)
         Method (SBYT, 2, Serialized)
         {
             Acquire (P4SM, 0xFFFF)
             Store (AUXC, Local0)
-            Store (Zero, AUXC)
-            Store (Arg0, HADR)
-            Store (Arg1, HCMD)
-            Store (0xFF, HSTS)
-            Store (0x44, HSTC)
+            Store (Zero, AUXC) /* \AUXC */
+            Store (Arg0, HADR) /* \HADR */
+            Store (Arg1, HCMD) /* \HCMD */
+            Store (0xFF, HSTS) /* \HSTS */
+            Store (0x44, HSTC) /* \HSTC */
             If (WTSB ())
             {
-                Store (Local0, AUXC)
+                Store (Local0, AUXC) /* \AUXC */
                 Release (P4SM)
                 Return (One)
             }
             Else
             {
-                Store (Local0, AUXC)
+                Store (Local0, AUXC) /* \AUXC */
                 Release (P4SM)
                 Return (Zero)
             }
@@ -38392,11 +38593,11 @@ Else
                 }
                 Else
                 {
-                    Store (Arg0, HADR)
-                    Store (Arg1, HCMD)
-                    Store (Arg2, HDT0)
-                    Store (0xFF, HSTS)
-                    Store (0x48, HSTC)
+                    Store (Arg0, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
+                    Store (Arg2, HDT0) /* \HDT0 */
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x48, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Release (P4SM)
@@ -38425,15 +38626,15 @@ Else
                 }
                 Else
                 {
-                    Store (Arg0, HADR)
-                    Store (Arg1, HCMD)
+                    Store (Arg0, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
                     And (Arg2, 0xFF, Local1)
                     ShiftRight (Arg2, 0x08, Local2)
                     And (Local2, 0xFF, Local2)
-                    Store (Local2, HDT0)
-                    Store (Local1, HDT1)
-                    Store (0xFF, HSTS)
-                    Store (0x4C, HSTC)
+                    Store (Local2, HDT0) /* \HDT0 */
+                    Store (Local1, HDT1) /* \HDT1 */
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x4C, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Release (P4SM)
@@ -38462,23 +38663,23 @@ Else
                 }
                 Else
                 {
-                    Or (AUXC, 0x02, AUXC)
-                    Store (Arg0, HADR)
-                    Store (Arg1, HCMD)
+                    Or (AUXC, 0x02, AUXC) /* \AUXC */
+                    Store (Arg0, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
                     Store (HSTC, Local1)
                     Store (Arg2, Local2)
                     Store (Zero, Local1)
                     While (Local2)
                     {
-                        Store (DerefOf (Index (RBUF, Local1)), BLKD)
+                        Store (DerefOf (Index (RBUF, Local1)), BLKD) /* \BLKD */
                         Decrement (Local2)
                         Increment (Local1)
                     }
 
-                    Store (Arg2, HDT0)
+                    Store (Arg2, HDT0) /* \HDT0 */
                     Store (HSTC, Local1)
-                    Store (0xFF, HSTS)
-                    Store (0x54, HSTC)
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x54, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Release (P4SM)
@@ -38507,14 +38708,14 @@ Else
                 }
                 Else
                 {
-                    Or (Arg0, One, HADR)
-                    Store (Arg1, HCMD)
-                    Store (0xFF, HSTS)
-                    Store (0x44, HSTC)
+                    Or (Arg0, One, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x44, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Release (P4SM)
-                        Return (HDT0)
+                        Return (HDT0) /* \HDT0 */
                     }
                     Else
                     {
@@ -38539,14 +38740,14 @@ Else
                 }
                 Else
                 {
-                    Or (Arg0, One, HADR)
-                    Store (Arg1, HCMD)
-                    Store (0xFF, HSTS)
-                    Store (0x48, HSTC)
+                    Or (Arg0, One, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x48, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Release (P4SM)
-                        Return (HDT0)
+                        Return (HDT0) /* \HDT0 */
                     }
                     Else
                     {
@@ -38571,10 +38772,10 @@ Else
                 }
                 Else
                 {
-                    Or (Arg0, One, HADR)
-                    Store (Arg1, HCMD)
-                    Store (0xFF, HSTS)
-                    Store (0x4C, HSTC)
+                    Or (Arg0, One, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x4C, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Store (HDT0, Local1)
@@ -38607,17 +38808,17 @@ Else
                 }
                 Else
                 {
-                    Or (AUXC, 0x02, AUXC)
-                    Or (Arg0, One, HADR)
-                    Store (Arg1, HCMD)
-                    Store (0xFF, HSTS)
-                    Store (0x54, HSTC)
+                    Or (AUXC, 0x02, AUXC) /* \AUXC */
+                    Or (Arg0, One, HADR) /* \HADR */
+                    Store (Arg1, HCMD) /* \HCMD */
+                    Store (0xFF, HSTS) /* \HSTS */
+                    Store (0x54, HSTC) /* \HSTC */
                     If (WTSB ())
                     {
                         Store (HSTC, Local1)
                         Store (HDT0, Local2)
                         Store (Local2, Local3)
-                        Store (Zero, RBUF)
+                        Store (Zero, RBUF) /* \RBUF */
                         Store (Zero, Local1)
                         While (Local2)
                         {
@@ -38645,18 +38846,18 @@ Else
     {
         Name (CNTB, Buffer (0x0E)
         {
-            /* 0000 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00,
-            /* 0008 */  0xFF, 0x00, 0x00, 0x00, 0x00, 0x00             
+            /* 0000 */  0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00,  // ........
+            /* 0008 */  0xFF, 0x00, 0x00, 0x00, 0x00, 0x00               // ......
         })
         Name (VISB, Buffer (0x0E)
         {
-            /* 0000 */  0x01, 0x01, 0x01, 0x00, 0x01, 0x01, 0x00, 0x00,
-            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00             
+            /* 0000 */  0x01, 0x01, 0x01, 0x00, 0x01, 0x01, 0x00, 0x00,  // ........
+            /* 0008 */  0x00, 0x00, 0x00, 0x00, 0x00, 0x00               // ......
         })
         Name (SHPB, Buffer (0x0E)
         {
-            /* 0000 */  0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07,
-            /* 0008 */  0x07, 0x07, 0x07, 0x07, 0x07, 0x07             
+            /* 0000 */  0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07,  // ........
+            /* 0008 */  0x07, 0x07, 0x07, 0x07, 0x07, 0x07               // ......
         })
         Name (BUPC, Package (0x04)
         {
@@ -38667,7 +38868,7 @@ Else
         })
         Name (BPLD, Buffer (0x10)
         {
-             0x81, 0x00, 0x31, 0x00                         
+             0x81, 0x00, 0x31, 0x00                           // ..1.
         })
         Method (OUPC, 2, Serialized)
         {
@@ -38694,8 +38895,10 @@ Else
             Store (DerefOf (Index (BPLD, 0x0A)), Local0)
             Store (DerefOf (Index (BPLD, 0x0B)), Local1)
             Store (Add (Arg0, One), Local2)
-            Store (Or (And (Local0, 0x7F), ShiftLeft (And (Local2, One), 0x07)), Index (BPLD, 0x0A))
-            Store (Or (And (Local1, 0x80), ShiftRight (And (Local2, 0xFE), One)), Index (BPLD, 0x0B))
+            Store (Or (And (Local0, 0x7F), ShiftLeft (And (Local2, One), 0x07
+                )), Index (BPLD, 0x0A))
+            Store (Or (And (Local1, 0x80), ShiftRight (And (Local2, 0xFE), One
+                )), Index (BPLD, 0x0B))
         }
     }
 
@@ -38717,14 +38920,14 @@ Else
                                 {
                                     Return (Buffer (One)
                                     {
-                                         0x0F                                           
+                                         0x0F                                             // .
                                     })
                                 }
                                 Default
                                 {
                                     Return (Buffer (One)
                                     {
-                                         0x00                                           
+                                         0x00                                             // .
                                     })
                                 }
 
@@ -38761,7 +38964,7 @@ Else
 
     Scope (_GPE)
     {
-        Method (_E02, 0, NotSerialized)  // _Exx: Edge-Triggered GPE
+        Method (_E02, 0, NotSerialized)  // _Exx: Edge-Triggered GPE, xx=0x00-0xFF
         {
             Store (One, Local0)
             Add (0x80, Local0, Local0)
@@ -38784,7 +38987,7 @@ Else
         Name (XSCT, 0x18)
         Name (XSST, 0x1A)
         Name (XRCT, 0x1C)
-        Mutex(MUTE, 0)
+        Mutex (MUTE, 0x00)
         Method (BDFR, 4, NotSerialized)
         {
             ShiftLeft (Arg0, 0x14, Arg0)
@@ -38808,7 +39011,7 @@ Else
             }
 
             Release (MUTE)
-            Return (XCFG)
+            Return (XCFG) /* \_SB_.RBPE.XCFG */
         }
 
         Method (RWPE, 1, NotSerialized)
@@ -38823,7 +39026,7 @@ Else
             }
 
             Release (MUTE)
-            Return (XCFG)
+            Return (XCFG) /* \_SB_.RWPE.XCFG */
         }
 
         Method (RDPE, 1, NotSerialized)
@@ -38838,7 +39041,7 @@ Else
             }
 
             Release (MUTE)
-            Return (XCFG)
+            Return (XCFG) /* \_SB_.RDPE.XCFG */
         }
 
         Method (WBPE, 2, NotSerialized)
@@ -38851,7 +39054,7 @@ Else
                 XCFG,   8
             }
 
-            Store (Arg1, XCFG)
+            Store (Arg1, XCFG) /* \_SB_.WBPE.XCFG */
             Release (MUTE)
         }
 
@@ -38866,7 +39069,7 @@ Else
                 XCFG,   16
             }
 
-            Store (Arg1, XCFG)
+            Store (Arg1, XCFG) /* \_SB_.WWPE.XCFG */
             Release (MUTE)
         }
 
@@ -38881,7 +39084,7 @@ Else
                 XCFG,   32
             }
 
-            Store (Arg1, XCFG)
+            Store (Arg1, XCFG) /* \_SB_.WDPE.XCFG */
             Release (MUTE)
         }
 
@@ -38897,7 +39100,7 @@ Else
             }
 
             And (XCFG, Arg2, Local1)
-            Or (Local1, Arg1, XCFG)
+            Or (Local1, Arg1, XCFG) /* \_SB_.RWDP.XCFG */
             Release (MUTE)
         }
 
@@ -39215,9 +39418,9 @@ Else
         {
             Buffer (0x14)
             {
-                /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x14, 0x00, 0x14, 0x00,
-                /* 0008 */  0x25, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                /* 0010 */  0xFF, 0xFF, 0xFF, 0xFF                         
+                /* 0000 */  0x82, 0x00, 0x00, 0x00, 0x14, 0x00, 0x14, 0x00,  // ........
+                /* 0008 */  0x25, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // %.......
+                /* 0010 */  0xFF, 0xFF, 0xFF, 0xFF                           // ....
             }
         })
         Device (DCAM)
@@ -39225,7 +39428,7 @@ Else
             Name (_ADR, 0x04)  // _ADR: Address
             Method (_PLD, 0, NotSerialized)  // _PLD: Physical Location of Device
             {
-                Return (CAPD)
+                Return (CAPD) /* \_SB_.PCI0.XHC_.RHUB.SS04.CAPD */
             }
         }
     }
@@ -39693,6 +39896,10 @@ Else
             }
         }
     }
-    Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }
+
+    Method (B1B2, 2, NotSerialized)
+    {
+        Return (Or (Arg0, ShiftLeft (Arg1, 0x08)))
+    }
 }
 
